@@ -1,4 +1,3 @@
-
 # 100
 
 Two curated lists to prepare for AI/ML engineering — 100 research papers and 100 books, each organized beginner → advanced with direct links.
@@ -10,6 +9,7 @@ Two curated lists to prepare for AI/ML engineering — 100 research papers and 1
 | [`ResearchPaper.md`](./ResearchPaper.md) | 100 research papers spanning ML foundations, deep learning, transformers, LLMs, generative models, reinforcement learning, and alignment — mostly linked directly to arXiv PDFs |
 | [`Books.md`](./Books.md) | 100 books spanning math/stats foundations, classic ML, deep learning, NLP, computer vision, RL, generative AI/LLMs, MLOps, and theory — linked to free official versions where available, otherwise publisher pages |
 | [`Datasets.md`](./Datasets.md) | 100 datasets to practice on, from beginner (Iris, MNIST) to advanced (LAION-5B, Common Crawl, RLHF preference datasets, RL environments) |
+| [`Projects.md`](./Projects.md) | 100 project ideas, tiered by difficulty — from linear regression to fine-tuning an LLM and building a RAG pipeline |
 
 ### Planned / upcoming
 
@@ -17,7 +17,6 @@ More "100" lists and supporting docs to round out the repo:
 
 | File | What it will be |
 |---|---|
-| `Projects.md` | 100 project ideas, tiered by difficulty — from linear regression to fine-tuning an LLM or building a RAG pipeline |
 | `Tools.md` | 100 tools/libraries — from numpy and PyTorch to vLLM, LangChain, Ray, and Weights & Biases |
 | `Interview_Questions.md` | 100 ML/AI interview questions with brief answers, grouped by topic |
 | `Courses.md` | 100 free courses and lectures (YouTube, university OCW, MOOCs) |
