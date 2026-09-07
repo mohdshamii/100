@@ -15,6 +15,7 @@ Five curated lists to prepare for AI/ML engineering — 100 research papers, 100
 | [`Datasets.md`](./Datasets.md) | 100 datasets to practice on, from beginner (Iris, MNIST) to advanced (LAION-5B, Common Crawl, RLHF preference datasets, RL environments) |
 | [`Projects.md`](./Projects.md) | 100 project ideas, tiered by difficulty — from linear regression to fine-tuning an LLM and building a RAG pipeline |
 | [`Tools.md`](./Tools.md) | 100 tools/libraries, tiered from fundamentals to production infrastructure — from numpy and PyTorch to vLLM, LangChain, Ray, and Weights & Biases |
+| [`Interview_Questions.md`](./Interview_Questions.md) | 100 ML/AI interview questions with brief answers, grouped into 12 topics — math/stats, classic ML, evaluation metrics, deep learning, optimization, NLP/LLMs, computer vision, RL, ML system design/MLOps, coding/DSA, and behavioral |
 
 ### Planned / upcoming
 
@@ -22,7 +23,6 @@ More "100" lists and supporting docs to round out the repo:
 
 | File | What it will be |
 |---|---|
-| `Interview_Questions.md` | 100 ML/AI interview questions with brief answers, grouped by topic |
 | `Courses.md` | 100 free courses and lectures (YouTube, university OCW, MOOCs) |
 | `Blogs_and_Newsletters.md` | 100 blogs, newsletters, and people to follow in AI/ML |
 | `Glossary.md` | 100 key terms and concepts defined in plain language |
