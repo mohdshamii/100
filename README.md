@@ -16,6 +16,9 @@ Five curated lists to prepare for AI/ML engineering — 100 research papers, 100
 | [`Projects.md`](./Projects.md) | 100 project ideas, tiered by difficulty — from linear regression to fine-tuning an LLM and building a RAG pipeline |
 | [`Tools.md`](./Tools.md) | 100 tools/libraries, tiered from fundamentals to production infrastructure — from numpy and PyTorch to vLLM, LangChain, Ray, and Weights & Biases |
 | [`Interview_Questions.md`](./Interview_Questions.md) | 100 ML/AI interview questions with brief answers, grouped into 12 topics — math/stats, classic ML, evaluation metrics, deep learning, optimization, NLP/LLMs, computer vision, RL, ML system design/MLOps, coding/DSA, and behavioral |
+| [`Courses.md`](./Courses.md) | 100 free courses and lecture series across 12 categories — math/CS foundations, classic ML, deep learning, NLP, computer vision, RL, LLMs/generative AI, MLOps, key YouTube channels, general MOOCs, and advanced specialized topics |
+| [`Blogs_and_Newsletters.md`](./Blogs_and_Newsletters.md) | 100 blogs, newsletters, and people to follow across 11 categories — research lab blogs, company engineering blogs, independent researcher blogs, newsletters, explainer sites, researchers/engineers to follow, podcasts, communities, policy/safety sources, and paper-tracking aggregators |
+| [`Glossary.md`](./Glossary.md) | 100 key terms defined in plain language across 11 categories — basic ML concepts, math/stats, classic ML, deep learning, training/optimization, NLP/Transformers, LLM-specific terms, generative models, RL, MLOps, and evaluation/advanced terms |
 
 ### Planned / upcoming
 
@@ -23,9 +26,6 @@ More "100" lists and supporting docs to round out the repo:
 
 | File | What it will be |
 |---|---|
-| `Courses.md` | 100 free courses and lectures (YouTube, university OCW, MOOCs) |
-| `Blogs_and_Newsletters.md` | 100 blogs, newsletters, and people to follow in AI/ML |
-| `Glossary.md` | 100 key terms and concepts defined in plain language |
 | `ROADMAP.md` | A single timeline tying papers, books, datasets, projects, and tools together into one learning path |
 | `CHEATSHEETS.md` | Condensed math/formula references — linear algebra, probability, loss functions, optimizer update rules |
 | `CONTRIBUTING.md` | Guidelines for submitting new papers, books, or links via PR |
