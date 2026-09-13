@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 — A Two-Track AI/ML Reading List</title>
+<meta name="description" content="An interactive companion to mohdshamii/100: 100 curated AI/ML books and 100 curated AI/ML research papers, each organized into ten categories.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* =========================
+   DESIGN TOKENS
+========================= */
+:root{
+  --bg: #0F1113;
+  --bg-elevated: #131619;
+  --surface: #16191D;
+  --surface-2: #1C2024;
+  --border: #272B30;
+  --border-soft: #1F2327;
+  --text: #ECEDEF;
+  --text-muted: #969DA5;
+  --text-faint: #666D75;
+  --accent: #E8A33D;
+  --accent-dim: #B9822F;
+  --accent-soft: rgba(232,163,61,0.10);
+  --accent-2: #5FA8A0;
+  --accent-2-soft: rgba(95,168,160,0.10);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --radius: 6px;
+  --maxw: 1120px;
+}
+:root[data-theme="light"]{
+  --bg: #FAF8F4;
+  --bg-elevated: #F3F0E9;
+  --surface: #FFFFFF;
+  --surface-2: #F4F1EA;
+  --border: #E3DED2;
+  --border-soft: #EBE6D9;
+  --text: #191714;
+  --text-muted: #6B655A;
+  --text-faint: #948C7D;
+  --accent: #B9722C;
+  --accent-dim: #96591F;
+  --accent-soft: rgba(185,114,44,0.08);
+  --accent-2: #2F7B73;
+  --accent-2-soft: rgba(47,123,115,0.08);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  transition:background 0.3s ease, color 0.3s ease;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;}
+button{font-family:inherit;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+@media (max-width:640px){ .wrap{padding:0 20px;} }
+
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+h1,h2,h3,h4{font-family:var(--serif); font-weight:500; margin:0; letter-spacing:-0.01em;}
+
+.section-label{
+  font-family:var(--mono);
+  font-size:13px;
+  color:var(--accent);
+  margin:0 0 14px;
+}
+
+.muted{color:var(--text-muted);}
+
+.reveal{opacity:0; transform:translateY(14px); transition:opacity 0.6s ease, transform 0.6s ease;}
+.reveal.is-visible{opacity:1; transform:translateY(0);}
+
+/* =========================
+   NAVIGATION
+========================= */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border-soft);
+}
+.nav-inner{
+  max-width:var(--maxw); margin:0 auto; padding:0 28px;
+  height:64px; display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+@media (max-width:640px){ .nav-inner{padding:0 20px;} }
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+.brand-mark{
+  font-family:var(--serif); font-size:20px; font-weight:600;
+  width:34px; height:34px; border:1px solid var(--border);
+  border-radius:var(--radius); display:flex; align-items:center; justify-content:center;
+  color:var(--accent);
+}
+.brand-text{display:flex; flex-direction:column; line-height:1.1;}
+.brand-title{font-size:14px; font-weight:600;}
+.brand-sub{font-size:11px; color:var(--text-faint); font-family:var(--mono);}
+
+.nav-links{display:flex; align-items:center; gap:28px;}
+.nav-links a{
+  font-size:14px; text-decoration:none; color:var(--text-muted);
+  transition:color 0.15s ease;
+}
+.nav-links a:hover{color:var(--text);}
+.nav-actions{display:flex; align-items:center; gap:10px;}
+
+.icon-btn{
+  width:38px; height:38px; border-radius:var(--radius);
+  border:1px solid var(--border); background:var(--surface);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; color:var(--text-muted);
+  transition:border-color 0.15s ease, color 0.15s ease;
+}
+.icon-btn:hover{border-color:var(--accent); color:var(--accent);}
+
+.gh-btn{
+  display:flex; align-items:center; gap:8px;
+  padding:0 16px; height:38px; border-radius:var(--radius);
+  background:var(--text); color:var(--bg);
+  text-decoration:none; font-size:13px; font-weight:600;
+  border:1px solid var(--text);
+}
+:root[data-theme="light"] .gh-btn{background:var(--text); color:#fff;}
+
+.menu-toggle{display:none;}
+@media (max-width:860px){
+  .nav-links{display:none;}
+  .menu-toggle{
+    display:flex; width:38px; height:38px; border-radius:var(--radius);
+    border:1px solid var(--border); background:var(--surface);
+    align-items:center; justify-content:center; cursor:pointer;
+  }
+  .gh-btn span{display:none;}
+  .gh-btn{width:38px; padding:0; justify-content:center;}
+}
+.mobile-panel{
+  display:none; flex-direction:column; gap:2px;
+  border-bottom:1px solid var(--border-soft); background:var(--bg-elevated);
+  padding:10px 20px 16px;
+}
+.mobile-panel.open{display:flex;}
+.mobile-panel a{
+  padding:12px 6px; text-decoration:none; color:var(--text);
+  border-bottom:1px solid var(--border-soft); font-size:15px;
+}
+.mobile-panel a:last-child{border-bottom:none;}
+
+/* =========================
+   HERO
+========================= */
+.hero{padding:88px 0 64px; border-bottom:1px solid var(--border-soft);}
+.hero-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:start;}
+@media (max-width:900px){ .hero-grid{grid-template-columns:1fr; gap:36px;} }
+
+.hero h1{
+  font-size:clamp(34px, 5vw, 56px);
+  line-height:1.08;
+  margin-bottom:22px;
+  max-width:16ch;
+}
+.hero .lede{
+  font-size:18px; color:var(--text-muted); max-width:56ch; margin-bottom:26px;
+}
+.hero-facts{display:flex; flex-wrap:wrap; gap:10px 28px; margin-bottom:30px;}
+.hero-fact{font-size:14px; color:var(--text-muted);}
+.hero-fact b{color:var(--text); font-weight:600;}
+
+.hero-ctas{display:flex; gap:12px; flex-wrap:wrap;}
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 20px; border-radius:var(--radius);
+  text-decoration:none; font-size:14px; font-weight:600;
+  border:1px solid var(--border); cursor:pointer;
+  transition:transform 0.15s ease, border-color 0.15s ease;
+}
+.btn-primary{background:var(--accent); border-color:var(--accent); color:#151515;}
+.btn-primary:hover{transform:translateY(-1px);}
+.btn-ghost{background:transparent; color:var(--text);}
+.btn-ghost:hover{border-color:var(--text-muted);}
+
+.hero-note{
+  border:1px solid var(--border); border-radius:var(--radius);
+  padding:18px 20px; background:var(--surface); font-size:13.5px; color:var(--text-muted);
+}
+.hero-note b{color:var(--text);}
+.hero-note code{
+  font-family:var(--mono); font-size:12.5px; background:var(--surface-2);
+  padding:1px 5px; border-radius:3px;
+}
+
+.hero-card{
+  border:1px solid var(--border); border-radius:var(--radius); background:var(--surface);
+  padding:26px; position:sticky; top:88px;
+}
+.hero-card-row{display:flex; justify-content:space-between; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--border-soft);}
+.hero-card-row:last-child{border-bottom:none;}
+.hero-card-row .k{font-size:13px; color:var(--text-muted);}
+.hero-card-row .v{font-family:var(--mono); font-size:15px; color:var(--accent);}
+
+/* =========================
+   STATS
+========================= */
+.stats{padding:56px 0; border-bottom:1px solid var(--border-soft);}
+.stats-grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+  background:var(--border-soft); border:1px solid var(--border-soft); border-radius:var(--radius); overflow:hidden;
+}
+@media (max-width:760px){ .stats-grid{grid-template-columns:repeat(2,1fr);} }
+.stat-cell{background:var(--bg); padding:26px 22px;}
+.stat-num{font-family:var(--serif); font-size:38px; color:var(--accent); font-variant-numeric:tabular-nums;}
+.stat-label{font-size:13px; color:var(--text-muted); margin-top:6px;}
+
+/* =========================
+   ECOSYSTEM
+========================= */
+.section{padding:80px 0; border-bottom:1px solid var(--border-soft);}
+.section-head{max-width:640px; margin-bottom:44px;}
+.section-head h2{font-size:clamp(26px,3.4vw,34px); margin-bottom:14px;}
+.section-head p{color:var(--text-muted); font-size:15.5px;}
+
+.file-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+@media (max-width:900px){ .file-grid{grid-template-columns:1fr;} }
+
+.file-card{
+  border:1px solid var(--border); border-radius:var(--radius); background:var(--surface);
+  padding:24px; display:flex; flex-direction:column; gap:14px;
+}
+.file-card .glyph{
+  width:38px; height:38px; border-radius:var(--radius); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:13px; color:var(--accent);
+}
+.file-card h3{font-size:19px;}
+.file-card .filename{font-family:var(--mono); font-size:12px; color:var(--text-faint);}
+.file-card p{font-size:14px; color:var(--text-muted); margin:0;}
+.chip-row{display:flex; flex-wrap:wrap; gap:6px;}
+.chip{
+  font-size:11.5px; font-family:var(--mono); color:var(--text-muted);
+  border:1px solid var(--border); border-radius:100px; padding:3px 10px;
+}
+.file-card .meta{
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:auto; padding-top:14px; border-top:1px solid var(--border-soft);
+}
+.file-card .count{font-family:var(--mono); font-size:13px; color:var(--accent);}
+.file-card a.open{font-size:13px; text-decoration:none; color:var(--text); font-weight:600;}
+.file-card a.open:hover{color:var(--accent);}
+
+/* relationship strip */
+.relate{
+  margin-top:26px; border:1px dashed var(--border); border-radius:var(--radius);
+  padding:18px 22px; font-size:14px; color:var(--text-muted); display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+}
+.relate .node{font-family:var(--mono); font-size:12.5px; color:var(--text); border:1px solid var(--border); border-radius:100px; padding:4px 12px;}
+.relate .arrow{color:var(--text-faint);}
+
+/* =========================
+   EXPLORER
+========================= */
+.explorer-controls{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:26px; align-items:center;}
+.search-box{
+  flex:1 1 260px; display:flex; align-items:center; gap:10px;
+  border:1px solid var(--border); border-radius:var(--radius); background:var(--surface);
+  padding:0 14px; height:44px;
+}
+.search-box input{
+  flex:1; border:none; background:transparent; color:var(--text); font-size:14px; outline:none;
+}
+.search-box input::placeholder{color:var(--text-faint);}
+.track-tabs{display:flex; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;}
+.track-tab{
+  height:44px; padding:0 18px; background:var(--surface); border:none; color:var(--text-muted);
+  cursor:pointer; font-size:13.5px; font-weight:600; border-right:1px solid var(--border);
+}
+.track-tab:last-child{border-right:none;}
+.track-tab[aria-pressed="true"]{background:var(--accent-soft); color:var(--accent);}
+
+.results-count{font-size:13px; color:var(--text-faint); margin-bottom:14px; font-family:var(--mono);}
+
+.cat-list{display:flex; flex-direction:column; gap:10px;}
+.cat-item{border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); overflow:hidden;}
+.cat-trigger{
+  width:100%; display:flex; align-items:center; gap:16px;
+  background:transparent; border:none; color:var(--text); text-align:left;
+  padding:16px 18px; cursor:pointer;
+}
+.cat-trigger .num{
+  font-family:var(--mono); font-size:12.5px; color:var(--text-faint); width:44px; flex-shrink:0;
+}
+.cat-trigger .body{flex:1; min-width:0;}
+.cat-trigger .name{font-size:15.5px; font-weight:600;}
+.cat-trigger .track-pill{
+  font-family:var(--mono); font-size:10.5px; margin-left:8px; padding:2px 7px; border-radius:100px;
+  border:1px solid var(--border); color:var(--text-faint); vertical-align:middle;
+}
+.cat-trigger .count-pill{
+  font-family:var(--mono); font-size:12.5px; color:var(--accent); flex-shrink:0;
+}
+.cat-trigger .chevron{flex-shrink:0; color:var(--text-faint); transition:transform 0.2s ease;}
+.cat-item[data-open="true"] .chevron{transform:rotate(180deg);}
+.cat-panel{
+  max-height:0; overflow:hidden; transition:max-height 0.28s ease;
+}
+.cat-panel-inner{padding:0 18px 20px 78px;}
+.cat-examples{list-style:none; margin:0 0 14px; padding:0; display:flex; flex-direction:column; gap:8px;}
+.cat-examples li{font-size:13.5px; color:var(--text-muted); padding-left:14px; position:relative;}
+.cat-examples li::before{content:"—"; position:absolute; left:0; color:var(--text-faint);}
+.cat-panel-inner .open-link{
+  font-size:13px; text-decoration:none; color:var(--accent); font-weight:600;
+}
+.no-results{padding:40px 0; text-align:center; color:var(--text-faint); font-size:14px;}
+
+/* =========================
+   ROADMAP
+========================= */
+.roadmap-tracks{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+@media (max-width:820px){ .roadmap-tracks{grid-template-columns:1fr;} }
+.rt-head{display:flex; align-items:center; gap:10px; margin-bottom:22px;}
+.rt-dot{width:9px; height:9px; border-radius:50%;}
+.rt-head h3{font-size:17px;}
+.rt-head .src{font-family:var(--mono); font-size:11.5px; color:var(--text-faint); margin-left:auto;}
+
+.timeline{position:relative; padding-left:26px;}
+.timeline::before{
+  content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--border);
+}
+.tl-step{position:relative; padding-bottom:26px;}
+.tl-step:last-child{padding-bottom:0;}
+.tl-step::before{
+  content:""; position:absolute; left:-26px; top:4px; width:11px; height:11px; border-radius:50%;
+  background:var(--bg); border:2px solid var(--accent);
+}
+.tl-step.papers::before{border-color:var(--accent-2);}
+.tl-step .when{font-family:var(--mono); font-size:12px; color:var(--accent); margin-bottom:4px;}
+.tl-step.papers .when{color:var(--accent-2);}
+.tl-step .what{font-size:14.5px; color:var(--text); line-height:1.5;}
+
+/* =========================
+   HOW TO USE
+========================= */
+.howto-list{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+@media (max-width:760px){ .howto-list{grid-template-columns:1fr;} }
+.howto-item{border:1px solid var(--border); border-radius:var(--radius); padding:20px 22px; background:var(--surface);}
+.howto-item .idx{font-family:var(--mono); font-size:12px; color:var(--accent); margin-bottom:8px;}
+.howto-item h4{font-size:15.5px; margin-bottom:8px; font-weight:600; font-family:var(--sans);}
+.howto-item p{font-size:14px; color:var(--text-muted); margin:0;}
+
+/* =========================
+   CONTRIBUTE / CTA
+========================= */
+.contribute-box{
+  border:1px solid var(--border); border-radius:var(--radius); background:var(--surface);
+  padding:36px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;
+}
+.contribute-box h3{font-size:20px; margin-bottom:8px;}
+.contribute-box p{color:var(--text-muted); font-size:14.5px; margin:0; max-width:52ch;}
+
+/* =========================
+   FOOTER
+========================= */
+footer{padding:48px 0 60px;}
+.footer-grid{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-start;}
+.footer-brand p{color:var(--text-muted); font-size:13.5px; max-width:40ch; margin-top:10px;}
+.footer-links{display:flex; gap:48px; flex-wrap:wrap;}
+.footer-col h5{font-size:12px; color:var(--text-faint); font-family:var(--mono); font-weight:400; margin-bottom:12px;}
+.footer-col a{display:block; font-size:13.5px; text-decoration:none; color:var(--text-muted); margin-bottom:8px;}
+.footer-col a:hover{color:var(--accent);}
+.footer-bottom{margin-top:40px; padding-top:20px; border-top:1px solid var(--border-soft); font-size:12.5px; color:var(--text-faint);}
+</style>
+</head>
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">Ⅽ</span>
+      <span class="brand-text">
+        <span class="brand-title">100</span>
+        <span class="brand-sub">mohdshamii/100</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#overview">Overview</a>
+      <a href="#ecosystem">Library</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#roadmap">Tracks</a>
+      <a href="#howto">How It Works</a>
+      <a href="#contribute">Contribute</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Switch to light theme" title="Toggle theme">
+        <svg id="themeIcon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a class="gh-btn" href="https://github.com/mohdshamii/100" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.03 3.26 9.29 7.79 10.8.57.1.78-.25.78-.55v-2.14c-3.17.69-3.83-1.36-3.83-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.05-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0c2.19-1.47 3.15-1.16 3.15-1.16.62 1.58.23 2.75.11 3.04.73.79 1.17 1.81 1.17 3.05 0 4.37-2.66 5.34-5.2 5.62.41.36.77 1.07.77 2.15v3.19c0 .31.21.66.79.55A10.53 10.53 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#overview">Overview</a>
+    <a href="#ecosystem">Library</a>
+    <a href="#explorer">Explorer</a>
+    <a href="#roadmap">Tracks</a>
+    <a href="#howto">How It Works</a>
+    <a href="#contribute">Contribute</a>
+  </div>
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+<main id="top">
+<section class="hero" id="overview">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="section-label">github.com/mohdshamii/100</p>
+      <h1>Two hundred-item reading lists for learning AI and ML, beginner to advanced.</h1>
+      <p class="lede">The repository holds two parallel, hand-curated collections — <strong>100 books</strong> and <strong>100 research papers</strong> — each split into ten thematic categories and each shipped with its own suggested order of study.</p>
+      <div class="hero-facts">
+        <span class="hero-fact"><b>2</b> content files</span>
+        <span class="hero-fact"><b>200</b> total entries</span>
+        <span class="hero-fact"><b>10 + 10</b> categories</span>
+        <span class="hero-fact"><b>2</b> suggested study paths</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#explorer">Explore the resources</a>
+        <a class="btn btn-ghost" href="https://github.com/mohdshamii/100" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+    <div>
+      <div class="hero-card">
+        <div class="hero-card-row"><span class="k">README.md</span><span class="v">7 bytes</span></div>
+        <div class="hero-card-row"><span class="k">Books.md</span><span class="v">135 lines · 12.7 KB</span></div>
+        <div class="hero-card-row"><span class="k">ResearchPaper.md</span><span class="v">135 lines · 10.7 KB</span></div>
+        <div class="hero-card-row"><span class="k">Default branch</span><span class="v">main</span></div>
+      </div>
+      <div class="hero-note" style="margin-top:16px;">
+        <b>A note on this page.</b> The repository's <code>README.md</code> currently contains only the heading “100” — it doesn't state a mission, audience, or philosophy. Everything below is derived directly from the actual content of <code>Books.md</code> and <code>ResearchPaper.md</code>, not from marketing copy.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     STATS
+========================= -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-cell reveal">
+        <div class="stat-num" data-count="100">0</div>
+        <div class="stat-label">Books, in Books.md</div>
+      </div>
+      <div class="stat-cell reveal">
+        <div class="stat-num" data-count="100">0</div>
+        <div class="stat-label">Papers, in ResearchPaper.md</div>
+      </div>
+      <div class="stat-cell reveal">
+        <div class="stat-num" data-count="10">0</div>
+        <div class="stat-label">Categories per file</div>
+      </div>
+      <div class="stat-cell reveal">
+        <div class="stat-num" data-count="5">0</div>
+        <div class="stat-label">Stages in each suggested path</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     ECOSYSTEM
+========================= -->
+<section class="section" id="ecosystem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label">Repository ecosystem</p>
+      <h2>Three files, two reading tracks</h2>
+      <p>Everything in the repository lives in one of three markdown files. <code style="font-family:var(--mono); background:var(--surface-2); padding:1px 5px; border-radius:3px;">README.md</code> is a placeholder; the two content files are what carry the actual library.</p>
+    </div>
+
+    <div class="file-grid">
+      <article class="file-card reveal">
+        <span class="glyph">Rm</span>
+        <div>
+          <h3>README.md</h3>
+          <div class="filename">/README.md</div>
+        </div>
+        <p>A single top-level heading, “100”. No description, audience statement, or philosophy is written here — the repository's real content lives in the two files beside it.</p>
+        <div class="chip-row"><span class="chip">1 line</span><span class="chip">7 bytes</span></div>
+        <div class="meta">
+          <span class="count">placeholder</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/README.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="file-card reveal">
+        <span class="glyph" style="color:var(--accent);">Bk</span>
+        <div>
+          <h3>Books.md</h3>
+          <div class="filename">/Books.md</div>
+        </div>
+        <p>“100 AI/ML Books — Beginner to Advanced.” Ten numbered sections running from math foundations to alignment and safety, plus a month-by-month suggested path.</p>
+        <div class="chip-row">
+          <span class="chip">Math</span><span class="chip">Classic ML</span><span class="chip">Deep Learning</span><span class="chip">NLP</span><span class="chip">CV</span><span class="chip">RL</span><span class="chip">LLMs</span><span class="chip">MLOps</span><span class="chip">Theory</span>
+        </div>
+        <div class="meta">
+          <span class="count">100 books · 10 sections</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/Books.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="file-card reveal">
+        <span class="glyph" style="color:var(--accent-2);">Rp</span>
+        <div>
+          <h3>ResearchPaper.md</h3>
+          <div class="filename">/ResearchPaper.md</div>
+        </div>
+        <p>“100 AI/ML Research Papers — Beginner to Advanced.” Ten numbered sections from 1958's Perceptron paper to 2023 alignment and evaluation work, plus a week-by-week reading order.</p>
+        <div class="chip-row">
+          <span class="chip">Foundations</span><span class="chip">CNNs</span><span class="chip">RNN/LSTM</span><span class="chip">Transformers</span><span class="chip">LLMs</span><span class="chip">Generative</span><span class="chip">RL</span><span class="chip">Self-Supervised</span><span class="chip">Multimodal</span><span class="chip">Safety</span>
+        </div>
+        <div class="meta">
+          <span class="count">100 papers · 10 sections</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/ResearchPaper.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="relate reveal">
+      <span class="node">Books.md</span>
+      <span class="arrow">runs parallel to</span>
+      <span class="node">ResearchPaper.md</span>
+      <span class="arrow">— both move beginner → advanced across ten matched-in-spirit sections, each with its own independent suggested schedule.</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     EXPLORER
+========================= -->
+<section class="section" id="explorer">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label">Interactive resource explorer</p>
+      <h2>Search and browse every category</h2>
+      <p>Filter by track, search by category or by any of the representative titles pulled from the file, and expand a category to see examples and jump straight to that section on GitHub.</p>
+    </div>
+
+    <div class="explorer-controls">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-faint); flex-shrink:0;"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search categories or titles, e.g. “transformer”, “GAN”, “math”">
+      </div>
+      <div class="track-tabs" role="tablist" aria-label="Filter by track">
+        <button class="track-tab" data-track="all" aria-pressed="true" role="tab">All</button>
+        <button class="track-tab" data-track="books" aria-pressed="false" role="tab">Books</button>
+        <button class="track-tab" data-track="papers" aria-pressed="false" role="tab">Papers</button>
+      </div>
+    </div>
+
+    <p class="results-count" id="resultsCount"></p>
+    <div class="cat-list" id="catList"></div>
+    <p class="no-results" id="noResults" hidden>No categories match that search.</p>
+  </div>
+</section>
+
+<!-- =========================
+     ROADMAP
+========================= -->
+<section class="section" id="roadmap">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label">Suggested study paths</p>
+      <h2>Two independent schedules, one per file</h2>
+      <p>Books.md and ResearchPaper.md each end with their own “suggested path” — one paced by month, the other by week. Neither file instructs you to interleave them; they're shown side by side here because they cover comparable ground in a comparable order.</p>
+    </div>
+
+    <div class="roadmap-tracks">
+      <div>
+        <div class="rt-head">
+          <span class="rt-dot" style="background:var(--accent);"></span>
+          <h3>Books.md — “Suggested path”</h3>
+          <span class="src">by month</span>
+        </div>
+        <div class="timeline" id="booksTimeline"></div>
+      </div>
+      <div>
+        <div class="rt-head">
+          <span class="rt-dot" style="background:var(--accent-2);"></span>
+          <h3>ResearchPaper.md — “Suggested reading order”</h3>
+          <span class="src">by week</span>
+        </div>
+        <div class="timeline" id="papersTimeline"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     HOW TO USE
+========================= -->
+<section class="section" id="howto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label">How to use this repository</p>
+      <h2>What the files actually tell you to do</h2>
+      <p>The repository has no separate onboarding guide, so this is assembled from the notes and suggested-path sections written directly into <code style="font-family:var(--mono); background:var(--surface-2); padding:1px 5px; border-radius:3px;">Books.md</code> and <code style="font-family:var(--mono); background:var(--surface-2); padding:1px 5px; border-radius:3px;">ResearchPaper.md</code>.</p>
+    </div>
+
+    <div class="howto-list">
+      <div class="howto-item reveal">
+        <div class="idx">Books.md</div>
+        <h4>Start with math and classic ML</h4>
+        <p>The suggested path opens with Section 1 (Math &amp; Stats Foundations) alongside Section 2 (Classic Machine Learning) across months 1–2, then Sections 3–4 (deep learning foundations and practical engineering) in months 3–4.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">Books.md</div>
+        <h4>Pick a specialty, then go current</h4>
+        <p>Months 5–6 are for choosing NLP (§5), computer vision (§6), or reinforcement learning (§7). Month 7 moves to generative AI and LLMs (§8), which the file flags as most relevant to current industry roles, before MLOps (§9) and theory (§10) from month 8 onward.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">ResearchPaper.md</div>
+        <h4>Read chronologically through the fundamentals</h4>
+        <p>Weeks 1–3 cover Sections 1–3: classic foundations, CNN architectures, and the RNN/LSTM era — the historical build-up to modern deep learning.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">ResearchPaper.md</div>
+        <h4>Prioritize transformers and LLMs</h4>
+        <p>Weeks 4–6 cover Sections 4–5 (attention, transformers, and large language models), which the file calls out as most relevant for AI/ML engineering roles today, before generative models, RL, self-supervision, and finally multimodal/safety work in weeks 7–12.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">Both files</div>
+        <h4>Links favor free, permanent sources</h4>
+        <p>Books.md links to an author's official free version or open textbook where one exists; ResearchPaper.md links mostly to direct arXiv PDFs, noting that a handful of pre-2012 classics link to their original hosting page instead.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">Both files</div>
+        <h4>If a link breaks</h4>
+        <p>Each file gives the same fallback: search the title and author (Books.md) or the title on Google Scholar (ResearchPaper.md) rather than assuming the resource is gone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     CONTRIBUTE
+========================= -->
+<section class="section" id="contribute" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="contribute-box reveal">
+      <div>
+        <h3>No contribution guide yet</h3>
+        <p>The repository doesn't include a CONTRIBUTING.md, so there's no documented process to summarize here. The most reliable way to suggest a resource or flag a broken link is directly on GitHub.</p>
+      </div>
+      <a class="btn btn-primary" href="https://github.com/mohdshamii/100" target="_blank" rel="noopener">Explore the repository on GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="brand-title" style="font-family:var(--serif); font-size:18px;">100</div>
+      <p>A two-track curated library — 100 AI/ML books and 100 AI/ML research papers, each organized into ten categories from beginner to advanced.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Repository</h5>
+        <a href="https://github.com/mohdshamii/100" target="_blank" rel="noopener">mohdshamii/100</a>
+        <a href="https://github.com/mohdshamii/100/blob/main/README.md" target="_blank" rel="noopener">README.md</a>
+      </div>
+      <div class="footer-col">
+        <h5>Files</h5>
+        <a href="https://github.com/mohdshamii/100/blob/main/Books.md" target="_blank" rel="noopener">Books.md</a>
+        <a href="https://github.com/mohdshamii/100/blob/main/ResearchPaper.md" target="_blank" rel="noopener">ResearchPaper.md</a>
+      </div>
+      <div class="footer-col">
+        <h5>This page</h5>
+        <a href="#explorer">Resource explorer</a>
+        <a href="#roadmap">Suggested paths</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    Built as a visual companion to the mohdshamii/100 repository. Not affiliated with GitHub.
+  </div>
+</footer>
+
+<script>
+/* =========================
+   Repository data
+   (transcribed directly from Books.md and ResearchPaper.md)
+========================= */
+const booksCategories = [
+  {n:1, name:"Math & Stats Foundations", count:10, anchor:"1-math--stats-foundations",
+    examples:["Linear Algebra Done Right — Axler","Convex Optimization — Boyd & Vandenberghe","Mathematics for Machine Learning — Deisenroth, Faisal, Ong"]},
+  {n:2, name:"Classic Machine Learning", count:10, anchor:"2-classic-machine-learning",
+    examples:["Pattern Recognition and Machine Learning — Bishop","The Elements of Statistical Learning — Hastie, Tibshirani, Friedman","The Hundred-Page Machine Learning Book — Burkov"]},
+  {n:3, name:"Deep Learning Foundations", count:10, anchor:"3-deep-learning-foundations",
+    examples:["Deep Learning — Goodfellow, Bengio, Courville","Dive into Deep Learning — Zhang, Lipton, Li, Smola","Grokking Deep Learning — Trask"]},
+  {n:4, name:"Practical / Applied ML Engineering", count:10, anchor:"4-practical--applied-ml-engineering",
+    examples:["Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow — Géron","Machine Learning Yearning — Ng","Interpretable Machine Learning — Molnar"]},
+  {n:5, name:"Natural Language Processing", count:8, anchor:"5-natural-language-processing",
+    examples:["Speech and Language Processing — Jurafsky & Martin","Natural Language Processing with Transformers — Tunstall, von Werra, Wolf"]},
+  {n:6, name:"Computer Vision", count:7, anchor:"6-computer-vision",
+    examples:["Computer Vision: Algorithms and Applications — Szeliski","Multiple View Geometry in Computer Vision — Hartley & Zisserman"]},
+  {n:7, name:"Reinforcement Learning", count:7, anchor:"7-reinforcement-learning",
+    examples:["Reinforcement Learning: An Introduction — Sutton & Barto","Grokking Deep Reinforcement Learning — Morales"]},
+  {n:8, name:"Generative AI & LLMs", count:10, anchor:"8-generative-ai--llms",
+    examples:["Build a Large Language Model (From Scratch) — Raschka","Hands-On Large Language Models — Alammar & Grootendorst","AI Engineering — Huyen"]},
+  {n:9, name:"MLOps & Systems", count:8, anchor:"9-mlops--systems",
+    examples:["Designing Machine Learning Systems — Huyen","Designing Data-Intensive Applications — Kleppmann"]},
+  {n:10, name:"Theory & Advanced Topics", count:20, anchor:"10-theory--advanced-topics",
+    examples:["Artificial Intelligence: A Modern Approach — Russell & Norvig","The Book of Why — Pearl & Mackenzie","Superintelligence — Bostrom","Causal Inference: The Mixtape — Cunningham"]},
+];
+
+const papersCategories = [
+  {n:1, name:"Classic Foundations (Beginner)", count:10, anchor:"1-classic-foundations-beginner",
+    examples:["Rosenblatt — The Perceptron (1958)","Rumelhart, Hinton, Williams — Learning representations by back-propagating errors (1986)","Krizhevsky, Sutskever, Hinton — AlexNet (2012)"]},
+  {n:2, name:"Deep CNN Architectures", count:10, anchor:"2-deep-cnn-architectures",
+    examples:["Simonyan & Zisserman — VGG","He et al. — ResNet","Tan & Le — EfficientNet"]},
+  {n:3, name:"Sequence Models (RNN/LSTM era)", count:8, anchor:"3-sequence-models-rnnlstm-era",
+    examples:["Sutskever, Vinyals, Le — Sequence to Sequence Learning","Mikolov et al. — Word2Vec","Peters et al. — ELMo"]},
+  {n:4, name:"Attention & Transformers", count:10, anchor:"4-attention--transformers",
+    examples:["Vaswani et al. — Attention Is All You Need","Devlin et al. — BERT","Dosovitskiy et al. — Vision Transformer (ViT)"]},
+  {n:5, name:"Large Language Models", count:15, anchor:"5-large-language-models",
+    examples:["Brown et al. — GPT-3","Touvron et al. — LLaMA","Hu et al. — LoRA","Wei et al. — Chain-of-Thought Prompting"]},
+  {n:6, name:"Generative Models", count:12, anchor:"6-generative-models",
+    examples:["Goodfellow et al. — Generative Adversarial Networks","Ho, Jain, Abbeel — DDPM","Rombach et al. — Latent Diffusion (Stable Diffusion)"]},
+  {n:7, name:"Reinforcement Learning", count:10, anchor:"7-reinforcement-learning",
+    examples:["Mnih et al. — DQN","Schulman et al. — PPO","Silver et al. — AlphaGo Zero"]},
+  {n:8, name:"Self-Supervised & Representation Learning", count:7, anchor:"8-self-supervised--representation-learning",
+    examples:["Chen et al. — SimCLR","Caron et al. — DINO","He et al. — Masked Autoencoders (MAE)"]},
+  {n:9, name:"Multimodal & Vision-Language", count:7, anchor:"9-multimodal--vision-language",
+    examples:["Kirillov et al. — Segment Anything (SAM)","Liu et al. — LLaVA","Radford et al. — CLIP"]},
+  {n:10, name:"Optimization, Efficiency, Alignment & Safety (Advanced)", count:11, anchor:"10-optimization-efficiency-alignment--safety-advanced",
+    examples:["Kingma & Ba — Adam","Bai et al. — Constitutional AI","Hendrycks et al. — MMLU"]},
+];
+
+const booksRoadmap = [
+  {when:"Months 1–2", what:"Math foundations (§1) alongside classic ML (§2)."},
+  {when:"Months 3–4", what:"Deep learning foundations (§3) + practical engineering (§4)."},
+  {when:"Months 5–6", what:"Pick your specialty — NLP (§5), CV (§6), or RL (§7)."},
+  {when:"Month 7", what:"Generative AI / LLMs (§8) — most relevant to current industry roles."},
+  {when:"Month 8+", what:"MLOps (§9) for production skills, then theory (§10) as you go deeper."},
+];
+
+const papersRoadmap = [
+  {when:"Weeks 1–3", what:"Sections 1–3 (fundamentals, classic CNNs, RNNs)."},
+  {when:"Weeks 4–6", what:"Sections 4–5 (Transformers, LLMs) — most relevant for AI/ML engineering roles today."},
+  {when:"Weeks 7–8", what:"Section 6 (Generative models)."},
+  {when:"Weeks 9–10", what:"Sections 7–8 (RL, self-supervised learning)."},
+  {when:"Weeks 11–12", what:"Sections 9–10 (multimodal, efficiency, alignment)."},
+];
+
+const BOOKS_URL = "https://github.com/mohdshamii/100/blob/main/Books.md";
+const PAPERS_URL = "https://github.com/mohdshamii/100/blob/main/ResearchPaper.md";
+
+/* =========================
+   Rendering
+========================= */
+function buildCatList(){
+  const list = document.getElementById("catList");
+  const all = [
+    ...booksCategories.map(c => ({...c, track:"books", trackLabel:"Books", base:BOOKS_URL})),
+    ...papersCategories.map(c => ({...c, track:"papers", trackLabel:"Papers", base:PAPERS_URL})),
+  ];
+  list.innerHTML = all.map((c, i) => `
+    <div class="cat-item" data-open="false" data-track="${c.track}" data-search="${(c.name + ' ' + c.examples.join(' ')).toLowerCase()}" id="cat-${c.track}-${c.n}">
+      <button class="cat-trigger" aria-expanded="false" aria-controls="panel-${c.track}-${c.n}">
+        <span class="num">${String(c.n).padStart(2,'0')}</span>
+        <span class="body">
+          <span class="name">${c.name}</span>
+          <span class="track-pill">${c.trackLabel}</span>
+        </span>
+        <span class="count-pill">${c.count} ${c.track === 'books' ? 'books' : 'papers'}</span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="cat-panel" id="panel-${c.track}-${c.n}">
+        <div class="cat-panel-inner">
+          <ul class="cat-examples">
+            ${c.examples.map(e => `<li>${e}</li>`).join('')}
+          </ul>
+          <a class="open-link" href="${c.base}#${c.anchor}" target="_blank" rel="noopener">View this section on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  list.querySelectorAll(".cat-trigger").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".cat-item");
+      const panel = item.querySelector(".cat-panel");
+      const isOpen = item.getAttribute("data-open") === "true";
+      item.setAttribute("data-open", String(!isOpen));
+      btn.setAttribute("aria-expanded", String(!isOpen));
+      panel.style.maxHeight = isOpen ? "0px" : panel.scrollHeight + "px";
+    });
+    btn.addEventListener("keydown", (e) => {
+      if(e.key === "Escape"){
+        const item = btn.closest(".cat-item");
+        if(item.getAttribute("data-open") === "true"){
+          item.setAttribute("data-open","false");
+          btn.setAttribute("aria-expanded","false");
+          item.querySelector(".cat-panel").style.maxHeight = "0px";
+          btn.focus();
+        }
+      }
+    });
+  });
+}
+
+function buildTimeline(el, data, cls){
+  el.innerHTML = data.map(step => `
+    <div class="tl-step ${cls}">
+      <div class="when">${step.when}</div>
+      <div class="what">${step.what}</div>
+    </div>
+  `).join('');
+}
+
+/* =========================
+   Search & filtering
+========================= */
+function applyFilters(){
+  const q = document.getElementById("searchInput").value.trim().toLowerCase();
+  const activeTrack = document.querySelector(".track-tab[aria-pressed='true']").dataset.track;
+  const items = document.querySelectorAll(".cat-item");
+  let visible = 0;
+  items.forEach(item => {
+    const matchesTrack = activeTrack === "all" || item.dataset.track === activeTrack;
+    const matchesSearch = !q || item.dataset.search.includes(q);
+    const show = matchesTrack && matchesSearch;
+    item.style.display = show ? "" : "none";
+    if(show) visible++;
+  });
+  document.getElementById("noResults").hidden = visible !== 0;
+  const total = items.length;
+  document.getElementById("resultsCount").textContent =
+    `Showing ${visible} of ${total} categories`;
+}
+
+/* =========================
+   Accordion, filters, tabs setup
+========================= */
+document.getElementById("searchInput").addEventListener("input", applyFilters);
+document.querySelectorAll(".track-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".track-tab").forEach(t => t.setAttribute("aria-pressed","false"));
+    tab.setAttribute("aria-pressed","true");
+    applyFilters();
+  });
+});
+
+/* =========================
+   Counters (IntersectionObserver)
+========================= */
+function animateCount(el){
+  const target = parseInt(el.dataset.count, 10);
+  const duration = 900;
+  const start = performance.now();
+  function tick(now){
+    const p = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(eased * target);
+    if(p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* =========================
+   Scroll reveal
+========================= */
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.15});
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      animateCount(entry.target);
+      countObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.4});
+
+/* =========================
+   Theme toggle (in-memory only)
+========================= */
+let currentTheme = "dark";
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
+const sunPath = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>';
+const moonPath = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+themeToggle.addEventListener("click", () => {
+  currentTheme = currentTheme === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  themeIcon.innerHTML = currentTheme === "dark" ? moonPath : sunPath;
+  themeToggle.setAttribute("aria-label", currentTheme === "dark" ? "Switch to light theme" : "Switch to dark theme");
+});
+
+/* =========================
+   Mobile menu
+========================= */
+const menuToggle = document.getElementById("menuToggle");
+const mobilePanel = document.getElementById("mobilePanel");
+menuToggle.addEventListener("click", () => {
+  const open = mobilePanel.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+});
+mobilePanel.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  mobilePanel.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded","false");
+}));
+
+/* =========================
+   Init
+========================= */
+buildCatList();
+buildTimeline(document.getElementById("booksTimeline"), booksRoadmap, "");
+buildTimeline(document.getElementById("papersTimeline"), papersRoadmap, "papers");
+applyFilters();
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+document.querySelectorAll(".stat-num").forEach(el => countObserver.observe(el));
+</script>
+</body>
+</html>
