@@ -20,6 +20,7 @@ Five curated lists to prepare for AI/ML engineering — 100 research papers, 100
 | [`Blogs_and_Newsletters.md`](./Blogs_and_Newsletters.md) | 100 blogs, newsletters, and people to follow across 11 categories — research lab blogs, company engineering blogs, independent researcher blogs, newsletters, explainer sites, researchers/engineers to follow, podcasts, communities, policy/safety sources, and paper-tracking aggregators |
 | [`Glossary.md`](./Glossary.md) | 100 key terms defined in plain language across 11 categories — basic ML concepts, math/stats, classic ML, deep learning, training/optimization, NLP/Transformers, LLM-specific terms, generative models, RL, MLOps, and evaluation/advanced terms |
 | [`ROADMAP.md`](./ROADMAP.md) | A single ~30-week timeline that interleaves every file above into one plan — each phase names the exact papers, book sections, datasets, projects, and tools to work through together on the same topic |
+| [`CHEATSHEETS.md`](./CHEATSHEETS.md) | Condensed formula references across 8 sections — linear algebra, probability & statistics, calculus essentials, loss functions, activation functions, optimizer update rules (SGD through AdamW), Transformer/attention formulas, and evaluation metrics |
 
 ### Planned / upcoming
 
@@ -27,7 +28,6 @@ More "100" lists and supporting docs to round out the repo:
 
 | File | What it will be |
 |---|---|
-| `CHEATSHEETS.md` | Condensed math/formula references — linear algebra, probability, loss functions, optimizer update rules |
 | `CONTRIBUTING.md` | Guidelines for submitting new papers, books, or links via PR |
 | `CHANGELOG.md` | Track additions and removals over time |
 
