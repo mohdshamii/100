@@ -4,7 +4,7 @@
 
 </div>
 
-Five curated lists to prepare for AI/ML engineering — 100 research papers, 100 books, 100 datasets, 100 project ideas, and 100 tools/libraries, each organized beginner → advanced with direct links.
+A complete, self-contained curriculum for AI/ML engineering — 100 research papers, 100 books, 100 datasets, 100 project ideas, 100 tools, 100 interview questions, 100 courses, 100 blogs/newsletters/people, and 100 glossary terms, plus a unified roadmap, formula cheatsheets, contribution guidelines, and a changelog — every list organized beginner → advanced with direct links.
 
 ## Contents
 
@@ -21,15 +21,8 @@ Five curated lists to prepare for AI/ML engineering — 100 research papers, 100
 | [`Glossary.md`](./Glossary.md) | 100 key terms defined in plain language across 11 categories — basic ML concepts, math/stats, classic ML, deep learning, training/optimization, NLP/Transformers, LLM-specific terms, generative models, RL, MLOps, and evaluation/advanced terms |
 | [`ROADMAP.md`](./ROADMAP.md) | A single ~30-week timeline that interleaves every file above into one plan — each phase names the exact papers, book sections, datasets, projects, and tools to work through together on the same topic |
 | [`CHEATSHEETS.md`](./CHEATSHEETS.md) | Condensed formula references across 8 sections — linear algebra, probability & statistics, calculus essentials, loss functions, activation functions, optimizer update rules (SGD through AdamW), Transformer/attention formulas, and evaluation metrics |
-
-### Planned / upcoming
-
-More "100" lists and supporting docs to round out the repo:
-
-| File | What it will be |
-|---|---|
-| `CONTRIBUTING.md` | Guidelines for submitting new papers, books, or links via PR |
-| `CHANGELOG.md` | Track additions and removals over time |
+| [`CONTRIBUTING.md`](./CONTRIBUTING.md) | Guidelines for submitting new papers, books, datasets, projects, tools, or corrections via PR — what's accepted, link-quality standards, and formatting conventions per file |
+| [`CHANGELOG.md`](./CHANGELOG.md) | A running, dated log of every addition, removal, correction, and link fix across all files in this repo |
 
 ## How each list is organized
 
@@ -57,4 +50,4 @@ For the fastest start, just follow [`ROADMAP.md`](./ROADMAP.md) — it's the wee
 
 ## Contributing
 
-Found a broken link or have a paper/book/dataset/project/tool to suggest? Open an issue or PR.
+Found a broken link or have a paper/book/dataset/project/tool to suggest? See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for what's accepted, link-quality standards, and formatting conventions before opening an issue or PR.
