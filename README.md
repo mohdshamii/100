@@ -19,6 +19,7 @@ Five curated lists to prepare for AI/ML engineering — 100 research papers, 100
 | [`Courses.md`](./Courses.md) | 100 free courses and lecture series across 12 categories — math/CS foundations, classic ML, deep learning, NLP, computer vision, RL, LLMs/generative AI, MLOps, key YouTube channels, general MOOCs, and advanced specialized topics |
 | [`Blogs_and_Newsletters.md`](./Blogs_and_Newsletters.md) | 100 blogs, newsletters, and people to follow across 11 categories — research lab blogs, company engineering blogs, independent researcher blogs, newsletters, explainer sites, researchers/engineers to follow, podcasts, communities, policy/safety sources, and paper-tracking aggregators |
 | [`Glossary.md`](./Glossary.md) | 100 key terms defined in plain language across 11 categories — basic ML concepts, math/stats, classic ML, deep learning, training/optimization, NLP/Transformers, LLM-specific terms, generative models, RL, MLOps, and evaluation/advanced terms |
+| [`ROADMAP.md`](./ROADMAP.md) | A single ~30-week timeline that interleaves every file above into one plan — each phase names the exact papers, book sections, datasets, projects, and tools to work through together on the same topic |
 
 ### Planned / upcoming
 
@@ -26,7 +27,6 @@ More "100" lists and supporting docs to round out the repo:
 
 | File | What it will be |
 |---|---|
-| `ROADMAP.md` | A single timeline tying papers, books, datasets, projects, and tools together into one learning path |
 | `CHEATSHEETS.md` | Condensed math/formula references — linear algebra, probability, loss functions, optimizer update rules |
 | `CONTRIBUTING.md` | Guidelines for submitting new papers, books, or links via PR |
 | `CHANGELOG.md` | Track additions and removals over time |
@@ -39,6 +39,8 @@ All files follow the same structure:
 - A suggested study path at the bottom (weeks for papers/datasets/projects/tools, months for books)
 
 ## Suggested use
+
+For the fastest start, just follow [`ROADMAP.md`](./ROADMAP.md) — it's the week-by-week plan that pulls from every file below in the right order. The short version:
 
 1. Start with the foundations sections across files in parallel — math/classic ML papers, math/stats books, beginner datasets, foundational projects, and core Python/ML tooling
 2. Move into deep learning and transformers as your base solidifies
