@@ -46,3 +46,7 @@ temp/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Node
+node_modules/
+package-lock.json

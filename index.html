@@ -1,842 +1,1825 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>100 Days of AI/ML — Complete Preparation Portal | GeeksforGeeks Style</title>
-  <meta name="description" content="A comprehensive 100 Days of AI/ML daily preparation portal inspired by GeeksforGeeks UI. Master Python, Linear Algebra, Classic ML, Deep Learning, Transformers, Computer Vision, LLMs, and MLOps with curated tutorials from GeeksforGeeks, TutorialsPoint, and W3Schools.">
-  <meta name="theme-color" content="#2F8D46">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 — A Two-Track AI/ML Reading List &amp; Curated Library</title>
+<meta name="description" content="An interactive companion to mohdshamii/100: 900+ curated AI/ML resources across 100 books, 100 research papers, datasets, projects, tools, courses, blogs, glossary, and interview questions.">
 
-  <!-- Favicon Icon (GFG Signature Green Brand) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232F8D46'/><text x='50%' y='68%' font-size='60' font-family='sans-serif' font-weight='900' fill='white' text-anchor='middle'>G</text></svg>">
+<!-- Favicon Mark -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230F1113'/><rect x='4' y='4' width='92' height='92' rx='14' fill='none' stroke='%23E8A33D' stroke-width='4'/><text x='50%' y='68%' font-size='56' font-family='serif' font-weight='600' fill='%23E8A33D' text-anchor='middle'>C</text></svg>">
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Editorial Google Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- KaTeX for math formula rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="if(window.renderMathInElement) renderMathInElement(document.body);"></script>
+<style>
+/* =========================
+   DESIGN TOKENS (EDITORIAL MINIMAL)
+========================= */
+:root {
+  --bg: #0F1113;
+  --bg-elevated: #131619;
+  --surface: #16191D;
+  --surface-2: #1C2024;
+  --border: #272B30;
+  --border-soft: #1F2327;
+  --text: #ECEDEF;
+  --text-muted: #969DA5;
+  --text-faint: #666D75;
+  --accent: #E8A33D;
+  --accent-dim: #B9822F;
+  --accent-soft: rgba(232, 163, 61, 0.10);
+  --accent-2: #5FA8A0;
+  --accent-2-soft: rgba(95, 168, 160, 0.10);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+  --radius: 6px;
+  --maxw: 1140px;
+}
 
-  <!-- Portal Stylesheet -->
-  <link rel="stylesheet" href="css/gfg-theme.css">
+:root[data-theme="light"] {
+  --bg: #FAF8F4;
+  --bg-elevated: #F3F0E9;
+  --surface: #FFFFFF;
+  --surface-2: #F4F1EA;
+  --border: #E3DED2;
+  --border-soft: #EBE6D9;
+  --text: #191714;
+  --text-muted: #6B655A;
+  --text-faint: #948C7D;
+  --accent: #B9722C;
+  --accent-dim: #96591F;
+  --accent-soft: rgba(185, 114, 44, 0.08);
+  --accent-2: #2F7B73;
+  --accent-2-soft: rgba(47, 123, 115, 0.08);
+}
+
+/* Base Reset & Accessibility */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.58;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+/* Skip Link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  background: var(--accent);
+  color: #151515;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 12px; }
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 18px; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+
+.muted { color: var(--text-muted); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 640px) {
+  .nav-inner { padding: 0 18px; }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.brand-mark {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.brand-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-family: var(--mono);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.nav-links a {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+  font-weight: 450;
+}
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.gh-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  height: 38px;
+  border-radius: var(--radius);
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--text);
+  transition: opacity 0.15s ease;
+}
+.gh-btn:hover { opacity: 0.9; }
+:root[data-theme="light"] .gh-btn {
+  background: var(--text);
+  color: #FFFFFF;
+}
+
+.menu-toggle { display: none; }
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .menu-toggle {
+    display: flex;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .gh-btn span { display: none; }
+  .gh-btn { width: 38px; padding: 0; justify-content: center; }
+}
+
+.mobile-panel {
+  display: none;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 8px 18px 16px;
+}
+.mobile-panel.open { display: flex; }
+.mobile-panel a {
+  padding: 12px 6px;
+  text-decoration: none;
+  color: var(--text);
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 15px;
+}
+.mobile-panel a:last-child { border-bottom: none; }
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 52px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .hero { padding: 56px 0 48px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.hero h1 {
+  font-size: clamp(32px, 4.8vw, 54px);
+  line-height: 1.1;
+  margin-bottom: 22px;
+  max-width: 17ch;
+}
+.hero .lede {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 58ch;
+  margin-bottom: 26px;
+  line-height: 1.6;
+}
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-bottom: 32px;
+}
+.hero-fact {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+.hero-fact b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #121212;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+.btn-ghost {
+  background: var(--surface);
+  color: var(--text);
+}
+.btn-ghost:hover {
+  border-color: var(--text-muted);
+}
+
+.hero-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 24px 26px;
+}
+.hero-card-header {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+  margin-bottom: 4px;
+}
+.hero-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.hero-card-row:last-child { border-bottom: none; }
+.hero-card-row .k {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.hero-card-row .v {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--accent);
+}
+
+.hero-note {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  background: var(--surface);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-top: 16px;
+}
+.hero-note b { color: var(--text); }
+.hero-note code {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--surface-2);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--text);
+}
+
+/* =========================
+   STATS BAR
+========================= */
+.stats {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 440px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+.stat-cell {
+  background: var(--bg);
+  padding: 24px 22px;
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: clamp(34px, 4vw, 42px);
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* =========================
+   ECOSYSTEM / LIBRARY FILES
+========================= */
+.section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+@media (max-width: 640px) {
+  .section { padding: 56px 0; }
+}
+.section-head {
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+.section-head h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  margin-bottom: 12px;
+}
+.section-head p {
+  color: var(--text-muted);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 960px) {
+  .file-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .file-grid { grid-template-columns: 1fr; }
+}
+
+.file-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.15s ease;
+}
+.file-card:hover {
+  border-color: var(--border-soft);
+}
+.file-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.file-card .glyph {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  flex-shrink: 0;
+  background: var(--surface-2);
+}
+.file-card h3 { font-size: 17px; }
+.file-card .filename {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text-faint);
+}
+.file-card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto;
+}
+.chip {
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 2px 8px;
+  background: var(--bg);
+}
+.file-card .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-soft);
+  margin-top: 4px;
+}
+.file-card .count {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+}
+.file-card a.open {
+  font-size: 12.5px;
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+.file-card a.open:hover { color: var(--accent); }
+
+/* Relationship strip */
+.relate {
+  margin-top: 24px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.relate .node {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 3px 10px;
+  background: var(--surface);
+}
+.relate .arrow { color: var(--text-faint); }
+
+/* =========================
+   RESOURCE EXPLORER
+========================= */
+.explorer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 0 16px;
+  height: 48px;
+  transition: border-color 0.15s ease;
+}
+.search-box:focus-within {
+  border-color: var(--accent);
+}
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  font-family: var(--sans);
+}
+.search-box input::placeholder { color: var(--text-faint); }
+
+.track-tabs {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background: var(--surface);
+}
+.track-tabs::-webkit-scrollbar { display: none; }
+.track-tab {
+  flex-shrink: 0;
+  height: 42px;
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  border-right: 1px solid var(--border);
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.track-tab:last-child { border-right: none; }
+.track-tab:hover { color: var(--text); }
+.track-tab[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.results-count {
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+  font-family: var(--mono);
+}
+
+.cat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cat-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.cat-item:hover {
+  border-color: var(--border-soft);
+}
+.cat-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  text-align: left;
+  padding: 16px 18px;
+  cursor: pointer;
+  min-height: 48px;
+}
+.cat-trigger .num {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  width: 32px;
+  flex-shrink: 0;
+}
+.cat-trigger .body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.cat-trigger .name {
+  font-size: 15px;
+  font-weight: 600;
+}
+.cat-trigger .track-pill {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  padding: 1px 7px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  background: var(--surface-2);
+}
+.cat-trigger .count-pill {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.cat-trigger .chevron {
+  flex-shrink: 0;
+  color: var(--text-faint);
+  transition: transform 0.22s ease;
+}
+.cat-item[data-open="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.cat-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cat-panel-inner {
+  padding: 4px 18px 20px 64px;
+  border-top: 1px solid var(--border-soft);
+}
+@media (max-width: 600px) {
+  .cat-panel-inner { padding: 4px 16px 18px 16px; }
+}
+
+.cat-examples {
+  list-style: none;
+  margin: 12px 0 14px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.cat-examples li {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  padding-left: 14px;
+  position: relative;
+}
+.cat-examples li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+
+/* Detailed Resource Items */
+.cat-resource-list {
+  list-style: none;
+  margin: 12px 0 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cat-resource-list li {
+  font-size: 13.5px;
+  padding-left: 14px;
+  position: relative;
+}
+.cat-resource-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+.res-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.res-link {
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+.res-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.res-title {
+  color: var(--text);
+  font-weight: 500;
+}
+.res-author {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* Glossary view */
+.glossary-items-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+.glossary-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 2px solid var(--accent);
+  padding-left: 12px;
+}
+.entry-term {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--text);
+  font-size: 13px;
+}
+.entry-def {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Interview view */
+.interview-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 12px 0 16px;
+}
+.interview-entry {
+  border-left: 2px solid var(--accent-2);
+  padding-left: 12px;
+}
+.qa-q {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.qa-a {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.panel-footer-action {
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-soft);
+}
+.cat-panel-inner .open-link {
+  font-size: 12.5px;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.cat-panel-inner .open-link:hover { text-decoration: underline; }
+
+.no-results {
+  padding: 44px 0;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 14px;
+  font-family: var(--mono);
+}
+
+/* =========================
+   ROADMAP & SUGGESTED PATHS
+========================= */
+.roadmap-tracks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+}
+@media (max-width: 840px) {
+  .roadmap-tracks { grid-template-columns: 1fr; gap: 36px; }
+}
+.rt-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.rt-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.rt-head h3 { font-size: 17px; }
+.rt-head .src {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text-faint);
+  margin-left: auto;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 26px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--border);
+}
+.tl-step {
+  position: relative;
+  padding-bottom: 26px;
+}
+.tl-step:last-child { padding-bottom: 0; }
+.tl-step::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 4px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.tl-step.papers::before { border-color: var(--accent-2); }
+.tl-step .when {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.tl-step.papers .when { color: var(--accent-2); }
+.tl-step .what {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* =========================
+   100-DAY CURRICULUM & DAILY ROUTINE
+========================= */
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 920px) {
+  .curriculum-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.phase-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.phase-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 18px 20px;
+}
+.phase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.phase-tag {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--accent);
+  font-weight: 500;
+}
+.phase-title {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+.phase-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+.phase-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.phase-ref-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 7px;
+  color: var(--text-faint);
+}
+
+.routine-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 22px;
+  position: sticky;
+  top: 88px;
+}
+.routine-box h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-family: var(--serif);
+}
+.routine-box .sub {
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin-bottom: 18px;
+}
+.routine-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.routine-item:last-child { border-bottom: none; }
+.routine-time {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--accent);
+  width: 90px;
+  flex-shrink: 0;
+}
+.routine-task {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.45;
+}
+.routine-task span {
+  display: block;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* =========================
+   HOW TO USE
+========================= */
+.howto-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .howto-list { grid-template-columns: 1fr; }
+}
+.howto-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  background: var(--surface);
+}
+.howto-item .idx {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.howto-item h4 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-family: var(--sans);
+}
+.howto-item p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* =========================
+   CONTRIBUTE CTA
+========================= */
+.contribute-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.contribute-box h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.contribute-box p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0;
+  max-width: 54ch;
+  line-height: 1.55;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 48px 0 60px;
+  border-top: 1px solid var(--border-soft);
+}
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.footer-brand p {
+  color: var(--text-muted);
+  font-size: 13px;
+  max-width: 42ch;
+  margin-top: 10px;
+  line-height: 1.55;
+}
+.footer-links {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.footer-col h5 {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  font-family: var(--mono);
+  font-weight: 500;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  transition: color 0.15s ease;
+}
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-soft);
+  font-size: 12px;
+  color: var(--text-faint);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+</style>
 </head>
 <body>
 
-  <!-- Top Announcement Bar (GFG Banner Strip) -->
-  <header class="announcement-bar">
-    <span class="badge">100-Day Roadmap</span>
-    <span>Daily AI and Machine Learning Preparation Curriculum with GeeksforGeeks, TutorialsPoint and W3Schools Tutorials</span>
-  </header>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Sticky Navbar (GeeksforGeeks Signature Header) -->
-  <nav class="navbar" role="navigation" aria-label="Main Navigation">
-    <div class="container nav-container">
-      
-      <!-- Brand Logo -->
-      <a href="#" class="brand-logo" onclick="window.AI_ML_APP.switchView('roadmap')">
-        <div class="brand-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <div class="brand-text">
-          <span class="name">AI/ML <span>Geeks</span></span>
-          <span class="tagline">100 Days Preparation Portal</span>
-        </div>
+<!-- =========================
+     NAVIGATION
+========================= -->
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="100 — AI/ML Reading List Home">
+      <span class="brand-mark">C</span>
+      <span class="brand-text">
+        <span class="brand-title">100</span>
+        <span class="brand-sub">mohdshamii/100</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary Navigation">
+      <a href="#overview">Overview</a>
+      <a href="#ecosystem">Library</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#roadmap">Tracks</a>
+      <a href="#curriculum">100 Days</a>
+      <a href="#howto">How It Works</a>
+      <a href="#contribute">Contribute</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Switch to light theme" title="Toggle dark/light theme">
+        <svg id="themeIcon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a class="gh-btn" href="https://github.com/mohdshamii/100" target="_blank" rel="noopener" aria-label="View on GitHub">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.03 3.26 9.29 7.79 10.8.57.1.78-.25.78-.55v-2.14c-3.17.69-3.83-1.36-3.83-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.05-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0c2.19-1.47 3.15-1.16 3.15-1.16.62 1.58.23 2.75.11 3.04.73.79 1.17 1.81 1.17 3.05 0 4.37-2.66 5.34-5.2 5.62.41.36.77 1.07.77 2.15v3.19c0 .31.21.66.79.55A10.53 10.53 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+        <span>GitHub</span>
       </a>
-
-      <!-- Search Bar with Live Filter -->
-      <div class="search-wrapper">
-        <div class="search-input-group">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <input type="text" id="globalSearchInput" class="search-input" placeholder="Search 100 days, algorithms, math formulas, or topics..." autocomplete="off">
-          <span class="search-shortcut">Ctrl+K</span>
-        </div>
-      </div>
-
-      <!-- Navigation Links -->
-      <ul class="nav-menu">
-        <li><a href="#" class="nav-link active" data-view="roadmap">100-Day Plan</a></li>
-        <li><a href="#" class="nav-link" data-view="routine">Daily Routine</a></li>
-        <li><a href="#" class="nav-link" data-view="practice">Practice IDE</a></li>
-        <li><a href="#" class="nav-link" data-view="formulas">Formulas</a></li>
-        <li><a href="#" class="nav-link" data-view="interview">Interview Q&A</a></li>
-        <li><a href="#" class="nav-link" data-view="resources">Repo Hub</a></li>
-      </ul>
-
-      <!-- Right Header Controls -->
-      <div class="nav-actions">
-        <div class="streak-badge" id="streakBadge" title="Consecutive Day Study Streak">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-3.5 4.5-5 7-5 10 0 3.87 3.13 7 7 7s7-3.13 7-7c0-2-1-4-2.5-6.5-.5 2-2 3.5-3.5 3.5-1.5 0-2-1-2-2.5 0-1.5 1-3.5 2-4.5z"/></svg>
-          <span>Streak: 1 Day</span>
-        </div>
-        <div class="progress-pill" id="navProgressPill" title="Your Overall 100-Day Progress">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>0% (0/100)</span>
-        </div>
-        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode">
-          <!-- Populated by JS -->
-        </button>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Mobile Menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-        </button>
-      </div>
-
-    </div>
-  </nav>
-
-  <!-- Secondary Subnav / Category Strip (GFG Style) -->
-  <div class="subnav-strip">
-    <div class="container">
-      <ul class="subnav-list">
-        <li><button class="subnav-item active" data-phase="all">All 100 Days <span class="subnav-badge">100</span></button></li>
-        <li><button class="subnav-item" data-phase="1">Phase 1: Math & Python <span class="subnav-badge">15</span></button></li>
-        <li><button class="subnav-item" data-phase="2">Phase 2: Classic ML <span class="subnav-badge">20</span></button></li>
-        <li><button class="subnav-item" data-phase="3">Phase 3: Deep Learning <span class="subnav-badge">20</span></button></li>
-        <li><button class="subnav-item" data-phase="4">Phase 4: Attention & NLP <span class="subnav-badge">15</span></button></li>
-        <li><button class="subnav-item" data-phase="5">Phase 5: Computer Vision <span class="subnav-badge">10</span></button></li>
-        <li><button class="subnav-item" data-phase="6">Phase 6: GenAI & LLMs <span class="subnav-badge">10</span></button></li>
-        <li><button class="subnav-item" data-phase="7">Phase 7: MLOps & Systems <span class="subnav-badge">7</span></button></li>
-        <li><button class="subnav-item" data-phase="8">Phase 8: Capstone & Interview <span class="subnav-badge">3</span></button></li>
-      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open mobile navigation" aria-expanded="false" aria-controls="mobilePanel">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#overview">Overview</a>
+    <a href="#ecosystem">Library</a>
+    <a href="#explorer">Explorer</a>
+    <a href="#roadmap">Tracks</a>
+    <a href="#curriculum">100 Days</a>
+    <a href="#howto">How It Works</a>
+    <a href="#contribute">Contribute</a>
+  </div>
+</header>
 
-  <!-- Hero & Preparation Dashboard -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-grid">
-        
-        <!-- Hero Left Column -->
-        <div class="hero-content">
-          <div class="hero-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            100 Days of Code: AI and Machine Learning Edition
-          </div>
-          <h1 class="hero-title">
-            Master <span>AI & Machine Learning</span> Step-by-Step
-          </h1>
-          <p class="hero-description">
-            A comprehensive, daily-wise preparation journey designed to take you from foundational mathematics and Python all the way to deep neural architectures, Transformers, Large Language Models, and production MLOps. Grounded in curated tutorials from <strong>GeeksforGeeks</strong>, <strong>TutorialsPoint</strong>, and <strong>W3Schools</strong>.
-          </p>
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+<main id="main-content">
 
-          <div class="hero-portal-tags">
-            <span class="portal-pill gfg">GeeksforGeeks Tutorials</span>
-            <span class="portal-pill tutorialspoint">TutorialsPoint Notes</span>
-            <span class="portal-pill w3schools">W3Schools Quick Guides</span>
-          </div>
-
-          <div class="hero-actions">
-            <button class="btn btn-primary" id="resumeLearningBtn">
-              Resume Learning
-            </button>
-            <button class="btn btn-secondary" onclick="window.AI_ML_APP.switchView('routine')">
-              View Daily Routine
-            </button>
-            <button class="btn btn-secondary" id="openPracticeCta">
-              Coding Practice Sandbox
-            </button>
-            <button class="btn btn-outline-green" onclick="window.AI_ML_APP.exportProgress()" title="Export your completed days and notes as JSON">
-              Backup Progress
-            </button>
-          </div>
-        </div>
-
-        <!-- Hero Right Column: Preparation Dashboard Card -->
-        <div class="hero-card-col">
-          <div class="progress-dashboard-card">
-            <div class="dash-header">
-              <h3>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gfg-green)" stroke-width="2">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-                Preparation Dashboard
-              </h3>
-              <button class="btn-sm btn-secondary" onclick="window.AI_ML_APP.resetProgress()" title="Reset study progress">
-                Reset
-              </button>
-            </div>
-
-            <div class="dash-stats-row">
-              <div class="dash-stat-box">
-                <div class="dash-stat-val" id="dashCompletedDaysVal">0 / 100</div>
-                <div class="dash-stat-lbl">Days Done</div>
-              </div>
-              <div class="dash-stat-box">
-                <div class="dash-stat-val" id="dashSolvedProblemsVal">0 / 10</div>
-                <div class="dash-stat-lbl">Tasks Solved</div>
-              </div>
-              <div class="dash-stat-box">
-                <div class="dash-stat-val" id="dashPercentVal">0%</div>
-                <div class="dash-stat-lbl">Mastery</div>
-              </div>
-            </div>
-
-            <!-- Progress Bar -->
-            <div class="progress-bar-container">
-              <div class="progress-labels">
-                <span>100-Day Course Progress</span>
-                <span id="progressPercentLabel">0%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-fill" id="dashProgressBarFill"></div>
-              </div>
-              <div class="milestones-strip">
-                <span>Day 1</span>
-                <span>Day 25</span>
-                <span>Day 50</span>
-                <span>Day 75</span>
-                <span>Day 100</span>
-              </div>
-            </div>
-
-            <!-- Dashboard Filter Controls -->
-            <div class="dash-actions-row">
-              <div class="dash-filter-group">
-                <button class="filter-btn active" data-status="all">All Days</button>
-                <button class="filter-btn" data-status="pending">Pending</button>
-                <button class="filter-btn" data-status="completed">Completed</button>
-                <button class="filter-btn" data-status="bookmarked">Starred</button>
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.35rem;">
-                <label for="difficultySelect" style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">Difficulty:</label>
-                <select id="difficultySelect" style="padding: 2px 6px; font-size: 0.75rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-primary);">
-                  <option value="all">All</option>
-                  <option value="easy">Easy</option>
-                  <option value="medium">Medium</option>
-                  <option value="hard">Hard</option>
-                </select>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+<!-- HERO -->
+<section class="hero" id="overview">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="section-label">github.com/mohdshamii/100</p>
+      <h1>A curated library for learning AI and ML, beginner to advanced.</h1>
+      <p class="lede">The repository holds an extensive, hand-curated collection of 100 books, 100 research papers, 100 datasets, 100 projects, 100 tools, 100 courses, 100 blogs, 100 glossary terms, and 100 interview questions — each split into thematic categories with structured study orders.</p>
+      <div class="hero-facts">
+        <span class="hero-fact"><b>9</b> content files</span>
+        <span class="hero-fact"><b>900+</b> total entries</span>
+        <span class="hero-fact"><b>102</b> categories</span>
+        <span class="hero-fact"><b>2</b> parallel study paths</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#explorer">Explore the resources</a>
+        <a class="btn btn-ghost" href="https://github.com/mohdshamii/100" target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </div>
-  </section>
-
-  <!-- =========================================================================
-       VIEW 1: 100-DAY ROADMAP & DAILY PREPARATION PLAN
-       ========================================================================= -->
-  <section class="view-section active-view" id="view-roadmap">
-    <div class="container">
-      
-      <!-- Roadmap Control Bar -->
-      <div class="roadmap-controls-bar">
-        <div class="roadmap-filter-tags">
-          <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary);" id="filteredCountDisplay">
-            Showing 100 of 100 Days
-          </span>
-          <span style="font-size: 0.8rem; color: var(--text-muted);">
-            • Click any card for detailed study guide, routine checklist and personal notes
-          </span>
-        </div>
-        <button class="btn-sm btn-secondary" id="resetFiltersBtn">
-          Clear All Filters
-        </button>
+    <div>
+      <div class="hero-card">
+        <div class="hero-card-header">Repository Breakdown</div>
+        <div class="hero-card-row"><span class="k">Books.md</span><span class="v">100 books · 10 categories</span></div>
+        <div class="hero-card-row"><span class="k">ResearchPaper.md</span><span class="v">100 papers · 10 categories</span></div>
+        <div class="hero-card-row"><span class="k">Datasets.md</span><span class="v">100 datasets · 12 categories</span></div>
+        <div class="hero-card-row"><span class="k">Projects.md</span><span class="v">108 projects · 12 categories</span></div>
+        <div class="hero-card-row"><span class="k">Tools.md</span><span class="v">100 tools · 12 categories</span></div>
+        <div class="hero-card-row"><span class="k">Courses.md</span><span class="v">100 courses · 12 categories</span></div>
+        <div class="hero-card-row"><span class="k">Glossary.md</span><span class="v">100 definitions · 11 categories</span></div>
+        <div class="hero-card-row"><span class="k">Interview_Questions.md</span><span class="v">105 Q&amp;A · 12 categories</span></div>
+        <div class="hero-card-row"><span class="k">Default branch</span><span class="v">main</span></div>
       </div>
-
-      <!-- 100-Day Grid (Rendered by JS) -->
-      <div class="roadmap-grid" id="roadmapGrid">
-        <!-- Rendered by js/app.js -->
+      <div class="hero-note">
+        <b>Authentic curation note.</b> Everything in this portal is transcribed and rendered directly from the actual markdown files in <code>mohdshamii/100</code>. No generic marketing copy, zero emojis, and complete preservation of the original editorial publication aesthetic.
       </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       VIEW: DETAILED DAILY ROUTINE & STUDY BLUEPRINT
-       ========================================================================= -->
-  <section class="view-section" id="view-routine">
-    <div class="container">
-      
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <h2>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gfg-green)" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-            </svg>
-            Structured Daily Study Routine
-          </h2>
-          <p>A rigorous, battle-tested time-blocked framework designed to maximize retention, hands-on implementation, and interview readiness across the 100 days.</p>
-        </div>
-      </div>
-
-      <!-- Hero Routine Summary Card -->
-      <div class="routine-hero-card">
-        <h3 class="routine-hero-title">The 4-Block Daily Learning Framework (120 Minutes)</h3>
-        <p class="routine-hero-desc">
-          To master Machine Learning, theory without code leads to illusion of competence, while code without theory leads to fragile debugging. This daily routine enforces the <strong>70/30 Rule</strong>: 30% structured conceptual reading and 70% active problem solving, tensor tracing, and code implementation.
-        </p>
-      </div>
-
-      <!-- 4-Block Detailed Grid -->
-      <div class="routine-grid">
-        
-        <!-- Block 1 -->
-        <div class="routine-card">
-          <div class="routine-card-header">
-            <span class="routine-block-num">Block 1</span>
-            <span class="time-badge">30 Minutes</span>
-          </div>
-          <h4 class="routine-title">Theory & Concept Exploration</h4>
-          <p class="routine-desc">Build intuitive understanding of the core concept and understand why the algorithm was created.</p>
-          <ul class="routine-steps-list">
-            <li class="routine-step-item">
-              <span class="bullet">1</span>
-              <span>Read the primary GeeksforGeeks tutorial for high-level structure and architecture diagrams.</span>
-            </li>
-            <li class="routine-step-item">
-              <span class="bullet">2</span>
-              <span>Cross-check with TutorialsPoint or W3Schools for concise explanations and property tables.</span>
-            </li>
-            <li class="routine-step-item">
-              <span class="bullet">3</span>
-              <span>Answer the question: "What exact limitation of previous models does this approach solve?"</span>
-            </li>
-          </ul>
-          <div class="routine-card-footer">
-            Output: Mental model and visual architecture diagram.
-          </div>
-        </div>
-
-        <!-- Block 2 -->
-        <div class="routine-card">
-          <div class="routine-card-header">
-            <span class="routine-block-num">Block 2</span>
-            <span class="time-badge">25 Minutes</span>
-          </div>
-          <h4 class="routine-title">Math & Tensor Dimension Tracing</h4>
-          <p class="routine-desc">Demystify the underlying mathematics and verify tensor shapes through each layer.</p>
-          <ul class="routine-steps-list">
-            <li class="routine-step-item">
-              <span class="bullet">1</span>
-              <span>Deconstruct the day's key formula (e.g. Cross-Entropy loss, Attention scaling, Adam update).</span>
-            </li>
-            <li class="routine-step-item">
-              <span class="bullet">2</span>
-              <span>Trace matrix dimensions step-by-step on paper: verify input shapes, weights, and output tensors.</span>
-            </li>
-            <li class="routine-step-item">
-              <span class="bullet">3</span>
-              <span>Inspect gradients: understand which parameters receive gradients during backpropagation.</span>
-            </li>
-          </ul>
-          <div class="routine-card-footer">
-            Output: Written mathematical formula and dimension verification.
-          </div>
-        </div>
-
-        <!-- Block 3 -->
-        <div class="routine-card">
-          <div class="routine-card-header">
-            <span class="routine-block-num">Block 3</span>
-            <span class="time-badge">45 Minutes</span>
-          </div>
-          <h4 class="routine-title">Hands-On Code Implementation</h4>
-          <p class="routine-desc">Translate mathematical logic into executable, vectorized Python code.</p>
-          <ul class="routine-steps-list">
-            <li class="routine-step-item">
-              <span class="bullet">1</span>
-              <span>Open the Practice IDE or your local editor and implement the daily task from scratch.</span>
-            </li>
-            <li class="routine-step-item">
-              <span class="bullet">2</span>
-              <span>Avoid loops where vectorized NumPy or PyTorch tensor operations apply.</span>
-            </li>
-            <li class="routine-step-item">
-              <span class="bullet">3</span>
-              <span>Test edge cases: zero inputs, negative values, extreme floating point numbers, and shape mismatches.</span>
-            </li>
-          </ul>
-          <div class="routine-card-footer">
-            Output: Working script with unit tests passed.
-          </div>
-        </div>
-
-        <!-- Block 4 -->
-        <div class="routine-card">
-          <div class="routine-card-header">
-            <span class="routine-block-num">Block 4</span>
-            <span class="time-badge">20 Minutes</span>
-          </div>
-          <h4 class="routine-title">Active Recall & Personal Notes</h4>
-          <p class="routine-desc">Cement learning through immediate reflection and documentation.</p>
-          <ul class="routine-steps-list">
-            <li class="routine-step-item">
-              <span class="bullet">1</span>
-              <span>Write 3 concise bullet takeaways in the portal's Day Notes box without copying text.</span>
-            </li>
-            <li class="routine-step-item">
-              <span class="bullet">2</span>
-              <span>Review the related interview question in the Interview Q&A tab and answer it verbally.</span>
-            </li>
-            <li class="routine-step-item">
-              <span class="bullet">3</span>
-              <span>Commit code to your personal GitHub repository and check off the day as completed.</span>
-            </li>
-          </ul>
-          <div class="routine-card-footer">
-            Output: Saved personal notes and GitHub commit.
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Schedule Comparison Tracks -->
-      <div class="schedule-track-row">
-        
-        <!-- Track A: Working Professional -->
-        <div class="schedule-card">
-          <div class="schedule-card-title">
-            <span>Track A: Working Professional (90–120 Mins / Day)</span>
-            <span class="time-badge">Part-Time</span>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-            Designed for engineers, analysts, or students with full-time day jobs. Focuses on high-yield consistency.
-          </p>
-          <div class="schedule-timeline">
-            <div class="schedule-slot">
-              <span class="time">07:00 - 07:35</span>
-              <span class="action">Morning Block: Theory reading on GeeksforGeeks & formula breakdown</span>
-            </div>
-            <div class="schedule-slot">
-              <span class="time">19:30 - 20:25</span>
-              <span class="action">Evening Block: Hands-on coding challenge and PyTorch/NumPy implementation</span>
-            </div>
-            <div class="schedule-slot">
-              <span class="time">20:25 - 20:45</span>
-              <span class="action">Night Review: Write notes, answer interview question, commit to GitHub</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Track B: Full-Time Transitioner -->
-        <div class="schedule-card">
-          <div class="schedule-card-title">
-            <span>Track B: Career Transitioner (3 Hours / Day)</span>
-            <span class="time-badge">Full-Time</span>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-            Designed for individuals dedicated full-time to landing an AI/ML engineering role within 3 to 6 months.
-          </p>
-          <div class="schedule-timeline">
-            <div class="schedule-slot">
-              <span class="time">09:00 - 09:50</span>
-              <span class="action">Deep Theory: Read GFG & TutorialsPoint, plus related research paper</span>
-            </div>
-            <div class="schedule-slot">
-              <span class="time">10:00 - 10:40</span>
-              <span class="action">Mathematical Derivation: Solve gradient equations and matrix shapes</span>
-            </div>
-            <div class="schedule-slot">
-              <span class="time">11:00 - 12:15</span>
-              <span class="action">Extended Coding: Complete daily practice task + build real mini-project</span>
-            </div>
-            <div class="schedule-slot">
-              <span class="time">14:00 - 14:30</span>
-              <span class="action">Documentation: Write technical blog summary or LinkedIn #100DaysOfCode post</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Weekend Consolidation Blueprint -->
-      <div class="routine-hero-card" style="margin-top: 1rem;">
-        <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
-          Weekend Review & Milestone Consolidation (Every Saturday / Sunday)
-        </h4>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
-          Do not rush forward on weekends. Use Saturdays and Sundays to consolidate the 5 days completed during the week:
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-          <div style="background: var(--bg-surface-alt); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--gfg-green);">
-            <strong style="color: var(--text-primary); font-size: 0.9rem; display: block; margin-bottom: 0.25rem;">1. Full System Integration</strong>
-            <span style="font-size: 0.85rem; color: var(--text-secondary);">Combine the week's modules into a single clean pipeline or notebook.</span>
-          </div>
-          <div style="background: var(--bg-surface-alt); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--gfg-green);">
-            <strong style="color: var(--text-primary); font-size: 0.9rem; display: block; margin-bottom: 0.25rem;">2. Flashcard Self-Testing</strong>
-            <span style="font-size: 0.85rem; color: var(--text-secondary);">Test yourself on the week's formulas and interview questions without looking at solutions.</span>
-          </div>
-          <div style="background: var(--bg-surface-alt); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--gfg-green);">
-            <strong style="color: var(--text-primary); font-size: 0.9rem; display: block; margin-bottom: 0.25rem;">3. Benchmark Dataset Audit</strong>
-            <span style="font-size: 0.85rem; color: var(--text-secondary);">Train models on a standard Kaggle or Hugging Face dataset to verify generalizability.</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       VIEW 2: CODING PRACTICE DASHBOARD (GFG PRACTICE PORTAL SIMULATOR)
-       ========================================================================= -->
-  <section class="view-section" id="view-practice">
-    <div class="container">
-      
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <h2>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gfg-green)" stroke-width="2">
-              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-            </svg>
-            GeeksforGeeks Style Coding Practice Portal
-          </h2>
-          <p>Sharpen your core AI/ML implementation skills with real interview-style algorithmic challenges and test runner.</p>
-        </div>
-      </div>
-
-      <div class="practice-portal-layout">
-        
-        <!-- Left Sidebar: Problems Directory -->
-        <aside class="practice-sidebar">
-          <div class="practice-sidebar-head">
-            <div style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); display: flex; justify-content: space-between; align-items: center;">
-              <span>Problem Directory</span>
-              <span style="font-size: 0.75rem; color: var(--gfg-green); font-weight: 800;">10 Challenges</span>
-            </div>
-            <input type="text" id="practiceSearchInput" class="practice-search-input" placeholder="Search problems..." oninput="window.AI_ML_APP.renderPracticePortal()">
-          </div>
-          <ul class="problem-list" id="practiceSidebarList">
-            <!-- Rendered by js/app.js -->
-          </ul>
-        </aside>
-
-        <!-- Right Main View: Active Problem & Interactive Code Runner -->
-        <main class="practice-main-view">
-          
-          <!-- Problem Details Card -->
-          <div class="problem-detail-card">
-            <div class="problem-header-row">
-              <div class="problem-title-area">
-                <h2 id="activeProblemTitle">Loading problem...</h2>
-                <div class="problem-badges" id="activeProblemBadges"></div>
-              </div>
-            </div>
-            <div class="problem-statement-body" id="activeProblemStatement"></div>
-          </div>
-
-          <!-- Code Editor & Sandbox -->
-          <div class="code-runner-card">
-            <div class="editor-toolbar">
-              <div class="editor-lang-badge">
-                Python 3.11 Runtime
-              </div>
-              <div class="editor-actions">
-                <button class="btn-sm btn-secondary" onclick="window.AI_ML_APP.resetCode()" style="background: rgba(255,255,255,0.15); color: #fff; border: none;">
-                  Reset Template
-                </button>
-                <button class="btn btn-sm btn-primary" onclick="window.AI_ML_APP.runCodeTests()" style="padding: 4px 12px;">
-                  Run Code / Test Solution
-                </button>
-              </div>
-            </div>
-            <textarea id="codeEditorArea" class="code-textarea" spellcheck="false" placeholder="# Type your Python solution here..."></textarea>
-            
-            <!-- Test Console Pane -->
-            <div class="test-console-pane">
-              <div class="test-controls-row">
-                <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase;">
-                  Output & Test Suite Results:
-                </span>
-              </div>
-              <div class="test-results-box" id="testResultsBox">
-                Console ready. Click "Run Code / Test Solution" to execute test cases.
-              </div>
-            </div>
-          </div>
-
-          <!-- Hints & Editorial Solution Drawer -->
-          <div class="editorial-drawer">
-            <button class="editorial-trigger" onclick="window.AI_ML_APP.toggleEditorial('Hint')">
-              <span>Need a Hint?</span>
-              <span>▼</span>
-            </button>
-            <div class="editorial-content" id="editorialHintBody"></div>
-          </div>
-
-          <div class="editorial-drawer">
-            <button class="editorial-trigger" onclick="window.AI_ML_APP.toggleEditorial('Solution')">
-              <span>View Editorial & Optimal Solution</span>
-              <span>▼</span>
-            </button>
-            <div class="editorial-content" id="editorialSolutionBody"></div>
-          </div>
-
-        </main>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       VIEW 3: FORMULAS & CHEATSHEET DECK
-       ========================================================================= -->
-  <section class="view-section" id="view-formulas">
-    <div class="container">
-      
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <h2>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gfg-green)" stroke-width="2">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            </svg>
-            Interactive Formula Deck & Mathematical Cheatsheet
-          </h2>
-          <p>Quick lookup reference for linear algebra, probability, loss functions, activation derivatives, optimizers, and Transformer attention equations.</p>
-        </div>
-      </div>
-
-      <div class="formula-search-bar">
-        <div class="search-input-group">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <input type="text" id="formulaSearchInput" class="search-input" placeholder="Search formulas (e.g., Attention, Cross-Entropy, SVD, Adam)..." oninput="window.AI_ML_APP.renderFormulaDeck()">
-        </div>
-      </div>
-
-      <div class="formula-grid" id="formulaGrid">
-        <!-- Rendered by js/app.js -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       VIEW 4: INTERVIEW PREPARATION HUB
-       ========================================================================= -->
-  <section class="view-section" id="view-interview">
-    <div class="container">
-      
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <h2>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gfg-green)" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-            GeeksforGeeks AI/ML Interview Corner
-          </h2>
-          <p>Top high-frequency conceptual, algorithmic, and system design interview questions asked at tier-1 tech companies.</p>
-        </div>
-      </div>
-
-      <div class="interview-accordion-list" id="interviewList">
-        <!-- Rendered by js/app.js -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       VIEW 5: REPOSITORY RESOURCES HUB
-       ========================================================================= -->
-  <section class="view-section" id="view-resources">
-    <div class="container">
-      
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <h2>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gfg-green)" stroke-width="2">
-              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-            </svg>
-            Repository Resource Library
-          </h2>
-          <p>Access the curated markdown documents hosted alongside this website in the repository.</p>
-        </div>
-      </div>
-
-      <div class="roadmap-grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
-        
-        <div class="day-card">
-          <div class="day-card-header">
-            <span class="day-number-badge">ROADMAP</span>
-            <span class="difficulty-badge easy">Core Guide</span>
-          </div>
-          <h3 class="day-title">ROADMAP.md</h3>
-          <p class="day-summary">One unified 30-week learning path interleaving research papers, books, datasets, projects, and interview preparation.</p>
-          <div class="day-card-footer">
-            <a href="ROADMAP.md" class="btn btn-sm btn-outline-green">Read Markdown File [Link]</a>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-card-header">
-            <span class="day-number-badge">100 BOOKS</span>
-            <span class="difficulty-badge easy">Literature</span>
-          </div>
-          <h3 class="day-title">Books.md</h3>
-          <p class="day-summary">100 curated textbooks across mathematics, classical ML, deep learning, NLP, computer vision, reinforcement learning, and MLOps.</p>
-          <div class="day-card-footer">
-            <a href="Books.md" class="btn btn-sm btn-outline-green">Browse Books [Link]</a>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-card-header">
-            <span class="day-number-badge">100 PAPERS</span>
-            <span class="difficulty-badge medium">Research</span>
-          </div>
-          <h3 class="day-title">ResearchPaper.md</h3>
-          <p class="day-summary">100 milestone research papers including Attention Is All You Need, ResNet, BERT, GPT-3, LoRA, DPO, and Diffusion Models.</p>
-          <div class="day-card-footer">
-            <a href="ResearchPaper.md" class="btn btn-sm btn-outline-green">Browse Papers [Link]</a>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-card-header">
-            <span class="day-number-badge">100 DATASETS</span>
-            <span class="difficulty-badge easy">Data</span>
-          </div>
-          <h3 class="day-title">Datasets.md</h3>
-          <p class="day-summary">100 curated benchmark datasets for tabular, vision, NLP, RLHF preference pairs, multimodal, and recommender systems.</p>
-          <div class="day-card-footer">
-            <a href="Datasets.md" class="btn btn-sm btn-outline-green">Browse Datasets [Link]</a>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-card-header">
-            <span class="day-number-badge">100 PROJECTS</span>
-            <span class="difficulty-badge hard">Hands-On</span>
-          </div>
-          <h3 class="day-title">Projects.md</h3>
-          <p class="day-summary">100 end-to-end projects ranging from algorithms from scratch to fine-tuning open-source LLMs and enterprise RAG deployments.</p>
-          <div class="day-card-footer">
-            <a href="Projects.md" class="btn btn-sm btn-outline-green">Browse Projects [Link]</a>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-card-header">
-            <span class="day-number-badge">100 TOOLS</span>
-            <span class="difficulty-badge medium">Ecosystem</span>
-          </div>
-          <h3 class="day-title">Tools.md</h3>
-          <p class="day-summary">100 essential frameworks and tools including PyTorch, Hugging Face, Ray, MLflow, vLLM, DeepSpeed, and Vector Databases.</p>
-          <div class="day-card-footer">
-            <a href="Tools.md" class="btn btn-sm btn-outline-green">Browse Tools [Link]</a>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-card-header">
-            <span class="day-number-badge">FORMULAS</span>
-            <span class="difficulty-badge medium">Cheatsheets</span>
-          </div>
-          <h3 class="day-title">CHEATSHEETS.md</h3>
-          <p class="day-summary">Condensed mathematical references for linear algebra, probability, loss functions, activation derivatives, and optimizers.</p>
-          <div class="day-card-footer">
-            <a href="CHEATSHEETS.md" class="btn btn-sm btn-outline-green">Read Cheatsheet [Link]</a>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-card-header">
-            <span class="day-number-badge">INTERVIEW</span>
-            <span class="difficulty-badge hard">Interview</span>
-          </div>
-          <h3 class="day-title">Interview_Questions.md</h3>
-          <p class="day-summary">100 questions spanning ML fundamentals, probability, classic algorithms, optimization, Transformers, and system design.</p>
-          <div class="day-card-footer">
-            <a href="Interview_Questions.md" class="btn btn-sm btn-outline-green">Read Q&A [Link]</a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       DAY DETAIL MODAL (DEEP DIVE DIALOG)
-       ========================================================================= -->
-  <div class="modal-overlay" id="dayModalOverlay" onclick="if(event.target === this) window.AI_ML_APP.closeModal()">
-    <div class="day-modal-content" id="dayModalContent">
-      <!-- Populated dynamically by window.AI_ML_APP.openDayModal(dayNum) -->
     </div>
   </div>
+</section>
 
-  <!-- =========================================================================
-       FOOTER (GEEKSFORGEEKS EDUCATIONAL PLATFORM FOOTER)
-       ========================================================================= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        
-        <div class="footer-brand">
-          <h4>AI/ML <span>Geeks</span> Portal</h4>
-          <p>
-            An open educational platform providing structured, daily-wise preparation for Artificial Intelligence, Machine Learning, Deep Learning, and MLOps. Designed with GeeksforGeeks clean educational UI and curated with reference tutorials.
-          </p>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">
-            Ready for zero-config hosting on <strong>GitHub Pages</strong>.
+<!-- STATS -->
+<section class="stats" aria-label="Repository Statistics">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-cell reveal">
+        <div class="stat-num" data-count="900">0</div>
+        <div class="stat-label">Curated resources</div>
+      </div>
+      <div class="stat-cell reveal">
+        <div class="stat-num" data-count="102">0</div>
+        <div class="stat-label">Thematic categories</div>
+      </div>
+      <div class="stat-cell reveal">
+        <div class="stat-num" data-count="9">0</div>
+        <div class="stat-label">Library content files</div>
+      </div>
+      <div class="stat-cell reveal">
+        <div class="stat-num" data-count="100">0</div>
+        <div class="stat-label">Days preparation plan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM / LIBRARY FILES -->
+<section class="section" id="ecosystem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label">Repository ecosystem</p>
+      <h2>Nine library files, structured for complete mastery</h2>
+      <p>All resources live in individual, focused markdown documents. Each file organizes 100 entries chronologically and conceptually from beginner fundamentals to cutting-edge frontiers.</p>
+    </div>
+
+    <div class="file-grid">
+      <!-- Books.md -->
+      <article class="file-card reveal">
+        <div class="file-card-top">
+          <span class="glyph" style="color:var(--accent);">Bk</span>
+          <div>
+            <h3>Books.md</h3>
+            <div class="filename">/Books.md</div>
+          </div>
+        </div>
+        <p>100 AI/ML Books across ten numbered sections running from mathematics foundations to alignment and safety, with a month-by-month path.</p>
+        <div class="chip-row">
+          <span class="chip">Math</span><span class="chip">Classic ML</span><span class="chip">Deep Learning</span><span class="chip">LLMs</span><span class="chip">MLOps</span>
+        </div>
+        <div class="meta">
+          <span class="count">100 books</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/Books.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- ResearchPaper.md -->
+      <article class="file-card reveal">
+        <div class="file-card-top">
+          <span class="glyph" style="color:var(--accent-2);">Rp</span>
+          <div>
+            <h3>ResearchPaper.md</h3>
+            <div class="filename">/ResearchPaper.md</div>
+          </div>
+        </div>
+        <p>100 Seminal research papers from Rosenblatt's 1958 Perceptron to modern transformers, diffusion models, and alignment architectures.</p>
+        <div class="chip-row">
+          <span class="chip">Foundations</span><span class="chip">CNNs</span><span class="chip">Transformers</span><span class="chip">Generative</span><span class="chip">Safety</span>
+        </div>
+        <div class="meta">
+          <span class="count">100 papers</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/ResearchPaper.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Datasets.md -->
+      <article class="file-card reveal">
+        <div class="file-card-top">
+          <span class="glyph">Ds</span>
+          <div>
+            <h3>Datasets.md</h3>
+            <div class="filename">/Datasets.md</div>
+          </div>
+        </div>
+        <p>100 Curated datasets across 12 domains: tabular benchmarks, computer vision, NLP corpora, speech, medical imaging, graph datasets, and LLM instruction sets.</p>
+        <div class="chip-row">
+          <span class="chip">Tabular</span><span class="chip">ImageNet</span><span class="chip">GLUE</span><span class="chip">CommonCrawl</span><span class="chip">RLHF</span>
+        </div>
+        <div class="meta">
+          <span class="count">100 datasets</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/Datasets.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Projects.md -->
+      <article class="file-card reveal">
+        <div class="file-card-top">
+          <span class="glyph">Pj</span>
+          <div>
+            <h3>Projects.md</h3>
+            <div class="filename">/Projects.md</div>
+          </div>
+        </div>
+        <p>108 Hands-on coding projects from scratch: building algorithms without libraries, deep architectures in PyTorch, full RAG systems, and production APIs.</p>
+        <div class="chip-row">
+          <span class="chip">From Scratch</span><span class="chip">Computer Vision</span><span class="chip">NLP</span><span class="chip">LoRA</span><span class="chip">FastAPI</span>
+        </div>
+        <div class="meta">
+          <span class="count">108 projects</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/Projects.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Tools.md -->
+      <article class="file-card reveal">
+        <div class="file-card-top">
+          <span class="glyph">Tl</span>
+          <div>
+            <h3>Tools.md</h3>
+            <div class="filename">/Tools.md</div>
+          </div>
+        </div>
+        <p>100 Essential libraries and frameworks: data handling, deep learning frameworks, transformer tooling, vector databases, experiment tracking, and deployment engines.</p>
+        <div class="chip-row">
+          <span class="chip">PyTorch</span><span class="chip">HuggingFace</span><span class="chip">vLLM</span><span class="chip">Qdrant</span><span class="chip">MLflow</span>
+        </div>
+        <div class="meta">
+          <span class="count">100 tools</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/Tools.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Courses.md -->
+      <article class="file-card reveal">
+        <div class="file-card-top">
+          <span class="glyph">Cs</span>
+          <div>
+            <h3>Courses.md</h3>
+            <div class="filename">/Courses.md</div>
+          </div>
+        </div>
+        <p>100 Free courses and university lectures: MIT Strang linear algebra, Stanford CS229 &amp; CS224N, Karpathy's Neural Networks Zero to Hero, and Fast.ai.</p>
+        <div class="chip-row">
+          <span class="chip">MIT 18.06</span><span class="chip">CS229</span><span class="chip">Karpathy</span><span class="chip">Fast.ai</span><span class="chip">Full Stack Deep Learning</span>
+        </div>
+        <div class="meta">
+          <span class="count">100 courses</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/Courses.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Glossary.md -->
+      <article class="file-card reveal">
+        <div class="file-card-top">
+          <span class="glyph">Gl</span>
+          <div>
+            <h3>Glossary.md</h3>
+            <div class="filename">/Glossary.md</div>
+          </div>
+        </div>
+        <p>100 Plain-language explanations of core concepts: inductive bias, gradient descent, KV cache, self-attention, rotary embeddings, LoRA, and DPO.</p>
+        <div class="chip-row">
+          <span class="chip">Concepts</span><span class="chip">Calculus</span><span class="chip">Attention</span><span class="chip">Diffusion</span><span class="chip">Inference</span>
+        </div>
+        <div class="meta">
+          <span class="count">100 terms</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/Glossary.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Interview_Questions.md -->
+      <article class="file-card reveal">
+        <div class="file-card-top">
+          <span class="glyph">Iq</span>
+          <div>
+            <h3>Interview_Questions.md</h3>
+            <div class="filename">/Interview_Questions.md</div>
+          </div>
+        </div>
+        <p>105 Technical interview questions covering mathematical derivations, model debugging, transformer architectures, MLOps, and system design.</p>
+        <div class="chip-row">
+          <span class="chip">Math Derivations</span><span class="chip">Transformers</span><span class="chip">System Design</span><span class="chip">Debugging</span>
+        </div>
+        <div class="meta">
+          <span class="count">105 questions</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/Interview_Questions.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Blogs_and_Newsletters.md -->
+      <article class="file-card reveal">
+        <div class="file-card-top">
+          <span class="glyph">Bl</span>
+          <div>
+            <h3>Blogs_and_Newsletters.md</h3>
+            <div class="filename">/Blogs_and_Newsletters.md</div>
+          </div>
+        </div>
+        <p>100 High-signal engineering publications, industry research blogs, and newsletters to stay abreast of weekly developments in artificial intelligence.</p>
+        <div class="chip-row">
+          <span class="chip">OpenAI</span><span class="chip">Anthropic</span><span class="chip">Jay Alammar</span><span class="chip">Lilian Weng</span><span class="chip">Import AI</span>
+        </div>
+        <div class="meta">
+          <span class="count">100 publications</span>
+          <a class="open" href="https://github.com/mohdshamii/100/blob/main/Blogs_and_Newsletters.md" target="_blank" rel="noopener">Open on GitHub ↗</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="relate reveal">
+      <span class="node">Books.md</span>
+      <span class="arrow">builds theory beside</span>
+      <span class="node">ResearchPaper.md</span>
+      <span class="arrow">grounded by</span>
+      <span class="node">Datasets.md</span>
+      <span class="arrow">implemented via</span>
+      <span class="node">Projects.md</span>
+      <span class="arrow">— a cohesive, self-contained educational ecosystem.</span>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCE EXPLORER -->
+<section class="section" id="explorer">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label">Interactive resource explorer</p>
+      <h2>Search and browse across all categories</h2>
+      <p>Filter by collection track, search by title, author, keyword, or math concept, and click any category to reveal every curated item with its direct link and GitHub anchor.</p>
+    </div>
+
+    <div class="explorer-controls">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-faint); flex-shrink:0;"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search across 900+ resources, e.g. “transformer”, “attention”, “axler”, “LoRA”, “resnet”..." autocomplete="off">
+      </div>
+      <div class="track-tabs" role="tablist" aria-label="Filter resources by collection">
+        <button class="track-tab" data-track="all" aria-pressed="true" role="tab">All Collections</button>
+        <button class="track-tab" data-track="books" aria-pressed="false" role="tab">Books</button>
+        <button class="track-tab" data-track="papers" aria-pressed="false" role="tab">Papers</button>
+        <button class="track-tab" data-track="datasets" aria-pressed="false" role="tab">Datasets</button>
+        <button class="track-tab" data-track="projects" aria-pressed="false" role="tab">Projects</button>
+        <button class="track-tab" data-track="tools" aria-pressed="false" role="tab">Tools</button>
+        <button class="track-tab" data-track="courses" aria-pressed="false" role="tab">Courses</button>
+        <button class="track-tab" data-track="blogs" aria-pressed="false" role="tab">Blogs</button>
+        <button class="track-tab" data-track="glossary" aria-pressed="false" role="tab">Glossary</button>
+        <button class="track-tab" data-track="interview" aria-pressed="false" role="tab">Interview Q&amp;A</button>
+      </div>
+    </div>
+
+    <p class="results-count" id="resultsCount">Loading curated resources...</p>
+    <div class="cat-list" id="catList" role="region" aria-label="Resource Categories List"></div>
+    <p class="no-results" id="noResults" hidden>No categories or resources match that search query.</p>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section" id="roadmap">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label">Suggested study paths</p>
+      <h2>Two independent schedules, one per track</h2>
+      <p>Books.md and ResearchPaper.md each establish their own structured pace — one measured by month for deep conceptual reading, the other by week for seminal literature study.</p>
+    </div>
+
+    <div class="roadmap-tracks">
+      <div>
+        <div class="rt-head">
+          <span class="rt-dot" style="background:var(--accent);"></span>
+          <h3>Books.md — Suggested Path</h3>
+          <span class="src">paced by month</span>
+        </div>
+        <div class="timeline" id="booksTimeline"></div>
+      </div>
+      <div>
+        <div class="rt-head">
+          <span class="rt-dot" style="background:var(--accent-2);"></span>
+          <h3>ResearchPaper.md — Reading Order</h3>
+          <span class="src">paced by week</span>
+        </div>
+        <div class="timeline" id="papersTimeline"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 100-DAY CURRICULUM & DAILY ROUTINE (ADDITIVE) -->
+<section class="section" id="curriculum">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label">100-Day preparation plan</p>
+      <h2>Systematic daily routine and phase progression</h2>
+      <p>A rigorous, battle-tested structure combining theoretical reading, paper dissection, hands-on implementation, and interview preparation across 100 dedicated days.</p>
+    </div>
+
+    <div class="curriculum-grid">
+      <!-- 5 Phase Breakdown -->
+      <div class="phase-card-list">
+        <div class="phase-card reveal">
+          <div class="phase-header">
+            <span class="phase-tag">Phase 1 · Days 01–20</span>
+            <span class="phase-title">Mathematical &amp; Classical Foundations</span>
+          </div>
+          <p class="phase-desc">Linear algebra (eigenvalues, SVD), multivariate calculus, probability distributions, followed by NumPy/Pandas pipelines and foundational regression/classification algorithms.</p>
+          <div class="phase-refs">
+            <span class="phase-ref-pill">Books §1–2</span>
+            <span class="phase-ref-pill">Papers §1</span>
+            <span class="phase-ref-pill">Datasets §1</span>
+            <span class="phase-ref-pill">Projects §1</span>
           </div>
         </div>
 
-        <div class="footer-col">
-          <h5>Curriculum</h5>
-          <ul>
-            <li><a href="#" onclick="window.AI_ML_APP.switchView('roadmap')">100-Day Roadmap</a></li>
-            <li><a href="#" onclick="window.AI_ML_APP.switchView('routine')">Daily Study Routine</a></li>
-            <li><a href="#" onclick="window.AI_ML_APP.switchView('practice')">Coding Practice Sandbox</a></li>
-            <li><a href="#" onclick="window.AI_ML_APP.switchView('formulas')">Mathematical Formulas</a></li>
-            <li><a href="#" onclick="window.AI_ML_APP.switchView('interview')">Top Interview Questions</a></li>
-          </ul>
+        <div class="phase-card reveal">
+          <div class="phase-header">
+            <span class="phase-tag">Phase 2 · Days 21–40</span>
+            <span class="phase-title">Deep Learning &amp; Computer Vision</span>
+          </div>
+          <p class="phase-desc">Multi-layer perceptrons, backpropagation derivations, optimization (SGD, Adam), CNN architectures (AlexNet, VGG, ResNet), and object detection with PyTorch.</p>
+          <div class="phase-refs">
+            <span class="phase-ref-pill">Books §3, §6</span>
+            <span class="phase-ref-pill">Papers §2, §3</span>
+            <span class="phase-ref-pill">Datasets §2</span>
+            <span class="phase-ref-pill">Projects §3</span>
+          </div>
         </div>
 
-        <div class="footer-col">
-          <h5>Tutorial Portals</h5>
-          <ul>
-            <li><a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener noreferrer">GeeksforGeeks</a></li>
-            <li><a href="https://www.tutorialspoint.com/" target="_blank" rel="noopener noreferrer">TutorialsPoint</a></li>
-            <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
-            <li><a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
-          </ul>
+        <div class="phase-card reveal">
+          <div class="phase-header">
+            <span class="phase-tag">Phase 3 · Days 41–60</span>
+            <span class="phase-title">Sequence Modeling &amp; Transformers</span>
+          </div>
+          <p class="phase-desc">From RNNs and LSTMs to Attention mechanisms. Deep study of "Attention Is All You Need", BERT, GPT-2/3, ViT, and building self-attention from scratch.</p>
+          <div class="phase-refs">
+            <span class="phase-ref-pill">Books §5</span>
+            <span class="phase-ref-pill">Papers §4, §5</span>
+            <span class="phase-ref-pill">Tools §3</span>
+            <span class="phase-ref-pill">Projects §5</span>
+          </div>
         </div>
 
-        <div class="footer-col">
-          <h5>Repository Files</h5>
-          <ul>
-            <li><a href="ROADMAP.md">ROADMAP.md</a></li>
-            <li><a href="Books.md">Books.md</a></li>
-            <li><a href="Projects.md">Projects.md</a></li>
-            <li><a href="CHEATSHEETS.md">CHEATSHEETS.md</a></li>
-          </ul>
+        <div class="phase-card reveal">
+          <div class="phase-header">
+            <span class="phase-tag">Phase 4 · Days 61–80</span>
+            <span class="phase-title">Generative AI, LLMs &amp; Fine-Tuning</span>
+          </div>
+          <p class="phase-desc">Diffusion models (DDPM, Latent Diffusion), Parameter-Efficient Fine-Tuning (LoRA, QLoRA), RLHF, DPO, and building production RAG pipelines with vector databases.</p>
+          <div class="phase-refs">
+            <span class="phase-ref-pill">Books §8</span>
+            <span class="phase-ref-pill">Papers §6, §10</span>
+            <span class="phase-ref-pill">Datasets §10</span>
+            <span class="phase-ref-pill">Projects §8</span>
+          </div>
         </div>
 
+        <div class="phase-card reveal">
+          <div class="phase-header">
+            <span class="phase-tag">Phase 5 · Days 81–100</span>
+            <span class="phase-title">Production MLOps &amp; Interview Mastery</span>
+          </div>
+          <p class="phase-desc">Model serving with FastAPI and vLLM, Dockerization, monitoring, system design for recommendation/search engines, and intensive interview Q&amp;A drills.</p>
+          <div class="phase-refs">
+            <span class="phase-ref-pill">Books §9–10</span>
+            <span class="phase-ref-pill">Interview §1–12</span>
+            <span class="phase-ref-pill">Tools §9</span>
+            <span class="phase-ref-pill">Projects §11</span>
+          </div>
+        </div>
       </div>
 
-      <div class="footer-bottom">
-        <div>
-          Copyright 2026 AI/ML Geeks Portal • Inspired by GeeksforGeeks Educational Aesthetic. All content curated for learning and preparation.
-        </div>
-        <div style="display: flex; gap: 1rem;">
-          <a href="#" onclick="window.AI_ML_APP.exportProgress()">Backup Progress (JSON)</a>
-          <a href="#" onclick="window.AI_ML_APP.resetProgress()">Reset Progress</a>
+      <!-- Recommended Daily Routine -->
+      <div>
+        <div class="routine-box reveal">
+          <h4>Daily Study Protocol</h4>
+          <div class="sub">Structured 4–5 hour daily schedule</div>
+
+          <div class="routine-item">
+            <div class="routine-time">08:00–09:30</div>
+            <div class="routine-task">
+              Core Theory &amp; Foundations
+              <span>Read 1 book chapter (Books.md) and take structured markdown notes on mathematical definitions.</span>
+            </div>
+          </div>
+
+          <div class="routine-item">
+            <div class="routine-time">10:00–12:00</div>
+            <div class="routine-task">
+              Hands-On Coding &amp; Projects
+              <span>Implement the corresponding algorithm from scratch in Python/PyTorch (Projects.md).</span>
+            </div>
+          </div>
+
+          <div class="routine-item">
+            <div class="routine-time">14:00–15:30</div>
+            <div class="routine-task">
+              Seminal Paper Reading
+              <span>Read 1 research paper (ResearchPaper.md), focusing on methodology, ablation studies, and limitations.</span>
+            </div>
+          </div>
+
+          <div class="routine-item">
+            <div class="routine-time">16:30–17:30</div>
+            <div class="routine-task">
+              Interview &amp; Concept Recall
+              <span>Work through 3 technical questions (Interview_Questions.md) and review glossary definitions.</span>
+            </div>
+          </div>
+
+          <div class="routine-item">
+            <div class="routine-time">20:30–21:00</div>
+            <div class="routine-task">
+              Daily Code Commit &amp; Review
+              <span>Commit code and progress log to personal GitHub repository to maintain study consistency.</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Application Scripts -->
-  <script src="js/course-data.js"></script>
-  <script src="js/practice-data.js"></script>
-  <script src="js/formula-data.js"></script>
-  <script src="js/interview-data.js"></script>
-  <script src="js/app.js"></script>
+<!-- HOW TO USE -->
+<section class="section" id="howto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label">How to use this repository</p>
+      <h2>Direct guidance from the curation files</h2>
+      <p>Principles and practical advice assembled directly from the notes, suggested-path sections, and instructions written into the repository.</p>
+    </div>
 
+    <div class="howto-list">
+      <div class="howto-item reveal">
+        <div class="idx">Books.md</div>
+        <h4>Start with math and classic ML</h4>
+        <p>The suggested path opens with Section 1 (Math &amp; Stats Foundations) alongside Section 2 (Classic Machine Learning) across months 1–2, then Sections 3–4 (deep learning foundations and practical engineering) in months 3–4.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">Books.md</div>
+        <h4>Pick a specialty, then go current</h4>
+        <p>Months 5–6 are for choosing NLP (§5), computer vision (§6), or reinforcement learning (§7). Month 7 moves to generative AI and LLMs (§8), which the file flags as most relevant to current industry roles, before MLOps (§9) and theory (§10) from month 8 onward.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">ResearchPaper.md</div>
+        <h4>Read chronologically through the fundamentals</h4>
+        <p>Weeks 1–3 cover Sections 1–3: classic foundations, CNN architectures, and the RNN/LSTM era — establishing the historical build-up to modern deep learning.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">ResearchPaper.md</div>
+        <h4>Prioritize transformers and LLMs</h4>
+        <p>Weeks 4–6 cover Sections 4–5 (attention, transformers, and large language models), which the file calls out as most relevant for AI/ML engineering roles today, before generative models, RL, self-supervision, and multimodal safety work.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">Library Files</div>
+        <h4>Links favor free, permanent sources</h4>
+        <p>Books.md links to author official free versions or open textbooks where one exists; ResearchPaper.md links mostly to direct arXiv PDFs, with older classics linking to their original academic proceedings.</p>
+      </div>
+      <div class="howto-item reveal">
+        <div class="idx">Library Files</div>
+        <h4>Fallback when a link breaks</h4>
+        <p>Each file gives the same instruction: search the title and author (Books.md) or the title on Google Scholar (ResearchPaper.md) rather than assuming the resource is unavailable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTRIBUTE -->
+<section class="section" id="contribute" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="contribute-box reveal">
+      <div>
+        <h3>Open source and community driven</h3>
+        <p>The repository is actively maintained on GitHub. If you find a broken link, wish to propose an additional resource, or suggest curriculum enhancements, contribute directly via issues and pull requests.</p>
+      </div>
+      <a class="btn btn-primary" href="https://github.com/mohdshamii/100" target="_blank" rel="noopener">Explore the repository on GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer role="contentinfo">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="brand-title" style="font-family:var(--serif); font-size:20px; font-weight:600; color:var(--text);">100</div>
+      <p>A comprehensive AI/ML curated library and preparation portal — 900+ resources across 100 books, 100 research papers, datasets, projects, tools, courses, blogs, glossary, and interview questions.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Repository</h5>
+        <a href="https://github.com/mohdshamii/100" target="_blank" rel="noopener">mohdshamii/100</a>
+        <a href="https://github.com/mohdshamii/100/blob/main/README.md" target="_blank" rel="noopener">README.md</a>
+        <a href="https://github.com/mohdshamii/100/commits/main" target="_blank" rel="noopener">Commit History</a>
+      </div>
+      <div class="footer-col">
+        <h5>Core Collections</h5>
+        <a href="https://github.com/mohdshamii/100/blob/main/Books.md" target="_blank" rel="noopener">Books.md</a>
+        <a href="https://github.com/mohdshamii/100/blob/main/ResearchPaper.md" target="_blank" rel="noopener">ResearchPaper.md</a>
+        <a href="https://github.com/mohdshamii/100/blob/main/Datasets.md" target="_blank" rel="noopener">Datasets.md</a>
+        <a href="https://github.com/mohdshamii/100/blob/main/Projects.md" target="_blank" rel="noopener">Projects.md</a>
+      </div>
+      <div class="footer-col">
+        <h5>Reference &amp; Prep</h5>
+        <a href="https://github.com/mohdshamii/100/blob/main/Tools.md" target="_blank" rel="noopener">Tools.md</a>
+        <a href="https://github.com/mohdshamii/100/blob/main/Courses.md" target="_blank" rel="noopener">Courses.md</a>
+        <a href="https://github.com/mohdshamii/100/blob/main/Glossary.md" target="_blank" rel="noopener">Glossary.md</a>
+        <a href="https://github.com/mohdshamii/100/blob/main/Interview_Questions.md" target="_blank" rel="noopener">Interview_Questions.md</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>Built as an interactive companion to the mohdshamii/100 repository. Not affiliated with GitHub.</span>
+    <span>Editorial minimal dark aesthetic with warm amber and teal accents.</span>
+  </div>
+</footer>
+
+<!-- TypeScript Compiled Interactive Engine & Data -->
+<script src="js/repo-data.js"></script>
+<script type="module" src="js/app.js"></script>
 </body>
 </html>
