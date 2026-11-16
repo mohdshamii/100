@@ -1,0 +1,13 @@
+{
+  "name": "100",
+  "version": "1.0.0",
+  "description": "An interactive companion to mohdshamii/100: 100 curated AI/ML books, research papers, datasets, projects, tools, courses, blogs, glossary, interview questions, and roadmap.",
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "start": "npx serve ."
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

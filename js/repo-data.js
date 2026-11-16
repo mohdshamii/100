@@ -1,0 +1,4468 @@
+var REPO_DATA = (typeof window !== "undefined" ? window : globalThis).REPO_DATA = {
+  "books": [
+    {
+      "name": "1. Math & Stats Foundations",
+      "items": [
+        {
+          "title": "Linear Algebra Done Right",
+          "author": "Axler",
+          "url": "https://linear.axler.net/"
+        },
+        {
+          "title": "Introduction to Linear Algebra",
+          "author": "Strang",
+          "url": "https://math.mit.edu/~gs/linearalgebra/"
+        },
+        {
+          "title": "Convex Optimization",
+          "author": "Boyd & Vandenberghe",
+          "url": "https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf"
+        },
+        {
+          "title": "All of Statistics",
+          "author": "Wasserman",
+          "url": "https://link.springer.com/book/10.1007/978-0-387-21736-9"
+        },
+        {
+          "title": "Think Stats",
+          "author": "Downey",
+          "url": "https://greenteapress.com/wp/think-stats-2e/"
+        },
+        {
+          "title": "Think Bayes",
+          "author": "Downey",
+          "url": "https://greenteapress.com/wp/think-bayes/"
+        },
+        {
+          "title": "Probability Theory: The Logic of Science",
+          "author": "Jaynes",
+          "url": "https://bayes.wustl.edu/etj/prob/book.pdf"
+        },
+        {
+          "title": "Introduction to Probability",
+          "author": "Bertsekas & Tsitsiklis",
+          "url": "https://www.athenasc.com/probbook.html"
+        },
+        {
+          "title": "Matrix Computations",
+          "author": "Golub & Van Loan",
+          "url": "https://www.press.jhu.edu/books/title/10678/matrix-computations"
+        },
+        {
+          "title": "Mathematics for Machine Learning",
+          "author": "Deisenroth, Faisal, Ong",
+          "url": "https://mml-book.github.io/"
+        }
+      ]
+    },
+    {
+      "name": "2. Classic Machine Learning",
+      "items": [
+        {
+          "title": "Pattern Recognition and Machine Learning",
+          "author": "Bishop",
+          "url": "https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf"
+        },
+        {
+          "title": "The Elements of Statistical Learning",
+          "author": "Hastie, Tibshirani, Friedman",
+          "url": "https://hastie.su.domains/ElemStatLearn/printings/ESLII_print12_toc.pdf"
+        },
+        {
+          "title": "An Introduction to Statistical Learning",
+          "author": "James, Witten, Hastie, Tibshirani",
+          "url": "https://www.statlearning.com/"
+        },
+        {
+          "title": "Pattern Classification",
+          "author": "Duda, Hart, Stork",
+          "url": "https://www.wiley.com/en-us/Pattern+Classification%2C+2nd+Edition-p-9780471056690"
+        },
+        {
+          "title": "Machine Learning: A Probabilistic Perspective",
+          "author": "Murphy",
+          "url": "https://probml.github.io/pml-book/book0.html"
+        },
+        {
+          "title": "Understanding Machine Learning: From Theory to Algorithms",
+          "author": "Shalev-Shwartz & Ben-David",
+          "url": "https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf"
+        },
+        {
+          "title": "Foundations of Machine Learning",
+          "author": "Mohri, Rostamizadeh, Talwalkar",
+          "url": "https://cs.nyu.edu/~mohri/mlbook/"
+        },
+        {
+          "title": "The Hundred-Page Machine Learning Book",
+          "author": "Burkov",
+          "url": "http://themlbook.com/"
+        },
+        {
+          "title": "Gaussian Processes for Machine Learning",
+          "author": "Rasmussen & Williams",
+          "url": "https://gaussianprocess.org/gpml/"
+        },
+        {
+          "title": "Bayesian Reasoning and Machine Learning",
+          "author": "Barber",
+          "url": "http://web4.cs.ucl.ac.uk/staff/D.Barber/pmwiki/pmwiki.php?n=Brml.HomePage"
+        }
+      ]
+    },
+    {
+      "name": "3. Deep Learning Foundations",
+      "items": [
+        {
+          "title": "Deep Learning",
+          "author": "Goodfellow, Bengio, Courville",
+          "url": "https://www.deeplearningbook.org/"
+        },
+        {
+          "title": "Neural Networks and Deep Learning",
+          "author": "Nielsen",
+          "url": "http://neuralnetworksanddeeplearning.com/"
+        },
+        {
+          "title": "Dive into Deep Learning",
+          "author": "Zhang, Lipton, Li, Smola",
+          "url": "https://d2l.ai/"
+        },
+        {
+          "title": "Deep Learning: Foundations and Concepts",
+          "author": "Bishop & Bishop",
+          "url": "https://www.bishopbook.com/"
+        },
+        {
+          "title": "Grokking Deep Learning",
+          "author": "Trask",
+          "url": "https://www.manning.com/books/grokking-deep-learning"
+        },
+        {
+          "title": "Deep Learning with Python",
+          "author": "Chollet",
+          "url": "https://www.manning.com/books/deep-learning-with-python-second-edition"
+        },
+        {
+          "title": "Deep Learning with PyTorch",
+          "author": "Stevens, Antiga, Viehmann",
+          "url": "https://pytorch.org/assets/deep-learning/Deep-Learning-with-PyTorch.pdf"
+        },
+        {
+          "title": "Deep Learning for Coders with fastai and PyTorch",
+          "author": "Howard & Gugger",
+          "url": "https://github.com/fastai/fastbook"
+        },
+        {
+          "title": "Neural Network Methods for Natural Language Processing",
+          "author": "Goldberg",
+          "url": "https://u.cs.biu.ac.il/~yogo/nnlp.pdf"
+        },
+        {
+          "title": "Deep Learning Illustrated",
+          "author": "Krohn, Beyleveld, Bassens",
+          "url": "https://www.deeplearningillustrated.com/"
+        }
+      ]
+    },
+    {
+      "name": "4. Practical / Applied ML Engineering",
+      "items": [
+        {
+          "title": "Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow",
+          "author": "Géron",
+          "url": "https://github.com/ageron/handson-ml3"
+        },
+        {
+          "title": "Python Machine Learning",
+          "author": "Raschka & Mirjalili",
+          "url": "https://www.packtpub.com/product/python-machine-learning-third-edition/9781789955750"
+        },
+        {
+          "title": "Data Science from Scratch",
+          "author": "Grus",
+          "url": "https://www.oreilly.com/library/view/data-science-from/9781492041122/"
+        },
+        {
+          "title": "Python for Data Analysis",
+          "author": "McKinney",
+          "url": "https://wesmckinney.com/book/"
+        },
+        {
+          "title": "Machine Learning Yearning",
+          "author": "Ng",
+          "url": "https://info.deeplearning.ai/machine-learning-yearning-book"
+        },
+        {
+          "title": "Machine Learning Engineering",
+          "author": "Burkov",
+          "url": "http://www.mlebook.com/"
+        },
+        {
+          "title": "Interpretable Machine Learning",
+          "author": "Molnar",
+          "url": "https://christophm.github.io/interpretable-ml-book/"
+        },
+        {
+          "title": "Building Machine Learning Powered Applications",
+          "author": "Ameisen",
+          "url": "https://www.oreilly.com/library/view/building-machine-learning/9781492045106/"
+        },
+        {
+          "title": "Approaching (Almost) Any Machine Learning Problem",
+          "author": "Thakur",
+          "url": "https://github.com/abhishekkrthakur/approachingalmost"
+        },
+        {
+          "title": "Grokking Algorithms",
+          "author": "Bhargava",
+          "url": "https://www.manning.com/books/grokking-algorithms"
+        }
+      ]
+    },
+    {
+      "name": "5. Natural Language Processing",
+      "items": [
+        {
+          "title": "Speech and Language Processing",
+          "author": "Jurafsky & Martin",
+          "url": "https://web.stanford.edu/~jurafsky/slp3/"
+        },
+        {
+          "title": "Natural Language Processing with Python",
+          "author": "Bird, Klein, Loper",
+          "url": "https://www.nltk.org/book/"
+        },
+        {
+          "title": "Natural Language Processing with Transformers",
+          "author": "Tunstall, von Werra, Wolf",
+          "url": "https://github.com/nlp-with-transformers/notebooks"
+        },
+        {
+          "title": "Introduction to Information Retrieval",
+          "author": "Manning, Raghavan, Schütze",
+          "url": "https://nlp.stanford.edu/IR-book/"
+        },
+        {
+          "title": "Foundations of Statistical Natural Language Processing",
+          "author": "Manning & Schütze",
+          "url": "https://nlp.stanford.edu/fsnlp/"
+        },
+        {
+          "title": "Real-World Natural Language Processing",
+          "author": "Hagiwara",
+          "url": "https://www.manning.com/books/real-world-natural-language-processing"
+        },
+        {
+          "title": "Transfer Learning for Natural Language Processing",
+          "author": "Azunre",
+          "url": "https://www.manning.com/books/transfer-learning-for-natural-language-processing"
+        },
+        {
+          "title": "Practical Natural Language Processing",
+          "author": "Vajjala, Majumder, Gupta, Surana",
+          "url": "https://www.oreilly.com/library/view/practical-natural-language/9781492054047/"
+        }
+      ]
+    },
+    {
+      "name": "6. Computer Vision",
+      "items": [
+        {
+          "title": "Computer Vision: Algorithms and Applications",
+          "author": "Szeliski",
+          "url": "https://szeliski.org/Book/"
+        },
+        {
+          "title": "Multiple View Geometry in Computer Vision",
+          "author": "Hartley & Zisserman",
+          "url": "https://www.robots.ox.ac.uk/~vgg/hzbook/"
+        },
+        {
+          "title": "Deep Learning for Vision Systems",
+          "author": "Elgendy",
+          "url": "https://www.manning.com/books/deep-learning-for-vision-systems"
+        },
+        {
+          "title": "Programming Computer Vision with Python",
+          "author": "Solem",
+          "url": "http://programmingcomputervision.com/"
+        },
+        {
+          "title": "Learning OpenCV",
+          "author": "Bradski & Kaehler",
+          "url": "https://www.oreilly.com/library/view/learning-opencv/9780596516130/"
+        },
+        {
+          "title": "Deep Learning for Computer Vision",
+          "author": "Rosebrock",
+          "url": "https://pyimagesearch.com/deep-learning-computer-vision-python-book/"
+        },
+        {
+          "title": "Generative Deep Learning",
+          "author": "Foster",
+          "url": "https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/"
+        }
+      ]
+    },
+    {
+      "name": "7. Reinforcement Learning",
+      "items": [
+        {
+          "title": "Reinforcement Learning: An Introduction",
+          "author": "Sutton & Barto",
+          "url": "http://incompleteideas.net/book/RLbook2020.pdf"
+        },
+        {
+          "title": "Algorithms for Reinforcement Learning",
+          "author": "Szepesvári",
+          "url": "https://sites.ualberta.ca/~szepesva/rlbook.html"
+        },
+        {
+          "title": "Deep Reinforcement Learning Hands-On",
+          "author": "Lapan",
+          "url": "https://www.packtpub.com/product/deep-reinforcement-learning-hands-on-second-edition/9781838826994"
+        },
+        {
+          "title": "Grokking Deep Reinforcement Learning",
+          "author": "Morales",
+          "url": "https://www.manning.com/books/grokking-deep-reinforcement-learning"
+        },
+        {
+          "title": "Reinforcement Learning and Optimal Control",
+          "author": "Bertsekas",
+          "url": "https://web.mit.edu/dimitrib/www/RLbook.html"
+        },
+        {
+          "title": "Deep Reinforcement Learning in Action",
+          "author": "Zai & Brown",
+          "url": "https://www.manning.com/books/deep-reinforcement-learning-in-action"
+        },
+        {
+          "title": "Multi-Agent Reinforcement Learning",
+          "author": "Albrecht, Christianos, Schäfer",
+          "url": "https://www.marl-book.com/"
+        }
+      ]
+    },
+    {
+      "name": "8. Generative AI & LLMs",
+      "items": [
+        {
+          "title": "Build a Large Language Model (From Scratch)",
+          "author": "Raschka",
+          "url": "https://github.com/rasbt/LLMs-from-scratch"
+        },
+        {
+          "title": "Hands-On Large Language Models",
+          "author": "Alammar & Grootendorst",
+          "url": "https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/"
+        },
+        {
+          "title": "Generative AI with LangChain",
+          "author": "Auffarth",
+          "url": "https://www.packtpub.com/product/generative-ai-with-langchain/9781835083468"
+        },
+        {
+          "title": "Prompt Engineering for Generative AI",
+          "author": "Phoenix & Taylor",
+          "url": "https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/"
+        },
+        {
+          "title": "Designing Large Language Model Applications",
+          "author": "Tam",
+          "url": "https://www.oreilly.com/library/view/designing-large-language/9781098150495/"
+        },
+        {
+          "title": "GANs in Action",
+          "author": "Langr & Bok",
+          "url": "https://www.manning.com/books/gans-in-action"
+        },
+        {
+          "title": "Transformers for Natural Language Processing",
+          "author": "Rothman",
+          "url": "https://www.packtpub.com/product/transformers-for-natural-language-processing-second-edition/9781803247335"
+        },
+        {
+          "title": "AI Engineering",
+          "author": "Huyen",
+          "url": "https://www.oreilly.com/library/view/ai-engineering/9781098166298/"
+        },
+        {
+          "title": "Quick Start Guide to Large Language Models",
+          "author": "Ozdemir",
+          "url": "https://www.informit.com/store/quick-start-guide-to-large-language-models-9780138199197"
+        }
+      ]
+    },
+    {
+      "name": "9. MLOps & Systems",
+      "items": [
+        {
+          "title": "Designing Machine Learning Systems",
+          "author": "Huyen",
+          "url": "https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/"
+        },
+        {
+          "title": "Designing Data-Intensive Applications",
+          "author": "Kleppmann",
+          "url": "https://dataintensive.net/"
+        },
+        {
+          "title": "Machine Learning Design Patterns",
+          "author": "Lakshmanan, Robinson, Munn",
+          "url": "https://www.oreilly.com/library/view/machine-learning-design/9781098115777/"
+        },
+        {
+          "title": "Building Machine Learning Pipelines",
+          "author": "Hapke & Nelson",
+          "url": "https://www.oreilly.com/library/view/building-machine-learning/9781492053187/"
+        },
+        {
+          "title": "Reliable Machine Learning",
+          "author": "Google (Chmielewski et al.)",
+          "url": "https://www.oreilly.com/library/view/reliable-machine-learning/9781098106218/"
+        },
+        {
+          "title": "Practical MLOps",
+          "author": "Ozdemir & Trevino",
+          "url": "https://www.oreilly.com/library/view/practical-mlops/9781098103002/"
+        },
+        {
+          "title": "Machine Learning Systems Design",
+          "author": "Huyen (course notes, free)",
+          "url": "https://huyenchip.com/machine-learning-systems-design/toc.html"
+        },
+        {
+          "title": "Kubeflow for Machine Learning",
+          "author": "Bigelow et al.",
+          "url": "https://www.oreilly.com/library/view/kubeflow-for-machine/9781492050117/"
+        }
+      ]
+    },
+    {
+      "name": "10. Theory & Advanced Topics",
+      "items": [
+        {
+          "title": "Probabilistic Machine Learning: An Introduction",
+          "author": "Murphy",
+          "url": "https://probml.github.io/pml-book/book1.html"
+        },
+        {
+          "title": "Probabilistic Machine Learning: Advanced Topics",
+          "author": "Murphy",
+          "url": "https://probml.github.io/pml-book/book2.html"
+        },
+        {
+          "title": "Information Theory, Inference, and Learning Algorithms",
+          "author": "MacKay",
+          "url": "https://www.inference.org.uk/itprnn/book.pdf"
+        },
+        {
+          "title": "Elements of Information Theory",
+          "author": "Cover & Thomas",
+          "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/047174882X"
+        },
+        {
+          "title": "Probabilistic Graphical Models: Principles and Techniques",
+          "author": "Koller & Friedman",
+          "url": "https://mitpress.mit.edu/9780262013192/probabilistic-graphical-models/"
+        },
+        {
+          "title": "Kernel Methods for Pattern Analysis",
+          "author": "Shawe-Taylor & Cristianini",
+          "url": "https://www.cambridge.org/highereducation/books/kernel-methods-for-pattern-analysis/"
+        },
+        {
+          "title": "Boosting: Foundations and Algorithms",
+          "author": "Schapire & Freund",
+          "url": "https://mitpress.mit.edu/9780262017183/boosting/"
+        },
+        {
+          "title": "Convex Optimization Algorithms",
+          "author": "Bertsekas",
+          "url": "https://web.mit.edu/dimitrib/www/Convex_Optimization_Algorithms.html"
+        },
+        {
+          "title": "Optimization for Machine Learning",
+          "author": "Sra, Nowozin, Wright (eds.)",
+          "url": "https://mitpress.mit.edu/9780262016469/optimization-for-machine-learning/"
+        },
+        {
+          "title": "An Introduction to Optimization on Smooth Manifolds",
+          "author": "Boumal",
+          "url": "https://www.nicolasboumal.net/book/"
+        },
+        {
+          "title": "High-Dimensional Probability",
+          "author": "Vershynin",
+          "url": "https://www.math.uci.edu/~rvershyn/papers/HDP-book/HDP-book.pdf"
+        },
+        {
+          "title": "High-Dimensional Statistics",
+          "author": "Wainwright",
+          "url": "https://www.cambridge.org/core/books/highdimensional-statistics/"
+        },
+        {
+          "title": "Statistical Learning with Sparsity",
+          "author": "Hastie, Tibshirani, Wainwright",
+          "url": "https://hastie.su.domains/StatLearnSparsity/"
+        },
+        {
+          "title": "Causal Inference: The Mixtape",
+          "author": "Cunningham",
+          "url": "https://mixtape.scunning.com/"
+        },
+        {
+          "title": "Causal Inference in Statistics: A Primer",
+          "author": "Pearl, Glymour, Jewell",
+          "url": "https://www.wiley.com/en-us/Causal+Inference+in+Statistics%3A+A+Primer-p-9781119186847"
+        },
+        {
+          "title": "The Book of Why",
+          "author": "Pearl & Mackenzie",
+          "url": "https://www.basicbooks.com/titles/judea-pearl/the-book-of-why/9780465097616/"
+        },
+        {
+          "title": "Artificial Intelligence: A Modern Approach",
+          "author": "Russell & Norvig",
+          "url": "http://aima.cs.berkeley.edu/"
+        },
+        {
+          "title": "Superintelligence: Paths, Dangers, Strategies",
+          "author": "Bostrom",
+          "url": "https://global.oup.com/academic/product/superintelligence-9780198739838"
+        },
+        {
+          "title": "Human Compatible",
+          "author": "Russell",
+          "url": "https://www.penguinrandomhouse.com/books/566677/human-compatible-by-stuart-russell/"
+        },
+        {
+          "title": "The Alignment Problem",
+          "author": "Christian",
+          "url": "https://www.hachettebookgroup.com/titles/brian-christian/the-alignment-problem/9780393635829/"
+        }
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "name": "1. Classic Foundations (Beginner)",
+      "items": [
+        {
+          "authors": "Rosenblatt",
+          "title": "The Perceptron",
+          "year": "1958",
+          "url": "https://psycnet.apa.org/record/1959-09865-001"
+        },
+        {
+          "authors": "Rumelhart, Hinton, Williams",
+          "title": "Learning representations by back-propagating errors",
+          "year": "1986",
+          "url": "https://www.iro.umontreal.ca/~vincentp/ift3395/lectures/backprop_old.pdf"
+        },
+        {
+          "authors": "LeCun et al.",
+          "title": "Gradient-Based Learning Applied to Document Recognition (LeNet-5)",
+          "year": "1998",
+          "url": "http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf"
+        },
+        {
+          "authors": "Cortes & Vapnik",
+          "title": "Support-Vector Networks",
+          "year": "1995",
+          "url": "https://link.springer.com/content/pdf/10.1007/BF00994018.pdf"
+        },
+        {
+          "authors": "Breiman",
+          "title": "Random Forests",
+          "year": "2001",
+          "url": "https://link.springer.com/content/pdf/10.1023/A:1010933404324.pdf"
+        },
+        {
+          "authors": "Hochreiter & Schmidhuber",
+          "title": "Long Short-Term Memory",
+          "year": "1997",
+          "url": "https://www.bioinf.jku.at/publications/older/2604.pdf"
+        },
+        {
+          "authors": "Krizhevsky, Sutskever, Hinton",
+          "title": "ImageNet Classification with Deep CNNs (AlexNet)",
+          "year": "2012",
+          "url": "https://papers.nips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf"
+        },
+        {
+          "authors": "Glorot & Bengio",
+          "title": "Understanding the difficulty of training deep feedforward networks (Xavier Init)",
+          "year": "2010",
+          "url": "https://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf"
+        },
+        {
+          "authors": "Srivastava et al.",
+          "title": "Dropout: A Simple Way to Prevent Overfitting",
+          "year": "2014",
+          "url": "https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf"
+        },
+        {
+          "authors": "Chen & Guestrin",
+          "title": "XGBoost: A Scalable Tree Boosting System",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1603.02754"
+        }
+      ]
+    },
+    {
+      "name": "2. Deep CNN Architectures",
+      "items": [
+        {
+          "authors": "Simonyan & Zisserman",
+          "title": "VGG: Very Deep Convolutional Networks",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1409.1556"
+        },
+        {
+          "authors": "Szegedy et al.",
+          "title": "GoogLeNet / Inception",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1409.4842"
+        },
+        {
+          "authors": "He et al.",
+          "title": "ResNet: Deep Residual Learning",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1512.03385"
+        },
+        {
+          "authors": "Huang et al.",
+          "title": "DenseNet",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1608.06993"
+        },
+        {
+          "authors": "Ioffe & Szegedy",
+          "title": "Batch Normalization",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1502.03167"
+        },
+        {
+          "authors": "He et al.",
+          "title": "He Initialization (PReLU)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1502.01852"
+        },
+        {
+          "authors": "Ba, Kiros, Hinton",
+          "title": "Layer Normalization",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1607.06450"
+        },
+        {
+          "authors": "Howard et al.",
+          "title": "MobileNets",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1704.04861"
+        },
+        {
+          "authors": "Tan & Le",
+          "title": "EfficientNet",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1905.11946"
+        },
+        {
+          "authors": "Zoph & Le",
+          "title": "Neural Architecture Search with Reinforcement Learning",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1611.01578"
+        }
+      ]
+    },
+    {
+      "name": "3. Sequence Models (RNN/LSTM era)",
+      "items": [
+        {
+          "authors": "Cho et al.",
+          "title": "GRU / Encoder-Decoder (RNN Encoder-Decoder)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1406.1078"
+        },
+        {
+          "authors": "Sutskever, Vinyals, Le",
+          "title": "Sequence to Sequence Learning",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1409.3215"
+        },
+        {
+          "authors": "Bahdanau, Cho, Bengio",
+          "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1409.0473"
+        },
+        {
+          "authors": "Kiros et al.",
+          "title": "Skip-Thought Vectors",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1506.06726"
+        },
+        {
+          "authors": "Mikolov et al.",
+          "title": "Efficient Estimation of Word Representations (Word2Vec)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1301.3781"
+        },
+        {
+          "authors": "Pennington, Socher, Manning",
+          "title": "GloVe: Global Vectors for Word Representation",
+          "year": "",
+          "url": "https://nlp.stanford.edu/pubs/glove.pdf"
+        },
+        {
+          "authors": "Peters et al.",
+          "title": "ELMo: Deep Contextualized Word Representations",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1802.05365"
+        },
+        {
+          "authors": "Graves",
+          "title": "Generating Sequences with Recurrent Neural Networks",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1308.0850"
+        }
+      ]
+    },
+    {
+      "name": "4. Attention & Transformers",
+      "items": [
+        {
+          "authors": "Vaswani et al.",
+          "title": "Attention Is All You Need",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1706.03762"
+        },
+        {
+          "authors": "Devlin et al.",
+          "title": "BERT",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1810.04805"
+        },
+        {
+          "authors": "Dai et al.",
+          "title": "Transformer-XL",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1901.02860"
+        },
+        {
+          "authors": "Yang et al.",
+          "title": "XLNet",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1906.08237"
+        },
+        {
+          "authors": "Liu et al.",
+          "title": "RoBERTa",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1907.11692"
+        },
+        {
+          "authors": "Lan et al.",
+          "title": "ALBERT",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1909.11942"
+        },
+        {
+          "authors": "Clark et al.",
+          "title": "ELECTRA",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2003.10555"
+        },
+        {
+          "authors": "Dosovitskiy et al.",
+          "title": "An Image is Worth 16x16 Words (Vision Transformer / ViT)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2010.11929"
+        },
+        {
+          "authors": "Dao et al.",
+          "title": "FlashAttention",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2205.14135"
+        },
+        {
+          "authors": "Raffel et al.",
+          "title": "T5: Exploring the Limits of Transfer Learning",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1910.10683"
+        }
+      ]
+    },
+    {
+      "name": "5. Large Language Models",
+      "items": [
+        {
+          "authors": "Radford et al.",
+          "title": "GPT-1: Improving Language Understanding by Generative Pre-Training",
+          "year": "",
+          "url": "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf"
+        },
+        {
+          "authors": "Radford et al.",
+          "title": "GPT-2",
+          "year": "",
+          "url": "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf"
+        },
+        {
+          "authors": "Brown et al.",
+          "title": "GPT-3: Language Models are Few-Shot Learners",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2005.14165"
+        },
+        {
+          "authors": "OpenAI",
+          "title": "GPT-4 Technical Report",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2303.08774"
+        },
+        {
+          "authors": "Kaplan et al.",
+          "title": "Scaling Laws for Neural Language Models",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2001.08361"
+        },
+        {
+          "authors": "Hoffmann et al.",
+          "title": "Chinchilla: Training Compute-Optimal LLMs",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2203.15556"
+        },
+        {
+          "authors": "Chowdhery et al.",
+          "title": "PaLM",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2204.02311"
+        },
+        {
+          "authors": "Touvron et al.",
+          "title": "LLaMA",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2302.13971"
+        },
+        {
+          "authors": "Touvron et al.",
+          "title": "LLaMA 2",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2307.09288"
+        },
+        {
+          "authors": "Fedus, Zoph, Shazeer",
+          "title": "Switch Transformer (Mixture of Experts)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2101.03961"
+        },
+        {
+          "authors": "Ouyang et al.",
+          "title": "InstructGPT: Training LMs to Follow Instructions with Human Feedback",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2203.02155"
+        },
+        {
+          "authors": "Hu et al.",
+          "title": "LoRA: Low-Rank Adaptation of LLMs",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2106.09685"
+        },
+        {
+          "authors": "Wei et al.",
+          "title": "Chain-of-Thought Prompting",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2201.11903"
+        },
+        {
+          "authors": "Lewis et al.",
+          "title": "RAG: Retrieval-Augmented Generation",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2005.11401"
+        },
+        {
+          "authors": "Wang et al.",
+          "title": "Self-Consistency Improves Chain of Thought Reasoning",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2203.11171"
+        }
+      ]
+    },
+    {
+      "name": "6. Generative Models",
+      "items": [
+        {
+          "authors": "Goodfellow et al.",
+          "title": "Generative Adversarial Networks",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1406.2661"
+        },
+        {
+          "authors": "Radford, Metz, Chintala",
+          "title": "DCGAN",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1511.06434"
+        },
+        {
+          "authors": "Arjovsky et al.",
+          "title": "Wasserstein GAN",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1701.07875"
+        },
+        {
+          "authors": "Karras et al.",
+          "title": "StyleGAN",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1812.04948"
+        },
+        {
+          "authors": "Kingma & Welling",
+          "title": "Auto-Encoding Variational Bayes (VAE)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1312.6114"
+        },
+        {
+          "authors": "van den Oord et al.",
+          "title": "VQ-VAE",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1711.00937"
+        },
+        {
+          "authors": "Ho, Jain, Abbeel",
+          "title": "Denoising Diffusion Probabilistic Models (DDPM)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2006.11239"
+        },
+        {
+          "authors": "Song & Ermon",
+          "title": "Score-Based Generative Modeling",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2011.13456"
+        },
+        {
+          "authors": "Rombach et al.",
+          "title": "High-Resolution Image Synthesis with Latent Diffusion (Stable Diffusion)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2112.10752"
+        },
+        {
+          "authors": "Ramesh et al.",
+          "title": "Zero-Shot Text-to-Image Generation (DALL-E)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2102.12092"
+        },
+        {
+          "authors": "Radford et al.",
+          "title": "CLIP: Learning Transferable Visual Models from Natural Language",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2103.00020"
+        },
+        {
+          "authors": "Saharia et al.",
+          "title": "Imagen",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2205.11487"
+        }
+      ]
+    },
+    {
+      "name": "7. Reinforcement Learning",
+      "items": [
+        {
+          "authors": "Mnih et al.",
+          "title": "Playing Atari with Deep RL (DQN)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1312.5602"
+        },
+        {
+          "authors": "van Hasselt et al.",
+          "title": "Double DQN",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1509.06461"
+        },
+        {
+          "authors": "Mnih et al.",
+          "title": "Asynchronous Methods for Deep RL (A3C)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1602.01783"
+        },
+        {
+          "authors": "Schulman et al.",
+          "title": "Trust Region Policy Optimization (TRPO)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1502.05477"
+        },
+        {
+          "authors": "Schulman et al.",
+          "title": "Proximal Policy Optimization (PPO)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1707.06347"
+        },
+        {
+          "authors": "Lillicrap et al.",
+          "title": "DDPG (Continuous Control)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1509.02971"
+        },
+        {
+          "authors": "Haarnoja et al.",
+          "title": "Soft Actor-Critic",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1801.01290"
+        },
+        {
+          "authors": "Silver et al.",
+          "title": "Mastering the Game of Go without Human Knowledge (AlphaGo Zero)",
+          "year": "",
+          "url": "https://www.nature.com/articles/nature24270"
+        },
+        {
+          "authors": "Silver et al.",
+          "title": "AlphaZero: Mastering Chess and Shogi",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1712.01815"
+        },
+        {
+          "authors": "Schrittwieser et al.",
+          "title": "MuZero",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1911.08265"
+        }
+      ]
+    },
+    {
+      "name": "8. Self-Supervised & Representation Learning",
+      "items": [
+        {
+          "authors": "van den Oord, Li, Vinyals",
+          "title": "Contrastive Predictive Coding",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1807.03748"
+        },
+        {
+          "authors": "He et al.",
+          "title": "Momentum Contrast (MoCo)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1911.05722"
+        },
+        {
+          "authors": "Chen et al.",
+          "title": "SimCLR",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2002.05709"
+        },
+        {
+          "authors": "Grill et al.",
+          "title": "BYOL: Bootstrap Your Own Latent",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2006.07733"
+        },
+        {
+          "authors": "Chen & He",
+          "title": "SimSiam",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2011.10566"
+        },
+        {
+          "authors": "Caron et al.",
+          "title": "DINO: Emerging Properties in Self-Supervised ViT",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2104.14294"
+        },
+        {
+          "authors": "He et al.",
+          "title": "Masked Autoencoders (MAE)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2111.06377"
+        }
+      ]
+    },
+    {
+      "name": "9. Multimodal & Vision-Language",
+      "items": [
+        {
+          "authors": "Alayrac et al.",
+          "title": "Flamingo: a Visual Language Model",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2204.14198"
+        },
+        {
+          "authors": "Li et al.",
+          "title": "BLIP",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2201.12086"
+        },
+        {
+          "authors": "Kirillov et al.",
+          "title": "Segment Anything (SAM)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2304.02643"
+        },
+        {
+          "authors": "Liu et al.",
+          "title": "LLaVA: Visual Instruction Tuning",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2304.08485"
+        },
+        {
+          "authors": "Jia et al.",
+          "title": "ALIGN: Scaling Visual/Vision-Language Representation Learning",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2102.05918"
+        },
+        {
+          "authors": "Yu et al.",
+          "title": "CoCa: Contrastive Captioners",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2205.01917"
+        }
+      ]
+    },
+    {
+      "name": "10. Optimization, Efficiency, Alignment & Safety (Advanced)",
+      "items": [
+        {
+          "authors": "Kingma & Ba",
+          "title": "Adam: A Method for Stochastic Optimization",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1412.6980"
+        },
+        {
+          "authors": "Loshchilov & Hutter",
+          "title": "AdamW: Decoupled Weight Decay Regularization",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1711.05101"
+        },
+        {
+          "authors": "Hinton, Vinyals, Dean",
+          "title": "Distilling the Knowledge in a Neural Network",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1503.02531"
+        },
+        {
+          "authors": "Micikevicius et al.",
+          "title": "Mixed Precision Training",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1710.03740"
+        },
+        {
+          "authors": "Christiano et al.",
+          "title": "Deep RL from Human Preferences (RLHF origin)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/1706.03741"
+        },
+        {
+          "authors": "Bai et al.",
+          "title": "Constitutional AI: Harmlessness from AI Feedback",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2212.08073"
+        },
+        {
+          "authors": "Ganguli et al.",
+          "title": "Red Teaming Language Models",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2209.07858"
+        },
+        {
+          "authors": "Bender et al.",
+          "title": "On the Dangers of Stochastic Parrots",
+          "year": "",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3442188.3445922"
+        },
+        {
+          "authors": "Perez et al.",
+          "title": "Discovering Language Model Behaviors with Model-Written Evaluations",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2212.09251"
+        },
+        {
+          "authors": "Hendrycks et al.",
+          "title": "Measuring Massive Multitask Language Understanding (MMLU)",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2009.03300"
+        },
+        {
+          "authors": "Wei et al.",
+          "title": "Emergent Abilities of Large Language Models",
+          "year": "",
+          "url": "https://arxiv.org/pdf/2206.07682"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "name": "1. Beginner Tabular & Classic ML",
+      "items": [
+        {
+          "name": "Iris",
+          "url": "https://archive.ics.uci.edu/dataset/53/iris"
+        },
+        {
+          "name": "Titanic (Kaggle)",
+          "url": "https://www.kaggle.com/c/titanic"
+        },
+        {
+          "name": "California Housing",
+          "url": "https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset"
+        },
+        {
+          "name": "Wine Quality",
+          "url": "https://archive.ics.uci.edu/dataset/186/wine+quality"
+        },
+        {
+          "name": "Breast Cancer Wisconsin (Diagnostic)",
+          "url": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic"
+        },
+        {
+          "name": "Adult / Census Income",
+          "url": "https://archive.ics.uci.edu/dataset/2/adult"
+        },
+        {
+          "name": "Pima Indians Diabetes",
+          "url": "https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database"
+        },
+        {
+          "name": "Heart Disease (UCI)",
+          "url": "https://archive.ics.uci.edu/dataset/45/heart+disease"
+        },
+        {
+          "name": "Mushroom Classification",
+          "url": "https://archive.ics.uci.edu/dataset/73/mushroom"
+        },
+        {
+          "name": "Bank Marketing",
+          "url": "https://archive.ics.uci.edu/dataset/222/bank+marketing"
+        }
+      ]
+    },
+    {
+      "name": "2. Classic Image Datasets",
+      "items": [
+        {
+          "name": "MNIST",
+          "url": "http://yann.lecun.com/exdb/mnist/"
+        },
+        {
+          "name": "Fashion-MNIST",
+          "url": "https://github.com/zalandoresearch/fashion-mnist"
+        },
+        {
+          "name": "CIFAR-10",
+          "url": "https://www.cs.toronto.edu/~kriz/cifar.html"
+        },
+        {
+          "name": "CIFAR-100",
+          "url": "https://www.cs.toronto.edu/~kriz/cifar.html"
+        },
+        {
+          "name": "SVHN (Street View House Numbers)",
+          "url": "http://ufldl.stanford.edu/housenumbers/"
+        },
+        {
+          "name": "EMNIST",
+          "url": "https://www.nist.gov/itl/products-and-services/emnist-dataset"
+        },
+        {
+          "name": "STL-10",
+          "url": "https://cs.stanford.edu/~acoates/stl10/"
+        },
+        {
+          "name": "ImageNet",
+          "url": "https://www.image-net.org/"
+        },
+        {
+          "name": "Caltech-101 / Caltech-256",
+          "url": "https://data.caltech.edu/records/mzrjq-6wc02"
+        },
+        {
+          "name": "Oxford-IIIT Pet Dataset",
+          "url": "https://www.robots.ox.ac.uk/~vgg/data/pets/"
+        }
+      ]
+    },
+    {
+      "name": "3. Classic NLP / Text",
+      "items": [
+        {
+          "name": "IMDB Movie Reviews (Sentiment)",
+          "url": "https://ai.stanford.edu/~amaas/data/sentiment/"
+        },
+        {
+          "name": "20 Newsgroups",
+          "url": "http://qwone.com/~jason/20Newsgroups/"
+        },
+        {
+          "name": "SMS Spam Collection",
+          "url": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection"
+        },
+        {
+          "name": "Sentiment140",
+          "url": "http://help.sentiment140.com/for-students"
+        },
+        {
+          "name": "AG News",
+          "url": "https://huggingface.co/datasets/ag_news"
+        },
+        {
+          "name": "Yelp Review Full",
+          "url": "https://huggingface.co/datasets/yelp_review_full"
+        },
+        {
+          "name": "Amazon Polarity Reviews",
+          "url": "https://huggingface.co/datasets/amazon_polarity"
+        },
+        {
+          "name": "Reuters-21578",
+          "url": "https://huggingface.co/datasets/reuters21578"
+        }
+      ]
+    },
+    {
+      "name": "4. Kaggle Practice / Structured Data",
+      "items": [
+        {
+          "name": "House Prices: Advanced Regression Techniques",
+          "url": "https://www.kaggle.com/c/house-prices-advanced-regression-techniques"
+        },
+        {
+          "name": "Credit Card Fraud Detection",
+          "url": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud"
+        },
+        {
+          "name": "Telco Customer Churn",
+          "url": "https://www.kaggle.com/datasets/blastchar/telco-customer-churn"
+        },
+        {
+          "name": "HR Analytics (Employee Attrition)",
+          "url": "https://www.kaggle.com/datasets/giripujar/hr-analytics"
+        },
+        {
+          "name": "Black Friday Sales",
+          "url": "https://www.kaggle.com/datasets/sdolezel/black-friday"
+        },
+        {
+          "name": "Store Sales — Time Series Forecasting",
+          "url": "https://www.kaggle.com/c/store-sales-time-series-forecasting"
+        },
+        {
+          "name": "NYC Taxi Trip Duration",
+          "url": "https://www.kaggle.com/c/nyc-taxi-trip-duration"
+        },
+        {
+          "name": "Instacart Market Basket Analysis",
+          "url": "https://www.kaggle.com/c/instacart-market-basket-analysis"
+        }
+      ]
+    },
+    {
+      "name": "5. Time Series",
+      "items": [
+        {
+          "name": "Air Passengers",
+          "url": "https://www.kaggle.com/datasets/rakannimer/air-passengers"
+        },
+        {
+          "name": "M4 Forecasting Competition",
+          "url": "https://github.com/Mcompetitions/M4-methods"
+        },
+        {
+          "name": "Electricity Load Diagrams (2011–2014)",
+          "url": "https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014"
+        },
+        {
+          "name": "Beijing PM2.5 Air Quality",
+          "url": "https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data"
+        },
+        {
+          "name": "UCI Appliances Energy Prediction",
+          "url": "https://archive.ics.uci.edu/dataset/374/appliances+energy+prediction"
+        },
+        {
+          "name": "S&P 500 Stock Data",
+          "url": "https://www.kaggle.com/datasets/camnugent/sandp500"
+        },
+        {
+          "name": "ETT — Electricity Transformer Temperature",
+          "url": "https://github.com/zhouhaoyi/ETDataset"
+        }
+      ]
+    },
+    {
+      "name": "6. Audio / Speech",
+      "items": [
+        {
+          "name": "LibriSpeech",
+          "url": "https://www.openslr.org/12"
+        },
+        {
+          "name": "Common Voice (Mozilla)",
+          "url": "https://commonvoice.mozilla.org/en/datasets"
+        },
+        {
+          "name": "Speech Commands Dataset",
+          "url": "https://www.tensorflow.org/datasets/catalog/speech_commands"
+        },
+        {
+          "name": "UrbanSound8K",
+          "url": "https://urbansounddataset.weebly.com/urbansound8k.html"
+        },
+        {
+          "name": "GTZAN Music Genre",
+          "url": "https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification"
+        },
+        {
+          "name": "VoxCeleb",
+          "url": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/"
+        },
+        {
+          "name": "AudioSet",
+          "url": "https://research.google.com/audioset/"
+        }
+      ]
+    },
+    {
+      "name": "7. Advanced Computer Vision",
+      "items": [
+        {
+          "name": "COCO (Common Objects in Context)",
+          "url": "https://cocodataset.org/"
+        },
+        {
+          "name": "Pascal VOC",
+          "url": "http://host.robots.ox.ac.uk/pascal/VOC/"
+        },
+        {
+          "name": "Cityscapes",
+          "url": "https://www.cityscapes-dataset.com/"
+        },
+        {
+          "name": "ADE20K",
+          "url": "https://groups.csail.mit.edu/vision/datasets/ADE20K/"
+        },
+        {
+          "name": "Open Images",
+          "url": "https://storage.googleapis.com/openimages/web/index.html"
+        },
+        {
+          "name": "KITTI",
+          "url": "https://www.cvlibs.net/datasets/kitti/"
+        },
+        {
+          "name": "WIDER FACE",
+          "url": "http://shuoyang1213.me/WIDERFACE/"
+        },
+        {
+          "name": "CelebA",
+          "url": "https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html"
+        },
+        {
+          "name": "nuScenes (autonomous driving)",
+          "url": "https://www.nuscenes.org/"
+        },
+        {
+          "name": "LVIS",
+          "url": "https://www.lvisdataset.org/"
+        }
+      ]
+    },
+    {
+      "name": "8. Advanced NLP / LLM Pretraining",
+      "items": [
+        {
+          "name": "Common Crawl",
+          "url": "https://commoncrawl.org/"
+        },
+        {
+          "name": "The Pile",
+          "url": "https://pile.eleuther.ai/"
+        },
+        {
+          "name": "C4 (Colossal Clean Crawled Corpus)",
+          "url": "https://huggingface.co/datasets/c4"
+        },
+        {
+          "name": "Wikipedia Dumps",
+          "url": "https://huggingface.co/datasets/wikipedia"
+        },
+        {
+          "name": "BookCorpus",
+          "url": "https://huggingface.co/datasets/bookcorpus"
+        },
+        {
+          "name": "OpenWebText",
+          "url": "https://huggingface.co/datasets/openwebtext"
+        },
+        {
+          "name": "RedPajama",
+          "url": "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T"
+        },
+        {
+          "name": "SQuAD (Question Answering)",
+          "url": "https://rajpurkar.github.io/SQuAD-explorer/"
+        },
+        {
+          "name": "GLUE Benchmark",
+          "url": "https://gluebenchmark.com/"
+        },
+        {
+          "name": "SuperGLUE Benchmark",
+          "url": "https://super.gluebenchmark.com/"
+        }
+      ]
+    },
+    {
+      "name": "9. Multimodal",
+      "items": [
+        {
+          "name": "LAION-5B",
+          "url": "https://laion.ai/blog/laion-5b/"
+        },
+        {
+          "name": "Conceptual Captions",
+          "url": "https://ai.google.com/research/ConceptualCaptions/"
+        },
+        {
+          "name": "Visual Genome",
+          "url": "https://homes.cs.washington.edu/~ranjay/visualgenome/"
+        },
+        {
+          "name": "Flickr30k",
+          "url": "https://shannon.cs.illinois.edu/DenotationGraph/"
+        },
+        {
+          "name": "VQA (Visual Question Answering)",
+          "url": "https://visualqa.org/"
+        },
+        {
+          "name": "WIT (Wikipedia Image Text)",
+          "url": "https://www.tensorflow.org/datasets/catalog/wit"
+        },
+        {
+          "name": "HowTo100M",
+          "url": "https://www.di.ens.fr/willow/research/howto100m/"
+        },
+        {
+          "name": "Kinetics (video action recognition)",
+          "url": "https://www.deepmind.com/open-source/kinetics"
+        }
+      ]
+    },
+    {
+      "name": "10. RLHF, Alignment & Advanced LLM Datasets",
+      "items": [
+        {
+          "name": "Anthropic HH-RLHF",
+          "url": "https://huggingface.co/datasets/Anthropic/hh-rlhf"
+        },
+        {
+          "name": "OpenAI WebGPT Comparisons",
+          "url": "https://huggingface.co/datasets/openai/webgpt_comparisons"
+        },
+        {
+          "name": "OpenAssistant Conversations (OASST1)",
+          "url": "https://huggingface.co/datasets/OpenAssistant/oasst1"
+        },
+        {
+          "name": "Stanford Human Preferences (SHP)",
+          "url": "https://huggingface.co/datasets/stanfordnlp/SHP"
+        },
+        {
+          "name": "Stanford Alpaca Dataset",
+          "url": "https://github.com/tatsu-lab/stanford_alpaca"
+        },
+        {
+          "name": "Databricks Dolly 15k",
+          "url": "https://huggingface.co/datasets/databricks/databricks-dolly-15k"
+        },
+        {
+          "name": "UltraFeedback",
+          "url": "https://huggingface.co/datasets/openbmb/UltraFeedback"
+        },
+        {
+          "name": "LMSYS-Chat-1M",
+          "url": "https://huggingface.co/datasets/lmsys/lmsys-chat-1m"
+        },
+        {
+          "name": "Chatbot Arena Conversations",
+          "url": "https://huggingface.co/datasets/lmsys/chatbot_arena_conversations"
+        },
+        {
+          "name": "Summarize from Human Feedback (OpenAI)",
+          "url": "https://huggingface.co/datasets/openai/summarize_from_feedback"
+        }
+      ]
+    },
+    {
+      "name": "11. Reinforcement Learning Environments",
+      "items": [
+        {
+          "name": "Gymnasium (formerly OpenAI Gym)",
+          "url": "https://gymnasium.farama.org/"
+        },
+        {
+          "name": "Arcade Learning Environment (Atari 2600)",
+          "url": "https://github.com/Farama-Foundation/Arcade-Learning-Environment"
+        },
+        {
+          "name": "MuJoCo",
+          "url": "https://mujoco.org/"
+        },
+        {
+          "name": "DeepMind Control Suite",
+          "url": "https://github.com/google-deepmind/dm_control"
+        },
+        {
+          "name": "StarCraft II Learning Environment (PySC2)",
+          "url": "https://github.com/google-deepmind/pysc2"
+        },
+        {
+          "name": "Procgen Benchmark",
+          "url": "https://github.com/openai/procgen"
+        }
+      ]
+    },
+    {
+      "name": "12. Recommender Systems",
+      "items": [
+        {
+          "name": "MovieLens",
+          "url": "https://grouplens.org/datasets/movielens/"
+        },
+        {
+          "name": "Amazon Product Reviews (recommendation)",
+          "url": "https://nijianmo.github.io/amazon/index.html"
+        },
+        {
+          "name": "Criteo Display Advertising Challenge",
+          "url": "https://www.kaggle.com/c/criteo-display-ad-challenge"
+        },
+        {
+          "name": "Netflix Prize Dataset",
+          "url": "https://archive.org/details/netflix-prize-dataset"
+        },
+        {
+          "name": "Yelp Open Dataset",
+          "url": "https://www.yelp.com/dataset"
+        },
+        {
+          "name": "Last.fm Dataset",
+          "url": "http://millionsongdataset.com/lastfm/"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "1. Foundational ML (Regression & Classification) — Beginner",
+      "items": [
+        {
+          "title": "Predict house prices with linear regression (California Housing dataset)"
+        },
+        {
+          "title": "Predict Titanic survival with logistic regression"
+        },
+        {
+          "title": "Classify iris species with K-Nearest Neighbors"
+        },
+        {
+          "title": "Predict diabetes onset with logistic regression (Pima dataset)"
+        },
+        {
+          "title": "Build a spam classifier with Naive Bayes"
+        },
+        {
+          "title": "Predict wine quality with a decision tree"
+        },
+        {
+          "title": "Customer churn prediction with a random forest"
+        },
+        {
+          "title": "Credit card fraud detection, handling severe class imbalance"
+        },
+        {
+          "title": "Predict loan default risk from applicant data"
+        },
+        {
+          "title": "Customer segmentation with K-means clustering"
+        }
+      ]
+    },
+    {
+      "name": "2. Classic ML Algorithms — Build From Scratch",
+      "items": [
+        {
+          "title": "Implement linear regression from scratch using gradient descent (no sklearn)"
+        },
+        {
+          "title": "Implement logistic regression from scratch"
+        },
+        {
+          "title": "Implement K-means clustering from scratch"
+        },
+        {
+          "title": "Implement a decision tree from scratch"
+        },
+        {
+          "title": "Implement K-Nearest Neighbors from scratch"
+        },
+        {
+          "title": "Implement a single-hidden-layer neural network with just numpy"
+        },
+        {
+          "title": "Build a gradient boosting model with XGBoost/LightGBM on a Kaggle competition"
+        },
+        {
+          "title": "Implement PCA from scratch for dimensionality reduction"
+        },
+        {
+          "title": "Build a stacked/blended ensemble for a Kaggle competition"
+        },
+        {
+          "title": "Implement Naive Bayes from scratch"
+        }
+      ]
+    },
+    {
+      "name": "3. Computer Vision",
+      "items": [
+        {
+          "title": "Handwritten digit classifier on MNIST with a simple CNN"
+        },
+        {
+          "title": "Fashion item classifier on Fashion-MNIST"
+        },
+        {
+          "title": "Cat vs. dog classifier using transfer learning"
+        },
+        {
+          "title": "Face detection app with OpenCV (Haar cascades)"
+        },
+        {
+          "title": "Image segmentation with U-Net on a small dataset"
+        },
+        {
+          "title": "Object detection on a custom dataset with YOLO"
+        },
+        {
+          "title": "Image captioning model (CNN encoder + Transformer/RNN decoder)"
+        },
+        {
+          "title": "Neural style transfer app"
+        },
+        {
+          "title": "Facial emotion recognition system"
+        },
+        {
+          "title": "Fine-tune a Vision Transformer (ViT) on a custom classification task"
+        }
+      ]
+    },
+    {
+      "name": "4. Natural Language Processing",
+      "items": [
+        {
+          "title": "Sentiment analysis on IMDB reviews with TF-IDF + logistic regression"
+        },
+        {
+          "title": "Spam/ham text classifier"
+        },
+        {
+          "title": "Named entity recognition with spaCy"
+        },
+        {
+          "title": "Extractive text summarizer"
+        },
+        {
+          "title": "Rule-based / intent-matching chatbot"
+        },
+        {
+          "title": "Fine-tune BERT for sentiment classification"
+        },
+        {
+          "title": "Question-answering system using a pretrained model on SQuAD"
+        },
+        {
+          "title": "Topic modeling on news articles with LDA"
+        },
+        {
+          "title": "Text generation with an LSTM language model"
+        },
+        {
+          "title": "Fine-tune a transformer for abstractive summarization"
+        }
+      ]
+    },
+    {
+      "name": "5. Deep Learning Internals — Build From Scratch",
+      "items": [
+        {
+          "title": "Neural network from scratch (numpy only) to classify MNIST"
+        },
+        {
+          "title": "Manual backpropagation implementation, verified with gradient checking"
+        },
+        {
+          "title": "CNN built from scratch (no framework) for a small image dataset"
+        },
+        {
+          "title": "Implement dropout and batch normalization from scratch"
+        },
+        {
+          "title": "Autoencoder for image denoising"
+        },
+        {
+          "title": "Variational Autoencoder (VAE) for MNIST digit generation"
+        },
+        {
+          "title": "LSTM cell implemented from scratch"
+        },
+        {
+          "title": "Minimal Transformer encoder from scratch, trained on a toy sequence task"
+        }
+      ]
+    },
+    {
+      "name": "6. Time Series & Forecasting",
+      "items": [
+        {
+          "title": "Forecast airline passenger counts with ARIMA"
+        },
+        {
+          "title": "Stock price prediction with an LSTM"
+        },
+        {
+          "title": "Electricity demand forecasting with Prophet"
+        },
+        {
+          "title": "Multivariate weather forecasting model"
+        },
+        {
+          "title": "Anomaly detection in sensor time series data"
+        },
+        {
+          "title": "Retail demand forecasting (Kaggle Store Sales competition)"
+        },
+        {
+          "title": "Temporal Fusion Transformer for multi-horizon forecasting"
+        }
+      ]
+    },
+    {
+      "name": "7. Recommender Systems",
+      "items": [
+        {
+          "title": "Movie recommender with collaborative filtering (MovieLens)"
+        },
+        {
+          "title": "Content-based recommender using TF-IDF/cosine similarity"
+        },
+        {
+          "title": "Matrix factorization (SVD) for recommendations"
+        },
+        {
+          "title": "Hybrid recommender combining collaborative + content-based signals"
+        },
+        {
+          "title": "Real-time recommendation API served with FastAPI"
+        },
+        {
+          "title": "Session-based recommender using RNNs"
+        }
+      ]
+    },
+    {
+      "name": "8. Generative Models",
+      "items": [
+        {
+          "title": "DCGAN to generate handwritten digits (MNIST)"
+        },
+        {
+          "title": "GAN for generating faces (CelebA)"
+        },
+        {
+          "title": "Conditional GAN (cGAN) for class-controlled generation"
+        },
+        {
+          "title": "Image-to-image translation with CycleGAN or Pix2Pix"
+        },
+        {
+          "title": "Train a simple diffusion model on a small image dataset"
+        },
+        {
+          "title": "Fine-tune Stable Diffusion on a custom style/subject with DreamBooth or LoRA"
+        },
+        {
+          "title": "Text-to-image generation demo using a pretrained diffusion model"
+        },
+        {
+          "title": "Music generation model with an RNN/Transformer"
+        }
+      ]
+    },
+    {
+      "name": "9. LLMs & Fine-Tuning",
+      "items": [
+        {
+          "title": "Fine-tune GPT-2 on a custom text corpus"
+        },
+        {
+          "title": "Fine-tune BERT for a custom text classification task"
+        },
+        {
+          "title": "Instruction-tune an open-source LLM (LLaMA/Mistral) with LoRA"
+        },
+        {
+          "title": "Fine-tune an LLM with QLoRA for memory-efficient training on consumer GPUs"
+        },
+        {
+          "title": "Train a custom tokenizer and a small language model from scratch"
+        },
+        {
+          "title": "Fine-tune an LLM for domain-specific code generation"
+        },
+        {
+          "title": "Preference-tune a small model with DPO (RLHF-style, no RL loop needed)"
+        },
+        {
+          "title": "Build an evaluation harness comparing a fine-tuned model against its base"
+        },
+        {
+          "title": "Distill a large LLM into a smaller student model"
+        },
+        {
+          "title": "Fine-tune a multimodal model (e.g., LLaVA) on custom image-text pairs"
+        }
+      ]
+    },
+    {
+      "name": "10. RAG, Agents & LLM Applications",
+      "items": [
+        {
+          "title": "Basic RAG pipeline over a PDF using LangChain/LlamaIndex + a vector DB"
+        },
+        {
+          "title": "RAG chatbot over your own notes or documents"
+        },
+        {
+          "title": "RAG system with hybrid search (keyword + vector retrieval)"
+        },
+        {
+          "title": "Multi-document RAG system with citation tracking"
+        },
+        {
+          "title": "Web-browsing agent that can research and answer questions"
+        },
+        {
+          "title": "Tool-using agent (calculator, search, code execution) via function calling"
+        },
+        {
+          "title": "Multi-agent system where agents collaborate on a task (e.g., research + writing)"
+        },
+        {
+          "title": "RAG-powered customer support bot with a feedback/correction loop"
+        }
+      ]
+    },
+    {
+      "name": "11. MLOps & Deployment",
+      "items": [
+        {
+          "title": "Deploy a trained model as a REST API with FastAPI or Flask"
+        },
+        {
+          "title": "Containerize an ML model with Docker"
+        },
+        {
+          "title": "CI/CD pipeline for automated model training and deployment"
+        },
+        {
+          "title": "Experiment tracking setup with MLflow or Weights & Biases"
+        },
+        {
+          "title": "Model monitoring dashboard for data/concept drift"
+        },
+        {
+          "title": "Deploy a model to a managed cloud service (SageMaker, Vertex AI, etc.)"
+        },
+        {
+          "title": "Build a feature store for a real-time ML application"
+        },
+        {
+          "title": "End-to-end pipeline: data ingestion → training → deployment → monitoring"
+        }
+      ]
+    },
+    {
+      "name": "12. Reinforcement Learning",
+      "items": [
+        {
+          "title": "Solve CartPole with tabular Q-learning"
+        },
+        {
+          "title": "Train a Deep Q-Network (DQN) to play an Atari game"
+        },
+        {
+          "title": "Train a PPO agent for continuous control (MuJoCo/Gymnasium)"
+        },
+        {
+          "title": "Design a custom game environment and train an RL agent to solve it"
+        },
+        {
+          "title": "Train a multi-agent RL system for a cooperative or competitive game"
+        },
+        {
+          "title": "**Weeks 1–4:** §1–2 — get the ML fundamentals and intuition for what's under the hood"
+        },
+        {
+          "title": "**Weeks 5–8:** §3–4 — pick vision or NLP (or both) and build real projects"
+        },
+        {
+          "title": "**Weeks 9–10:** §5 — implement core deep learning pieces from scratch for deeper understanding"
+        },
+        {
+          "title": "**Weeks 11–13:** §6–7 — forecasting and recommenders round out practical skills"
+        },
+        {
+          "title": "**Weeks 14–16:** §8–9 — generative models and LLM fine-tuning, the core of current AI engineering work"
+        },
+        {
+          "title": "**Weeks 17–18:** §10 — RAG and agentic applications, the most in-demand LLM-application skill"
+        },
+        {
+          "title": "**Weeks 19–20:** §11 — MLOps, so your projects are deployable, not just notebooks"
+        },
+        {
+          "title": "**Ongoing:** §12 — RL projects as a specialization track if relevant to your target role"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "1. Core Python & Data Handling",
+      "items": [
+        {
+          "name": "NumPy",
+          "url": "https://numpy.org/"
+        },
+        {
+          "name": "Pandas",
+          "url": "https://pandas.pydata.org/"
+        },
+        {
+          "name": "Polars",
+          "url": "https://pola.rs/"
+        },
+        {
+          "name": "Matplotlib",
+          "url": "https://matplotlib.org/"
+        },
+        {
+          "name": "Seaborn",
+          "url": "https://seaborn.pydata.org/"
+        },
+        {
+          "name": "Jupyter",
+          "url": "https://jupyter.org/"
+        },
+        {
+          "name": "SciPy",
+          "url": "https://scipy.org/"
+        },
+        {
+          "name": "Plotly",
+          "url": "https://plotly.com/python/"
+        },
+        {
+          "name": "DuckDB",
+          "url": "https://duckdb.org/"
+        },
+        {
+          "name": "Dask",
+          "url": "https://www.dask.org/"
+        }
+      ]
+    },
+    {
+      "name": "2. Classic Machine Learning",
+      "items": [
+        {
+          "name": "scikit-learn",
+          "url": "https://scikit-learn.org/"
+        },
+        {
+          "name": "XGBoost",
+          "url": "https://xgboost.readthedocs.io/"
+        },
+        {
+          "name": "LightGBM",
+          "url": "https://lightgbm.readthedocs.io/"
+        },
+        {
+          "name": "CatBoost",
+          "url": "https://catboost.ai/"
+        },
+        {
+          "name": "Statsmodels",
+          "url": "https://www.statsmodels.org/"
+        },
+        {
+          "name": "Optuna (hyperparameter optimization)",
+          "url": "https://optuna.org/"
+        },
+        {
+          "name": "Imbalanced-learn",
+          "url": "https://imbalanced-learn.org/"
+        },
+        {
+          "name": "SHAP (model explainability)",
+          "url": "https://shap.readthedocs.io/"
+        },
+        {
+          "name": "Yellowbrick (ML visualization)",
+          "url": "https://www.scikit-yb.org/"
+        },
+        {
+          "name": "Feature-engine",
+          "url": "https://feature-engine.trainindata.com/"
+        }
+      ]
+    },
+    {
+      "name": "3. Deep Learning Frameworks",
+      "items": [
+        {
+          "name": "PyTorch",
+          "url": "https://pytorch.org/"
+        },
+        {
+          "name": "TensorFlow",
+          "url": "https://www.tensorflow.org/"
+        },
+        {
+          "name": "JAX",
+          "url": "https://jax.readthedocs.io/"
+        },
+        {
+          "name": "Keras",
+          "url": "https://keras.io/"
+        },
+        {
+          "name": "PyTorch Lightning",
+          "url": "https://lightning.ai/docs/pytorch/stable/"
+        },
+        {
+          "name": "fastai",
+          "url": "https://www.fast.ai/"
+        },
+        {
+          "name": "Flax (JAX neural network library)",
+          "url": "https://flax.readthedocs.io/"
+        },
+        {
+          "name": "Haiku (DeepMind's JAX library)",
+          "url": "https://dm-haiku.readthedocs.io/"
+        }
+      ]
+    },
+    {
+      "name": "4. NLP & LLM Tooling",
+      "items": [
+        {
+          "name": "Hugging Face Transformers",
+          "url": "https://huggingface.co/docs/transformers/"
+        },
+        {
+          "name": "Hugging Face Datasets",
+          "url": "https://huggingface.co/docs/datasets/"
+        },
+        {
+          "name": "Hugging Face Tokenizers",
+          "url": "https://huggingface.co/docs/tokenizers/"
+        },
+        {
+          "name": "spaCy",
+          "url": "https://spacy.io/"
+        },
+        {
+          "name": "NLTK",
+          "url": "https://www.nltk.org/"
+        },
+        {
+          "name": "Gensim",
+          "url": "https://radimrehurek.com/gensim/"
+        },
+        {
+          "name": "LangChain",
+          "url": "https://www.langchain.com/"
+        },
+        {
+          "name": "LlamaIndex",
+          "url": "https://www.llamaindex.ai/"
+        },
+        {
+          "name": "Sentence-Transformers",
+          "url": "https://www.sbert.net/"
+        },
+        {
+          "name": "PEFT — parameter-efficient fine-tuning (LoRA, etc.)",
+          "url": "https://huggingface.co/docs/peft/"
+        },
+        {
+          "name": "TRL — Transformer Reinforcement Learning (RLHF/DPO)",
+          "url": "https://huggingface.co/docs/trl/"
+        },
+        {
+          "name": "Guidance (structured LLM output control)",
+          "url": "https://github.com/guidance-ai/guidance"
+        }
+      ]
+    },
+    {
+      "name": "5. Computer Vision",
+      "items": [
+        {
+          "name": "OpenCV",
+          "url": "https://opencv.org/"
+        },
+        {
+          "name": "torchvision",
+          "url": "https://pytorch.org/vision/stable/index.html"
+        },
+        {
+          "name": "Detectron2",
+          "url": "https://github.com/facebookresearch/detectron2"
+        },
+        {
+          "name": "Albumentations (image augmentation)",
+          "url": "https://albumentations.ai/"
+        },
+        {
+          "name": "MMDetection",
+          "url": "https://github.com/open-mmlab/mmdetection"
+        },
+        {
+          "name": "Ultralytics YOLO",
+          "url": "https://www.ultralytics.com/"
+        },
+        {
+          "name": "Kornia (differentiable CV)",
+          "url": "https://kornia.github.io/"
+        },
+        {
+          "name": "Pillow",
+          "url": "https://python-pillow.org/"
+        }
+      ]
+    },
+    {
+      "name": "6. Experiment Tracking & Visualization",
+      "items": [
+        {
+          "name": "Weights & Biases",
+          "url": "https://wandb.ai/"
+        },
+        {
+          "name": "MLflow",
+          "url": "https://mlflow.org/"
+        },
+        {
+          "name": "TensorBoard",
+          "url": "https://www.tensorflow.org/tensorboard"
+        },
+        {
+          "name": "Neptune.ai",
+          "url": "https://neptune.ai/"
+        },
+        {
+          "name": "Comet",
+          "url": "https://www.comet.com/"
+        },
+        {
+          "name": "DVC — Data Version Control",
+          "url": "https://dvc.org/"
+        },
+        {
+          "name": "ClearML",
+          "url": "https://clear.ml/"
+        }
+      ]
+    },
+    {
+      "name": "7. Data Engineering & Pipelines",
+      "items": [
+        {
+          "name": "Apache Airflow",
+          "url": "https://airflow.apache.org/"
+        },
+        {
+          "name": "Prefect",
+          "url": "https://www.prefect.io/"
+        },
+        {
+          "name": "Apache Spark",
+          "url": "https://spark.apache.org/"
+        },
+        {
+          "name": "Apache Kafka",
+          "url": "https://kafka.apache.org/"
+        },
+        {
+          "name": "dbt",
+          "url": "https://www.getdbt.com/"
+        },
+        {
+          "name": "Great Expectations (data validation)",
+          "url": "https://greatexpectations.io/"
+        },
+        {
+          "name": "Feast (feature store)",
+          "url": "https://feast.dev/"
+        },
+        {
+          "name": "Dagster",
+          "url": "https://dagster.io/"
+        }
+      ]
+    },
+    {
+      "name": "8. Vector Databases & Retrieval",
+      "items": [
+        {
+          "name": "FAISS",
+          "url": "https://github.com/facebookresearch/faiss"
+        },
+        {
+          "name": "Pinecone",
+          "url": "https://www.pinecone.io/"
+        },
+        {
+          "name": "Chroma",
+          "url": "https://www.trychroma.com/"
+        },
+        {
+          "name": "Weaviate",
+          "url": "https://weaviate.io/"
+        },
+        {
+          "name": "Milvus",
+          "url": "https://milvus.io/"
+        },
+        {
+          "name": "Qdrant",
+          "url": "https://qdrant.tech/"
+        },
+        {
+          "name": "Elasticsearch (with vector search)",
+          "url": "https://www.elastic.co/elasticsearch"
+        }
+      ]
+    },
+    {
+      "name": "9. Model Serving & Inference",
+      "items": [
+        {
+          "name": "vLLM (high-throughput LLM serving)",
+          "url": "https://github.com/vllm-project/vllm"
+        },
+        {
+          "name": "Text Generation Inference (TGI)",
+          "url": "https://github.com/huggingface/text-generation-inference"
+        },
+        {
+          "name": "NVIDIA Triton Inference Server",
+          "url": "https://developer.nvidia.com/triton-inference-server"
+        },
+        {
+          "name": "ONNX Runtime",
+          "url": "https://onnxruntime.ai/"
+        },
+        {
+          "name": "TensorRT",
+          "url": "https://developer.nvidia.com/tensorrt"
+        },
+        {
+          "name": "BentoML",
+          "url": "https://www.bentoml.com/"
+        },
+        {
+          "name": "TorchServe",
+          "url": "https://pytorch.org/serve/"
+        },
+        {
+          "name": "Ollama (local LLM runner)",
+          "url": "https://ollama.com/"
+        },
+        {
+          "name": "llama.cpp",
+          "url": "https://github.com/ggerganov/llama.cpp"
+        },
+        {
+          "name": "FastAPI (serving models as APIs)",
+          "url": "https://fastapi.tiangolo.com/"
+        }
+      ]
+    },
+    {
+      "name": "10. Distributed Training & Scaling",
+      "items": [
+        {
+          "name": "Ray",
+          "url": "https://www.ray.io/"
+        },
+        {
+          "name": "Horovod",
+          "url": "https://horovod.ai/"
+        },
+        {
+          "name": "DeepSpeed",
+          "url": "https://www.deepspeed.ai/"
+        },
+        {
+          "name": "Accelerate (Hugging Face)",
+          "url": "https://huggingface.co/docs/accelerate/"
+        },
+        {
+          "name": "FairScale",
+          "url": "https://github.com/facebookresearch/fairscale"
+        },
+        {
+          "name": "Megatron-LM",
+          "url": "https://github.com/NVIDIA/Megatron-LM"
+        },
+        {
+          "name": "Dask Distributed",
+          "url": "https://distributed.dask.org/"
+        },
+        {
+          "name": "PyTorch Distributed (DDP/torchrun)",
+          "url": "https://pytorch.org/tutorials/beginner/dist_overview.html"
+        }
+      ]
+    },
+    {
+      "name": "11. MLOps, Deployment & Infrastructure",
+      "items": [
+        {
+          "name": "Docker",
+          "url": "https://www.docker.com/"
+        },
+        {
+          "name": "Kubernetes",
+          "url": "https://kubernetes.io/"
+        },
+        {
+          "name": "Kubeflow",
+          "url": "https://www.kubeflow.org/"
+        },
+        {
+          "name": "Seldon Core",
+          "url": "https://www.seldon.io/solutions/open-source-projects/core"
+        },
+        {
+          "name": "AWS SageMaker",
+          "url": "https://aws.amazon.com/sagemaker/"
+        },
+        {
+          "name": "Google Vertex AI",
+          "url": "https://cloud.google.com/vertex-ai"
+        },
+        {
+          "name": "Terraform",
+          "url": "https://www.terraform.io/"
+        },
+        {
+          "name": "GitHub Actions (CI/CD for ML)",
+          "url": "https://github.com/features/actions"
+        }
+      ]
+    },
+    {
+      "name": "12. Demos, Dev Tools & Misc",
+      "items": [
+        {
+          "name": "Streamlit",
+          "url": "https://streamlit.io/"
+        },
+        {
+          "name": "Gradio",
+          "url": "https://www.gradio.app/"
+        },
+        {
+          "name": "Pydantic (data validation, widely used in ML APIs)",
+          "url": "https://docs.pydantic.dev/"
+        },
+        {
+          "name": "uv (fast Python package/dependency manager)",
+          "url": "https://github.com/astral-sh/uv"
+        }
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "name": "1. Math Foundations",
+      "items": [
+        {
+          "title": "MIT 18.06 Linear Algebra (Gilbert Strang)",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/"
+        },
+        {
+          "title": "MIT 18.02 Multivariable Calculus",
+          "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/"
+        },
+        {
+          "title": "Khan Academy — Linear Algebra",
+          "url": "https://www.khanacademy.org/math/linear-algebra"
+        },
+        {
+          "title": "Khan Academy — Statistics and Probability",
+          "url": "https://www.khanacademy.org/math/statistics-probability"
+        },
+        {
+          "title": "MIT 6.041 Probabilistic Systems Analysis",
+          "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/"
+        },
+        {
+          "title": "3Blue1Brown — Essence of Linear Algebra",
+          "url": "https://www.3blue1brown.com/topics/linear-algebra"
+        },
+        {
+          "title": "3Blue1Brown — Essence of Calculus",
+          "url": "https://www.3blue1brown.com/topics/calculus"
+        },
+        {
+          "title": "Stanford CS109 Probability for Computer Scientists",
+          "url": "https://web.stanford.edu/class/cs109/"
+        },
+        {
+          "title": "MIT 6.006 Introduction to Algorithms",
+          "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        },
+        {
+          "title": "Stanford EE364A Convex Optimization (Boyd)",
+          "url": "https://web.stanford.edu/class/ee364a/"
+        }
+      ]
+    },
+    {
+      "name": "2. Programming & CS Foundations",
+      "items": [
+        {
+          "title": "CS50: Introduction to Computer Science (Harvard)",
+          "url": "https://cs50.harvard.edu/x/"
+        },
+        {
+          "title": "MIT 6.0001 Intro to CS and Programming in Python",
+          "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/"
+        },
+        {
+          "title": "Berkeley CS61A Structure and Interpretation of Computer Programs",
+          "url": "https://cs61a.org/"
+        },
+        {
+          "title": "freeCodeCamp — Python for Everybody",
+          "url": "https://www.freecodecamp.org/"
+        },
+        {
+          "title": "Stanford CS103 Discrete Mathematics",
+          "url": "https://web.stanford.edu/class/archive/cs/cs103/cs103.1236/"
+        },
+        {
+          "title": "Google's Python Class",
+          "url": "https://developers.google.com/edu/python"
+        },
+        {
+          "title": "MIT 6.005 Software Construction",
+          "url": "https://ocw.mit.edu/courses/6-005-software-construction-spring-2016/"
+        },
+        {
+          "title": "Full Stack Deep Learning — free lecture series",
+          "url": "https://fullstackdeeplearning.com/"
+        }
+      ]
+    },
+    {
+      "name": "3. Classic Machine Learning",
+      "items": [
+        {
+          "title": "Stanford CS229 Machine Learning (Andrew Ng)",
+          "url": "https://cs229.stanford.edu/"
+        },
+        {
+          "title": "Machine Learning Specialization (Andrew Ng, Coursera, free audit)",
+          "url": "https://www.coursera.org/specializations/machine-learning-introduction"
+        },
+        {
+          "title": "Caltech \"Learning From Data\" (Yaser Abu-Mostafa)",
+          "url": "https://work.caltech.edu/telecourse.html"
+        },
+        {
+          "title": "StatQuest with Josh Starmer (YouTube)",
+          "url": "https://www.youtube.com/@statquest"
+        },
+        {
+          "title": "MIT 6.036 Introduction to Machine Learning",
+          "url": "https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/"
+        },
+        {
+          "title": "Google Machine Learning Crash Course",
+          "url": "https://developers.google.com/machine-learning/crash-course"
+        },
+        {
+          "title": "Kaggle Learn — Intro to Machine Learning",
+          "url": "https://www.kaggle.com/learn/intro-to-machine-learning"
+        },
+        {
+          "title": "UC Berkeley CS189 Machine Learning",
+          "url": "https://people.eecs.berkeley.edu/~jrs/189/"
+        },
+        {
+          "title": "Cornell CS4780 Machine Learning for Intelligent Systems",
+          "url": "https://www.cs.cornell.edu/courses/cs4780/2018fa/"
+        },
+        {
+          "title": "DeepLearning.AI Machine Learning Specialization lectures",
+          "url": "https://www.deeplearning.ai/courses/machine-learning-specialization/"
+        }
+      ]
+    },
+    {
+      "name": "4. Deep Learning",
+      "items": [
+        {
+          "title": "fast.ai — Practical Deep Learning for Coders",
+          "url": "https://course.fast.ai/"
+        },
+        {
+          "title": "Deep Learning Specialization (Andrew Ng, Coursera, free audit)",
+          "url": "https://www.coursera.org/specializations/deep-learning"
+        },
+        {
+          "title": "MIT 6.S191 Introduction to Deep Learning",
+          "url": "http://introtodeeplearning.com/"
+        },
+        {
+          "title": "Stanford CS230 Deep Learning",
+          "url": "https://cs230.stanford.edu/"
+        },
+        {
+          "title": "NYU Deep Learning (Yann LeCun & Alfredo Canziani)",
+          "url": "https://atcold.github.io/NYU-DLSP21/"
+        },
+        {
+          "title": "Andrej Karpathy — Neural Networks: Zero to Hero",
+          "url": "https://karpathy.ai/zero-to-hero.html"
+        },
+        {
+          "title": "Deep Learning with PyTorch: Zero to GANs (freeCodeCamp/Jovian)",
+          "url": "https://www.freecodecamp.org/news/deep-learning-with-pytorch-zero-to-gans-video-course/"
+        },
+        {
+          "title": "Berkeley CS182 Deep Learning",
+          "url": "https://cs182sp21.github.io/"
+        },
+        {
+          "title": "fast.ai — Practical Deep Learning Part 2 (foundations)",
+          "url": "https://course.fast.ai/Lessons/part2.html"
+        },
+        {
+          "title": "DeepMind x UCL Deep Learning Lecture Series",
+          "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs"
+        }
+      ]
+    },
+    {
+      "name": "5. Natural Language Processing",
+      "items": [
+        {
+          "title": "Stanford CS224n NLP with Deep Learning",
+          "url": "http://web.stanford.edu/class/cs224n/"
+        },
+        {
+          "title": "Hugging Face NLP Course",
+          "url": "https://huggingface.co/learn/nlp-course"
+        },
+        {
+          "title": "CMU CS11-747 Neural Networks for NLP",
+          "url": "http://phontron.com/class/nn4nlp2021/"
+        },
+        {
+          "title": "fast.ai — A Code-First Intro to Natural Language Processing",
+          "url": "https://www.fast.ai/posts/2019-07-08-fastai-nlp.html"
+        },
+        {
+          "title": "Oxford Deep NLP Course",
+          "url": "https://github.com/oxford-cs-deepnlp-2017/lectures"
+        },
+        {
+          "title": "spaCy — Advanced NLP with spaCy (free interactive course)",
+          "url": "https://course.spacy.io/en/"
+        },
+        {
+          "title": "Stanford — Speech and Language Processing lecture companion",
+          "url": "https://web.stanford.edu/~jurafsky/slp3/"
+        },
+        {
+          "title": "Natural Language Processing Specialization (DeepLearning.AI, Coursera, free audit)",
+          "url": "https://www.coursera.org/specializations/natural-language-processing"
+        }
+      ]
+    },
+    {
+      "name": "6. Computer Vision",
+      "items": [
+        {
+          "title": "Stanford CS231n Convolutional Neural Networks for Visual Recognition",
+          "url": "http://cs231n.stanford.edu/"
+        },
+        {
+          "title": "Columbia — First Principles of Computer Vision",
+          "url": "https://fpcv.cs.columbia.edu/"
+        },
+        {
+          "title": "PyImageSearch — free tutorials",
+          "url": "https://pyimagesearch.com/"
+        },
+        {
+          "title": "Michigan EECS 498 Deep Learning for Computer Vision (Justin Johnson)",
+          "url": "https://web.eecs.umich.edu/~justincj/teaching/eecs498/"
+        },
+        {
+          "title": "fast.ai — Practical Deep Learning (covers CV extensively)",
+          "url": "https://course.fast.ai/"
+        },
+        {
+          "title": "MIT 6.869 Advances in Computer Vision",
+          "url": "https://ocw.mit.edu/courses/6-869-advances-in-computer-vision-fall-2009/"
+        },
+        {
+          "title": "OpenCV — free courses",
+          "url": "https://opencv.org/courses/"
+        },
+        {
+          "title": "UC Berkeley CS280 Computer Vision",
+          "url": "https://inst.eecs.berkeley.edu/~cs280/sp18/"
+        }
+      ]
+    },
+    {
+      "name": "7. Reinforcement Learning",
+      "items": [
+        {
+          "title": "David Silver's Reinforcement Learning Course (UCL/DeepMind)",
+          "url": "https://www.davidsilver.uk/teaching/"
+        },
+        {
+          "title": "Stanford CS234 Reinforcement Learning",
+          "url": "https://web.stanford.edu/class/cs234/"
+        },
+        {
+          "title": "UC Berkeley CS285 Deep Reinforcement Learning",
+          "url": "https://rail.eecs.berkeley.edu/deeprlcourse/"
+        },
+        {
+          "title": "Hugging Face Deep RL Course",
+          "url": "https://huggingface.co/learn/deep-rl-course"
+        },
+        {
+          "title": "DeepMind x UCL Reinforcement Learning Lecture Series",
+          "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZBiG_XpjnPrSNw-1XQaM_gB"
+        },
+        {
+          "title": "OpenAI — Spinning Up in Deep RL",
+          "url": "https://spinningup.openai.com/"
+        }
+      ]
+    },
+    {
+      "name": "8. LLMs & Generative AI",
+      "items": [
+        {
+          "title": "Stanford CS324 Large Language Models",
+          "url": "https://stanford-cs324.github.io/winter2022/"
+        },
+        {
+          "title": "Andrej Karpathy — Let's Build GPT From Scratch (YouTube)",
+          "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY"
+        },
+        {
+          "title": "DeepLearning.AI Short Courses (LangChain, prompt engineering, RAG, agents, etc.)",
+          "url": "https://www.deeplearning.ai/short-courses/"
+        },
+        {
+          "title": "Hugging Face NLP Course, LLM chapters",
+          "url": "https://huggingface.co/learn/nlp-course/chapter1/1"
+        },
+        {
+          "title": "Full Stack LLM Bootcamp",
+          "url": "https://fullstackdeeplearning.com/llm-bootcamp/"
+        },
+        {
+          "title": "Stanford CS25 Transformers United",
+          "url": "https://web.stanford.edu/class/cs25/"
+        },
+        {
+          "title": "MIT — Introduction to Data-Centric AI",
+          "url": "https://dcai.csail.mit.edu/"
+        },
+        {
+          "title": "Princeton COS 597G Understanding Large Language Models",
+          "url": "https://www.cs.princeton.edu/courses/archive/fall22/cos597G/"
+        },
+        {
+          "title": "Berkeley CS294 Large Language Model Agents",
+          "url": "https://llmagents-learning.org/f24"
+        },
+        {
+          "title": "DAIR.AI — Prompt Engineering Guide (free course)",
+          "url": "https://www.promptingguide.ai/"
+        }
+      ]
+    },
+    {
+      "name": "9. MLOps & Deployment",
+      "items": [
+        {
+          "title": "Full Stack Deep Learning — MLOps course",
+          "url": "https://fullstackdeeplearning.com/course/"
+        },
+        {
+          "title": "Made With ML — MLOps course (Goku Mohandas)",
+          "url": "https://madewithml.com/"
+        },
+        {
+          "title": "Google Cloud — MLOps Fundamentals",
+          "url": "https://www.cloudskillsboost.google/course_templates/158"
+        },
+        {
+          "title": "AWS Machine Learning Foundations (free)",
+          "url": "https://aws.amazon.com/training/learn-about/machine-learning/"
+        },
+        {
+          "title": "Machine Learning Engineering for Production (MLOps) Specialization (DeepLearning.AI, free audit)",
+          "url": "https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops"
+        },
+        {
+          "title": "Kubeflow — official tutorials",
+          "url": "https://www.kubeflow.org/docs/started/"
+        }
+      ]
+    },
+    {
+      "name": "10. YouTube Channels & Series",
+      "items": [
+        {
+          "title": "3Blue1Brown — Neural Networks series",
+          "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
+        },
+        {
+          "title": "StatQuest with Josh Starmer",
+          "url": "https://www.youtube.com/@statquest"
+        },
+        {
+          "title": "Two Minute Papers",
+          "url": "https://www.youtube.com/@TwoMinutePapers"
+        },
+        {
+          "title": "Yannic Kilcher — paper explanations",
+          "url": "https://www.youtube.com/@YannicKilcher"
+        },
+        {
+          "title": "Andrej Karpathy's YouTube channel",
+          "url": "https://www.youtube.com/@AndrejKarpathy"
+        },
+        {
+          "title": "sentdex — Machine Learning tutorials",
+          "url": "https://www.youtube.com/@sentdex"
+        },
+        {
+          "title": "Lex Fridman — AI lectures and interviews",
+          "url": "https://www.youtube.com/@lexfridman"
+        },
+        {
+          "title": "Jeremy Howard's lectures (fast.ai)",
+          "url": "https://www.youtube.com/@howardjeremyp"
+        },
+        {
+          "title": "Google DeepMind's YouTube channel",
+          "url": "https://www.youtube.com/@Google_DeepMind"
+        },
+        {
+          "title": "Weights & Biases — tutorials and paper reading groups",
+          "url": "https://www.youtube.com/@WeightsBiases"
+        }
+      ]
+    },
+    {
+      "name": "11. General AI & Data Science MOOCs",
+      "items": [
+        {
+          "title": "AI For Everyone (Andrew Ng, Coursera, free audit)",
+          "url": "https://www.coursera.org/learn/ai-for-everyone"
+        },
+        {
+          "title": "edX MITx — Introduction to Computational Thinking and Data Science",
+          "url": "https://www.edx.org/learn/computer-science/massachusetts-institute-of-technology-introduction-to-computational-thinking-and-data-science"
+        },
+        {
+          "title": "Google AI — free education resources",
+          "url": "https://ai.google/education/"
+        },
+        {
+          "title": "Kaggle Learn — full micro-course catalog",
+          "url": "https://www.kaggle.com/learn"
+        },
+        {
+          "title": "IBM Data Science Professional Certificate (edX/Coursera, free audit)",
+          "url": "https://www.edx.org/professional-certificate/ibm-data-science"
+        },
+        {
+          "title": "Elements of AI (University of Helsinki, free)",
+          "url": "https://www.elementsofai.com/"
+        },
+        {
+          "title": "DataCamp — free introductory courses",
+          "url": "https://www.datacamp.com/courses-all?price=free"
+        },
+        {
+          "title": "freeCodeCamp — Machine Learning with Python",
+          "url": "https://www.freecodecamp.org/learn/machine-learning-with-python/"
+        }
+      ]
+    },
+    {
+      "name": "12. Specialized & Advanced Topics",
+      "items": [
+        {
+          "title": "Stanford CS236 Deep Generative Models",
+          "url": "https://deepgenerativemodels.github.io/"
+        },
+        {
+          "title": "MIT — TinyML and Efficient Deep Learning Computing",
+          "url": "https://efficientml.ai/"
+        },
+        {
+          "title": "Stanford CS330 Deep Multi-Task and Meta Learning",
+          "url": "https://cs330.stanford.edu/"
+        },
+        {
+          "title": "Berkeley CS294-158 Deep Unsupervised Learning",
+          "url": "https://sites.google.com/view/berkeley-cs294-158-sp24/home"
+        },
+        {
+          "title": "Stanford CS236 companion — Score-Based Generative Modeling lecture notes (see CS236 site above) / MIT 9.520 Statistical Learning Theory",
+          "url": "https://www.mit.edu/~9.520/"
+        },
+        {
+          "title": "NYU Center for Data Science — Deep Learning lecture recordings (Yann LeCun)",
+          "url": "https://cds.nyu.edu/deep-learning/"
+        }
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "name": "1. Research Lab Blogs",
+      "items": [
+        {
+          "name": "OpenAI",
+          "url": "https://openai.com/news/"
+        },
+        {
+          "name": "Anthropic",
+          "url": "https://www.anthropic.com/news"
+        },
+        {
+          "name": "Google DeepMind",
+          "url": "https://deepmind.google/discover/blog/"
+        },
+        {
+          "name": "Google Research",
+          "url": "https://research.google/blog/"
+        },
+        {
+          "name": "Meta AI",
+          "url": "https://ai.meta.com/blog/"
+        },
+        {
+          "name": "Microsoft Research",
+          "url": "https://www.microsoft.com/en-us/research/blog/"
+        },
+        {
+          "name": "NVIDIA (deep learning blog)",
+          "url": "https://blogs.nvidia.com/blog/category/deep-learning/"
+        },
+        {
+          "name": "Amazon Science",
+          "url": "https://www.amazon.science/blog"
+        },
+        {
+          "name": "Apple Machine Learning Research",
+          "url": "https://machinelearning.apple.com/"
+        },
+        {
+          "name": "Allen Institute for AI (AI2)",
+          "url": "https://allenai.org/blog"
+        }
+      ]
+    },
+    {
+      "name": "2. Company Engineering Blogs (applied ML in production)",
+      "items": [
+        {
+          "name": "Netflix Tech Blog",
+          "url": "https://netflixtechblog.com/"
+        },
+        {
+          "name": "Uber Engineering Blog",
+          "url": "https://www.uber.com/blog/engineering/"
+        },
+        {
+          "name": "Airbnb Engineering & Data Science",
+          "url": "https://medium.com/airbnb-engineering"
+        },
+        {
+          "name": "Spotify Engineering",
+          "url": "https://engineering.atspotify.com/"
+        },
+        {
+          "name": "Pinterest Engineering",
+          "url": "https://medium.com/pinterest-engineering"
+        },
+        {
+          "name": "LinkedIn Engineering",
+          "url": "https://engineering.linkedin.com/blog"
+        },
+        {
+          "name": "Stripe Engineering",
+          "url": "https://stripe.com/blog/engineering"
+        },
+        {
+          "name": "Instacart Tech Blog",
+          "url": "https://tech.instacart.com/"
+        },
+        {
+          "name": "DoorDash Engineering",
+          "url": "https://doordash.engineering/"
+        },
+        {
+          "name": "Shopify Engineering",
+          "url": "https://shopify.engineering/"
+        }
+      ]
+    },
+    {
+      "name": "3. Independent Researcher & Practitioner Blogs",
+      "items": [
+        {
+          "name": "Lil'Log (Lilian Weng)",
+          "url": "https://lilianweng.github.io/"
+        },
+        {
+          "name": "Jay Alammar — The Illustrated series",
+          "url": "https://jalammar.github.io/"
+        },
+        {
+          "name": "Sebastian Raschka",
+          "url": "https://sebastianraschka.com/blog/"
+        },
+        {
+          "name": "Chip Huyen",
+          "url": "https://huyenchip.com/blog/"
+        },
+        {
+          "name": "Andrej Karpathy",
+          "url": "https://karpathy.github.io/"
+        },
+        {
+          "name": "Distill.pub (archived, still one of the best visual explainer archives)",
+          "url": "https://distill.pub/"
+        },
+        {
+          "name": "Colah's Blog (Christopher Olah)",
+          "url": "https://colah.github.io/"
+        },
+        {
+          "name": "Eugene Yan",
+          "url": "https://eugeneyan.com/"
+        },
+        {
+          "name": "Simon Willison's Weblog",
+          "url": "https://simonwillison.net/"
+        },
+        {
+          "name": "Chris Albon",
+          "url": "https://chrisalbon.com/"
+        },
+        {
+          "name": "Rachel Thomas (fast.ai)",
+          "url": "https://rachel.fast.ai/"
+        },
+        {
+          "name": "Sasha Rush",
+          "url": "https://rush-nlp.com/"
+        }
+      ]
+    },
+    {
+      "name": "4. Newsletters",
+      "items": [
+        {
+          "name": "Import AI (Jack Clark)",
+          "url": "https://importai.substack.com/"
+        },
+        {
+          "name": "The Batch (DeepLearning.AI)",
+          "url": "https://www.deeplearning.ai/the-batch/"
+        },
+        {
+          "name": "TLDR AI",
+          "url": "https://tldr.tech/ai"
+        },
+        {
+          "name": "Ben's Bites",
+          "url": "https://www.bensbites.com/"
+        },
+        {
+          "name": "The Neuron",
+          "url": "https://www.theneurondaily.com/"
+        },
+        {
+          "name": "AlphaSignal",
+          "url": "https://alphasignal.ai/"
+        },
+        {
+          "name": "Last Week in AI",
+          "url": "https://lastweekin.ai/"
+        },
+        {
+          "name": "Data Elixir",
+          "url": "https://dataelixir.com/"
+        },
+        {
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/"
+        },
+        {
+          "name": "Interconnects (Nathan Lambert)",
+          "url": "https://www.interconnects.ai/"
+        },
+        {
+          "name": "AI Weekly",
+          "url": "https://aiweekly.co/"
+        },
+        {
+          "name": "Deep Learning Weekly",
+          "url": "https://www.deeplearningweekly.com/"
+        }
+      ]
+    },
+    {
+      "name": "5. Explainer & Educational Sites",
+      "items": [
+        {
+          "name": "Machine Learning Mastery (Jason Brownlee)",
+          "url": "https://machinelearningmastery.com/"
+        },
+        {
+          "name": "Towards Data Science",
+          "url": "https://towardsdatascience.com/"
+        },
+        {
+          "name": "Papers with Code",
+          "url": "https://paperswithcode.com/"
+        },
+        {
+          "name": "The Gradient",
+          "url": "https://thegradient.pub/"
+        },
+        {
+          "name": "KDnuggets",
+          "url": "https://www.kdnuggets.com/"
+        },
+        {
+          "name": "Analytics Vidhya",
+          "url": "https://www.analyticsvidhya.com/blog/"
+        },
+        {
+          "name": "Made With ML",
+          "url": "https://madewithml.com/"
+        },
+        {
+          "name": "Full Stack Deep Learning Blog",
+          "url": "https://fullstackdeeplearning.com/blog/"
+        }
+      ]
+    },
+    {
+      "name": "6. People to Follow — Researchers",
+      "items": [
+        {
+          "name": "Yann LeCun",
+          "url": "https://twitter.com/ylecun"
+        },
+        {
+          "name": "Geoffrey Hinton",
+          "url": "https://www.cs.toronto.edu/~hinton/"
+        },
+        {
+          "name": "Yoshua Bengio",
+          "url": "https://yoshuabengio.org/"
+        },
+        {
+          "name": "Ilya Sutskever",
+          "url": "https://twitter.com/ilyasut"
+        },
+        {
+          "name": "Andrej Karpathy",
+          "url": "https://twitter.com/karpathy"
+        },
+        {
+          "name": "Fei-Fei Li",
+          "url": "https://twitter.com/drfeifei"
+        },
+        {
+          "name": "Andrew Ng",
+          "url": "https://twitter.com/AndrewYNg"
+        },
+        {
+          "name": "Sebastian Ruder",
+          "url": "https://www.ruder.io/"
+        },
+        {
+          "name": "Chelsea Finn",
+          "url": "https://ai.stanford.edu/~cbfinn/"
+        },
+        {
+          "name": "Percy Liang",
+          "url": "https://cs.stanford.edu/~pliang/"
+        },
+        {
+          "name": "Jim Fan",
+          "url": "https://twitter.com/DrJimFan"
+        },
+        {
+          "name": "Noam Shazeer",
+          "url": "https://twitter.com/NoamShazeer"
+        }
+      ]
+    },
+    {
+      "name": "7. People to Follow — Engineers & Practitioners",
+      "items": [
+        {
+          "name": "Simon Willison",
+          "url": "https://twitter.com/simonw"
+        },
+        {
+          "name": "Eugene Yan",
+          "url": "https://twitter.com/eugeneyan"
+        },
+        {
+          "name": "Chip Huyen",
+          "url": "https://twitter.com/chipro"
+        },
+        {
+          "name": "Santiago Valdarrama",
+          "url": "https://twitter.com/svpino"
+        },
+        {
+          "name": "Jeremy Howard",
+          "url": "https://twitter.com/jeremyphoward"
+        },
+        {
+          "name": "Sebastian Raschka",
+          "url": "https://twitter.com/rasbt"
+        },
+        {
+          "name": "Nathan Lambert",
+          "url": "https://twitter.com/natolambert"
+        },
+        {
+          "name": "swyx (Shawn Wang)",
+          "url": "https://www.swyx.io/"
+        }
+      ]
+    },
+    {
+      "name": "8. Podcasts",
+      "items": [
+        {
+          "name": "Lex Fridman Podcast",
+          "url": "https://lexfridman.com/podcast/"
+        },
+        {
+          "name": "The TWIML AI Podcast",
+          "url": "https://twimlai.com/podcast/twimlai/"
+        },
+        {
+          "name": "Practical AI",
+          "url": "https://changelog.com/practicalai"
+        },
+        {
+          "name": "Latent Space Podcast",
+          "url": "https://www.latent.space/podcast"
+        },
+        {
+          "name": "Machine Learning Street Talk",
+          "url": "https://www.youtube.com/@MachineLearningStreetTalk"
+        },
+        {
+          "name": "Gradient Dissent (Weights & Biases)",
+          "url": "https://wandb.ai/site/podcast"
+        },
+        {
+          "name": "No Priors",
+          "url": "https://www.no-priors.com/"
+        },
+        {
+          "name": "Dwarkesh Podcast",
+          "url": "https://www.dwarkeshpatel.com/podcast"
+        }
+      ]
+    },
+    {
+      "name": "9. Community & Forums",
+      "items": [
+        {
+          "name": "r/MachineLearning (Reddit)",
+          "url": "https://www.reddit.com/r/MachineLearning/"
+        },
+        {
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/"
+        },
+        {
+          "name": "Hugging Face Forums",
+          "url": "https://discuss.huggingface.co/"
+        },
+        {
+          "name": "Kaggle Discussions",
+          "url": "https://www.kaggle.com/discussions"
+        },
+        {
+          "name": "AI Alignment Forum",
+          "url": "https://www.alignmentforum.org/"
+        },
+        {
+          "name": "LessWrong",
+          "url": "https://www.lesswrong.com/"
+        },
+        {
+          "name": "EleutherAI Community",
+          "url": "https://www.eleuther.ai/"
+        },
+        {
+          "name": "MLOps Community",
+          "url": "https://mlops.community/"
+        }
+      ]
+    },
+    {
+      "name": "10. Policy, Safety & Alignment",
+      "items": [
+        {
+          "name": "Anthropic Research (alignment-focused)",
+          "url": "https://www.anthropic.com/research"
+        },
+        {
+          "name": "80,000 Hours — AI safety career content",
+          "url": "https://80000hours.org/problem-profiles/artificial-intelligence/"
+        },
+        {
+          "name": "Center for AI Safety",
+          "url": "https://www.safe.ai/blog"
+        },
+        {
+          "name": "Future of Life Institute",
+          "url": "https://futureoflife.org/"
+        },
+        {
+          "name": "AI Now Institute",
+          "url": "https://ainowinstitute.org/"
+        },
+        {
+          "name": "Stanford HAI (Human-Centered AI Institute)",
+          "url": "https://hai.stanford.edu/news"
+        }
+      ]
+    },
+    {
+      "name": "11. Aggregators & Paper Trackers",
+      "items": [
+        {
+          "name": "arXiv Sanity Lite",
+          "url": "https://arxiv-sanity-lite.com/"
+        },
+        {
+          "name": "Semantic Scholar",
+          "url": "https://www.semanticscholar.org/"
+        },
+        {
+          "name": "Google Scholar",
+          "url": "https://scholar.google.com/"
+        },
+        {
+          "name": "Connected Papers",
+          "url": "https://www.connectedpapers.com/"
+        },
+        {
+          "name": "Hugging Face Papers",
+          "url": "https://huggingface.co/papers"
+        },
+        {
+          "name": "@_akhaliq on X — daily paper digests",
+          "url": "https://twitter.com/_akhaliq"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "name": "1. Basic ML Concepts",
+      "items": [
+        {
+          "term": "Model",
+          "definition": "A function (with learned parameters) that maps inputs to predictions."
+        },
+        {
+          "term": "Training",
+          "definition": "The process of adjusting a model's parameters using data so its predictions improve."
+        },
+        {
+          "term": "Feature",
+          "definition": "An individual measurable input variable used to make a prediction (e.g., a house's square footage)."
+        },
+        {
+          "term": "Label / Target",
+          "definition": "The correct answer a model is trying to predict during supervised training."
+        },
+        {
+          "term": "Supervised learning",
+          "definition": "Learning from labeled examples (input-output pairs)."
+        },
+        {
+          "term": "Unsupervised learning",
+          "definition": "Finding patterns or structure in data that has no labels."
+        },
+        {
+          "term": "Overfitting",
+          "definition": "When a model learns the training data too specifically, including its noise, and performs worse on new data."
+        },
+        {
+          "term": "Underfitting",
+          "definition": "When a model is too simple to capture the underlying pattern, performing poorly even on training data."
+        },
+        {
+          "term": "Generalization",
+          "definition": "A model's ability to perform well on new, unseen data, not just the data it was trained on."
+        },
+        {
+          "term": "Inference",
+          "definition": "Using a trained model to make a prediction on new input."
+        }
+      ]
+    },
+    {
+      "name": "2. Math & Stats Terms",
+      "items": [
+        {
+          "term": "Gradient",
+          "definition": "The vector of partial derivatives showing the direction of steepest increase of a function; used to know which way to adjust parameters."
+        },
+        {
+          "term": "Loss function",
+          "definition": "A function that measures how wrong a model's predictions are; training tries to minimize it."
+        },
+        {
+          "term": "Derivative",
+          "definition": "A measure of how much a function's output changes as its input changes slightly."
+        },
+        {
+          "term": "Probability distribution",
+          "definition": "A description of how likely each possible outcome of a random variable is."
+        },
+        {
+          "term": "Variance",
+          "definition": "A measure of how spread out a set of values is from their average."
+        },
+        {
+          "term": "Bias (statistical)",
+          "definition": "A systematic error that causes predictions to consistently miss the true value in a particular direction."
+        },
+        {
+          "term": "Matrix multiplication",
+          "definition": "An operation combining two matrices, central to how neural network layers transform data."
+        },
+        {
+          "term": "Vector embedding",
+          "definition": "A list of numbers representing an object (word, image, etc.) in a way that captures its meaning or features, so similar objects end up close together numerically."
+        },
+        {
+          "term": "Cosine similarity",
+          "definition": "A measure of how similar two vectors are, based on the angle between them rather than their magnitude."
+        },
+        {
+          "term": "Dot product",
+          "definition": "A single number computed by multiplying corresponding elements of two vectors and summing the results; used in similarity and attention calculations."
+        }
+      ]
+    },
+    {
+      "name": "3. Classic ML Terms",
+      "items": [
+        {
+          "term": "Linear regression",
+          "definition": "A model that predicts a continuous value as a weighted sum of input features."
+        },
+        {
+          "term": "Logistic regression",
+          "definition": "A model that predicts the probability of a binary outcome using a sigmoid function."
+        },
+        {
+          "term": "Decision tree",
+          "definition": "A model that makes predictions by following a series of yes/no questions about the input features."
+        },
+        {
+          "term": "Random forest",
+          "definition": "A collection of decision trees trained on different random subsets of data, combined for a more robust prediction."
+        },
+        {
+          "term": "Gradient boosting",
+          "definition": "A technique that builds models sequentially, each one correcting the errors of the ones before it."
+        },
+        {
+          "term": "K-Nearest Neighbors (KNN)",
+          "definition": "A model that predicts based on the majority label (or average value) of the closest data points to a query."
+        },
+        {
+          "term": "Support Vector Machine (SVM)",
+          "definition": "A model that finds the boundary that best separates classes with the widest possible margin."
+        },
+        {
+          "term": "Clustering",
+          "definition": "Grouping similar data points together without using labels."
+        },
+        {
+          "term": "Dimensionality reduction",
+          "definition": "Reducing the number of input variables while preserving as much important information as possible."
+        },
+        {
+          "term": "Feature engineering",
+          "definition": "The process of creating or transforming input variables to help a model learn better."
+        }
+      ]
+    },
+    {
+      "name": "4. Deep Learning Terms",
+      "items": [
+        {
+          "term": "Neural network",
+          "definition": "A model made of layers of interconnected \"neurons\" that transform input data through weighted connections and nonlinear functions."
+        },
+        {
+          "term": "Neuron / Unit",
+          "definition": "A single computational node in a neural network that combines inputs and applies an activation function."
+        },
+        {
+          "term": "Activation function",
+          "definition": "A nonlinear function (like ReLU or sigmoid) applied after a layer's weighted sum, allowing the network to model complex patterns."
+        },
+        {
+          "term": "Backpropagation",
+          "definition": "The algorithm used to compute how much each weight in a network contributed to the error, so it can be updated."
+        },
+        {
+          "term": "Epoch",
+          "definition": "One complete pass through the entire training dataset."
+        },
+        {
+          "term": "Batch",
+          "definition": "A subset of training data processed together before the model's weights are updated."
+        },
+        {
+          "term": "Convolutional Neural Network (CNN)",
+          "definition": "A network architecture that uses filters sliding over input data (typically images) to detect local patterns like edges and textures."
+        },
+        {
+          "term": "Recurrent Neural Network (RNN)",
+          "definition": "A network architecture designed for sequential data, where information from previous steps influences the processing of the current step."
+        },
+        {
+          "term": "Dropout",
+          "definition": "A regularization technique that randomly disables a fraction of neurons during training to prevent overfitting."
+        },
+        {
+          "term": "Batch normalization",
+          "definition": "A technique that normalizes the inputs to a layer across a batch, stabilizing and speeding up training."
+        }
+      ]
+    },
+    {
+      "name": "5. Training & Optimization Terms",
+      "items": [
+        {
+          "term": "Learning rate",
+          "definition": "A number controlling how big a step the optimizer takes when updating parameters."
+        },
+        {
+          "term": "Optimizer",
+          "definition": "The algorithm (e.g., SGD, Adam) that updates a model's parameters based on gradients."
+        },
+        {
+          "term": "Stochastic Gradient Descent (SGD)",
+          "definition": "An optimization method that updates parameters using the gradient computed from a small batch of data rather than the whole dataset."
+        },
+        {
+          "term": "Regularization",
+          "definition": "Any technique that discourages a model from becoming too complex, to improve generalization."
+        },
+        {
+          "term": "Early stopping",
+          "definition": "Halting training once performance on a held-out validation set stops improving, to avoid overfitting."
+        },
+        {
+          "term": "Vanishing gradient",
+          "definition": "A problem where gradients become extremely small as they're propagated backward through many layers, stalling learning."
+        },
+        {
+          "term": "Exploding gradient",
+          "definition": "The opposite problem: gradients grow uncontrollably large, destabilizing training."
+        },
+        {
+          "term": "Learning rate schedule",
+          "definition": "A plan for changing the learning rate over the course of training, often starting high and decreasing."
+        }
+      ]
+    },
+    {
+      "name": "6. NLP & Transformer Terms",
+      "items": [
+        {
+          "term": "Tokenization",
+          "definition": "Splitting text into smaller units (words, subwords, or characters) that a model can process."
+        },
+        {
+          "term": "Embedding",
+          "definition": "A learned numerical vector representation of a token, word, or piece of data."
+        },
+        {
+          "term": "Attention",
+          "definition": "A mechanism that lets a model weigh how much focus to give different parts of the input when producing each output."
+        },
+        {
+          "term": "Self-attention",
+          "definition": "Attention applied within a single sequence, letting each token look at every other token in that same sequence."
+        },
+        {
+          "term": "Transformer",
+          "definition": "A neural network architecture built primarily on self-attention layers, now the dominant architecture for language (and increasingly vision) models."
+        },
+        {
+          "term": "Positional encoding",
+          "definition": "Information added to token embeddings so a Transformer, which has no inherent sense of order, knows the sequence position of each token."
+        },
+        {
+          "term": "Encoder",
+          "definition": "The part of a model that processes an input sequence into a representation, used in understanding-focused tasks."
+        },
+        {
+          "term": "Decoder",
+          "definition": "The part of a model that generates an output sequence, typically one token at a time, used in generation tasks."
+        },
+        {
+          "term": "Context window",
+          "definition": "The maximum number of tokens a model can consider at once when generating a response."
+        },
+        {
+          "term": "Word embedding",
+          "definition": "A vector representation of a word such that words with similar meaning are located close together in the vector space."
+        }
+      ]
+    },
+    {
+      "name": "7. LLM-Specific Terms",
+      "items": [
+        {
+          "term": "Large Language Model (LLM)",
+          "definition": "A very large neural network, typically Transformer-based, trained on massive text corpora to understand and generate language."
+        },
+        {
+          "term": "Pretraining",
+          "definition": "The initial phase of training a model on a large, general dataset before it's specialized for a task."
+        },
+        {
+          "term": "Fine-tuning",
+          "definition": "Further training a pretrained model on a smaller, task-specific dataset to adapt it."
+        },
+        {
+          "term": "Prompt",
+          "definition": "The input text given to a language model to elicit a desired response."
+        },
+        {
+          "term": "Prompt engineering",
+          "definition": "The practice of carefully crafting prompts to get better or more reliable outputs from a language model."
+        },
+        {
+          "term": "In-context learning",
+          "definition": "A model's ability to perform a new task just from examples given in the prompt, without updating its weights."
+        },
+        {
+          "term": "Chain-of-thought prompting",
+          "definition": "A prompting technique that asks the model to reason step by step before giving a final answer, often improving accuracy on complex tasks."
+        },
+        {
+          "term": "LoRA (Low-Rank Adaptation)",
+          "definition": "A fine-tuning method that trains small additional matrices instead of the full model, drastically reducing compute and memory needs."
+        },
+        {
+          "term": "Quantization",
+          "definition": "Reducing the numerical precision of a model's weights (e.g., from 32-bit to 8-bit or 4-bit) to make it smaller and faster, usually with a small accuracy cost."
+        },
+        {
+          "term": "RLHF (Reinforcement Learning from Human Feedback)",
+          "definition": "A training method that uses human preference comparisons to align a model's outputs with what people actually want."
+        },
+        {
+          "term": "Hallucination",
+          "definition": "When a model generates text that sounds plausible but is factually incorrect or fabricated."
+        },
+        {
+          "term": "Retrieval-Augmented Generation (RAG)",
+          "definition": "A technique where a model retrieves relevant external documents at inference time and uses them as extra context to produce grounded answers."
+        }
+      ]
+    },
+    {
+      "name": "8. Generative Model Terms",
+      "items": [
+        {
+          "term": "Generative model",
+          "definition": "A model that learns to create new data resembling its training data, rather than just classifying or predicting a label."
+        },
+        {
+          "term": "GAN (Generative Adversarial Network)",
+          "definition": "A generative model made of two networks — a generator that creates fake data and a discriminator that tries to spot it — trained against each other."
+        },
+        {
+          "term": "VAE (Variational Autoencoder)",
+          "definition": "A generative model that learns to compress data into a compact representation and then reconstruct or generate new data from it."
+        },
+        {
+          "term": "Diffusion model",
+          "definition": "A generative model that learns to reverse a gradual noising process, starting from pure noise and iteratively refining it into a realistic sample."
+        },
+        {
+          "term": "Latent space",
+          "definition": "A compressed, learned representation space where similar or related data points end up close together, often used as the \"input\" a generative model draws from."
+        },
+        {
+          "term": "Autoencoder",
+          "definition": "A network trained to compress input data into a smaller representation and then reconstruct the original from it."
+        }
+      ]
+    },
+    {
+      "name": "9. Reinforcement Learning Terms",
+      "items": [
+        {
+          "term": "Agent",
+          "definition": "The decision-maker in a reinforcement learning setup that takes actions in an environment."
+        },
+        {
+          "term": "Environment",
+          "definition": "The world an RL agent interacts with, which responds to the agent's actions with new states and rewards."
+        },
+        {
+          "term": "Reward",
+          "definition": "A numerical signal an RL agent receives after taking an action, indicating how good or bad that action was."
+        },
+        {
+          "term": "Policy",
+          "definition": "The strategy an RL agent uses to decide which action to take given a state."
+        },
+        {
+          "term": "Value function",
+          "definition": "A function estimating how good it is to be in a given state (or take a given action), in terms of expected future reward."
+        },
+        {
+          "term": "Exploration vs. exploitation",
+          "definition": "The tradeoff between trying new actions to learn more (exploration) and choosing the best-known action (exploitation)."
+        },
+        {
+          "term": "Q-learning",
+          "definition": "An RL algorithm that learns the expected future reward of taking each action in each state."
+        },
+        {
+          "term": "Policy gradient",
+          "definition": "A family of RL methods that directly adjust a policy's parameters to increase the probability of actions that lead to higher reward."
+        }
+      ]
+    },
+    {
+      "name": "10. MLOps & Systems Terms",
+      "items": [
+        {
+          "term": "Model drift",
+          "definition": "A decline in a deployed model's performance over time as real-world data diverges from what it was trained on."
+        },
+        {
+          "term": "Feature store",
+          "definition": "A centralized system for storing and serving features consistently across training and production."
+        },
+        {
+          "term": "A/B testing",
+          "definition": "Comparing two versions (e.g., models) by randomly splitting traffic between them and measuring which performs better on a chosen metric."
+        },
+        {
+          "term": "Model serving",
+          "definition": "The infrastructure and process of making a trained model available to receive input and return predictions in production."
+        },
+        {
+          "term": "Latency",
+          "definition": "The time it takes for a system to return a response after receiving a request."
+        },
+        {
+          "term": "Throughput",
+          "definition": "The number of requests (or tokens, in LLM contexts) a system can process in a given amount of time."
+        },
+        {
+          "term": "CI/CD (Continuous Integration/Continuous Deployment)",
+          "definition": "Automated pipelines that test and deploy code (or models) whenever changes are made."
+        },
+        {
+          "term": "Vector database",
+          "definition": "A database optimized for storing and searching embeddings by similarity, commonly used in RAG systems."
+        }
+      ]
+    },
+    {
+      "name": "11. Evaluation & Advanced Terms",
+      "items": [
+        {
+          "term": "Precision",
+          "definition": "Of everything the model predicted as positive, the fraction that was actually correct."
+        },
+        {
+          "term": "Recall",
+          "definition": "Of everything that was actually positive, the fraction the model correctly identified."
+        },
+        {
+          "term": "Cross-validation",
+          "definition": "A technique for estimating model performance by repeatedly splitting the data into different training/validation folds."
+        },
+        {
+          "term": "Benchmark",
+          "definition": "A standardized dataset and task used to measure and compare model performance."
+        },
+        {
+          "term": "Mixture of Experts (MoE)",
+          "definition": "An architecture where different specialized sub-networks (\"experts\") handle different inputs, with only a subset activated per input to save compute."
+        },
+        {
+          "term": "KV cache",
+          "definition": "Stored key/value tensors from a Transformer's attention layers, reused during text generation so each new token doesn't require recomputing attention over the whole sequence from scratch."
+        },
+        {
+          "term": "Distillation",
+          "definition": "Training a smaller \"student\" model to mimic a larger \"teacher\" model's behavior, compressing its knowledge into a cheaper model."
+        },
+        {
+          "term": "Emergent behavior",
+          "definition": "A capability that appears in a model only after it crosses a certain scale (parameters, data, or compute), without being explicitly designed for."
+        }
+      ]
+    }
+  ],
+  "interview": [
+    {
+      "name": "1. ML Fundamentals & Math",
+      "items": [
+        {
+          "number": 1,
+          "question": "What is the bias-variance tradeoff?",
+          "answer": "High bias underfits (model too simple), high variance overfits (model too sensitive to training data). Total error = bias² + variance + irreducible noise; the goal is minimizing the sum, not either alone."
+        },
+        {
+          "number": 2,
+          "question": "What is overfitting and how do you prevent it?",
+          "answer": "The model memorizes training data instead of generalizing. Prevent with more data, regularization (L1/L2), dropout, early stopping, or simpler models."
+        },
+        {
+          "number": 3,
+          "question": "What is regularization?",
+          "answer": "A penalty added to the loss function to discourage overly complex models. L1 (Lasso) encourages sparsity; L2 (Ridge) shrinks weights smoothly."
+        },
+        {
+          "number": 4,
+          "question": "Explain gradient descent.",
+          "answer": "An iterative optimization algorithm that updates parameters in the direction of the negative gradient of the loss function to minimize it."
+        },
+        {
+          "number": 5,
+          "question": "What's the difference between batch, stochastic, and mini-batch gradient descent?",
+          "answer": "Batch uses the whole dataset per update (stable, slow); stochastic uses one sample (fast, noisy); mini-batch uses a small subset (a practical middle ground, the standard in deep learning)."
+        },
+        {
+          "number": 6,
+          "question": "What is a convex function and why does it matter for optimization?",
+          "answer": "A function where any line segment between two points on its graph lies above the graph. Convex loss functions guarantee a global minimum, so gradient descent won't get stuck in local minima."
+        },
+        {
+          "number": 7,
+          "question": "What is the curse of dimensionality?",
+          "answer": "As feature dimensions increase, data becomes sparse in the space, distances become less meaningful, and models need exponentially more data to generalize well."
+        },
+        {
+          "number": 8,
+          "question": "What's the difference between parametric and non-parametric models?",
+          "answer": "Parametric models (linear regression, logistic regression) assume a fixed functional form with a fixed number of parameters. Non-parametric models (KNN, decision trees) grow in complexity with the data."
+        },
+        {
+          "number": 9,
+          "question": "What is Occam's Razor in the context of ML?",
+          "answer": "Prefer the simplest model that adequately explains the data — simpler models generalize better and are easier to interpret and maintain."
+        },
+        {
+          "number": 10,
+          "question": "What is the difference between generative and discriminative models?",
+          "answer": "Generative models learn the joint distribution P(X, Y) and can generate new samples (e.g., Naive Bayes, GANs). Discriminative models learn P(Y|X) directly to distinguish classes (e.g., logistic regression, SVMs)."
+        }
+      ]
+    },
+    {
+      "name": "2. Statistics & Probability",
+      "items": [
+        {
+          "number": 11,
+          "question": "What is the difference between correlation and causation?",
+          "answer": "Correlation means two variables move together; causation means one directly influences the other. Correlation alone never proves causation — confounders can explain the relationship."
+        },
+        {
+          "number": 12,
+          "question": "Explain the Central Limit Theorem.",
+          "answer": "The sampling distribution of the mean of a sufficiently large number of independent random variables approaches a normal distribution, regardless of the underlying distribution's shape."
+        },
+        {
+          "number": 13,
+          "question": "What is a p-value?",
+          "answer": "The probability of observing results at least as extreme as the current data, assuming the null hypothesis is true. A small p-value suggests the null hypothesis is unlikely."
+        },
+        {
+          "number": 14,
+          "question": "What is the difference between Type I and Type II error?",
+          "answer": "Type I (false positive) rejects a true null hypothesis. Type II (false negative) fails to reject a false null hypothesis."
+        },
+        {
+          "number": 15,
+          "question": "What is Bayes' Theorem and why is it useful in ML?",
+          "answer": "P(A|B) = P(B|A)P(A)/P(B). It lets you update beliefs (posterior) given new evidence, and underlies Naive Bayes and Bayesian inference methods."
+        },
+        {
+          "number": 16,
+          "question": "What is the difference between covariance and correlation?",
+          "answer": "Covariance measures the direction of a linear relationship but is unscaled. Correlation normalizes covariance to a [-1, 1] range, making it comparable across variable pairs."
+        },
+        {
+          "number": 17,
+          "question": "What is a confidence interval?",
+          "answer": "A range of values that is likely to contain a population parameter with a given confidence level (e.g., 95%), based on sample data."
+        },
+        {
+          "number": 18,
+          "question": "What is maximum likelihood estimation (MLE)?",
+          "answer": "A method for estimating model parameters by finding the values that maximize the likelihood of the observed data under the assumed model."
+        }
+      ]
+    },
+    {
+      "name": "3. Classic ML Algorithms",
+      "items": [
+        {
+          "number": 19,
+          "question": "How does linear regression work, and what are its assumptions?",
+          "answer": "It fits a line minimizing squared error between predictions and targets. Assumes linearity, independence of errors, homoscedasticity, and normally distributed residuals."
+        },
+        {
+          "number": 20,
+          "question": "How does logistic regression differ from linear regression?",
+          "answer": "Logistic regression models the log-odds of a binary outcome using a sigmoid function, producing probabilities, rather than predicting a continuous value directly."
+        },
+        {
+          "number": 21,
+          "question": "How does a decision tree decide where to split?",
+          "answer": "It picks the feature/threshold that maximizes information gain (or minimizes Gini impurity/entropy) at each node."
+        },
+        {
+          "number": 22,
+          "question": "What is the difference between bagging and boosting?",
+          "answer": "Bagging trains models in parallel on bootstrapped samples and averages results to reduce variance (e.g., Random Forest). Boosting trains models sequentially, each correcting the previous one's errors, to reduce bias (e.g., XGBoost)."
+        },
+        {
+          "number": 23,
+          "question": "Explain how a Random Forest works.",
+          "answer": "It builds many decision trees on bootstrapped samples with random feature subsets at each split, then averages (regression) or votes (classification) across trees."
+        },
+        {
+          "number": 24,
+          "question": "What is the kernel trick in SVMs?",
+          "answer": "It implicitly maps data into a higher-dimensional space using a kernel function (e.g., RBF, polynomial) without explicitly computing the transformation, enabling non-linear decision boundaries."
+        },
+        {
+          "number": 25,
+          "question": "How does K-means clustering work?",
+          "answer": "It iteratively assigns points to the nearest of K centroids, then recomputes centroids as the mean of assigned points, until convergence."
+        },
+        {
+          "number": 26,
+          "question": "What is the difference between K-means and hierarchical clustering?",
+          "answer": "K-means requires specifying K upfront and partitions data flatly. Hierarchical clustering builds a tree (dendrogram) of nested clusters without needing K in advance."
+        },
+        {
+          "number": 27,
+          "question": "What is PCA and what problem does it solve?",
+          "answer": "Principal Component Analysis reduces dimensionality by projecting data onto the directions (principal components) that capture the most variance, useful for visualization and reducing noise/redundancy."
+        },
+        {
+          "number": 28,
+          "question": "Why does Naive Bayes work well despite its independence assumption?",
+          "answer": "Even though features are rarely truly independent, the model only needs to rank classes correctly, and errors from correlated features often cancel out in practice."
+        }
+      ]
+    },
+    {
+      "name": "4. Model Evaluation & Metrics",
+      "items": [
+        {
+          "number": 29,
+          "question": "What's the difference between precision and recall?",
+          "answer": "Precision = TP/(TP+FP), how many predicted positives were correct. Recall = TP/(TP+FN), how many actual positives were found."
+        },
+        {
+          "number": 30,
+          "question": "What is F1 score and when would you use it over accuracy?",
+          "answer": "The harmonic mean of precision and recall. Use it over accuracy when classes are imbalanced and both false positives and false negatives matter."
+        },
+        {
+          "number": 31,
+          "question": "What is a ROC curve and AUC?",
+          "answer": "ROC plots true positive rate vs. false positive rate at various thresholds. AUC (area under the curve) summarizes overall discriminative ability, independent of a specific threshold."
+        },
+        {
+          "number": 32,
+          "question": "How do you handle imbalanced classes?",
+          "answer": "Resampling (oversample minority/undersample majority), synthetic data (SMOTE), class-weighted loss functions, or choosing metrics like F1/AUC-PR over accuracy."
+        },
+        {
+          "number": 33,
+          "question": "What is cross-validation and why use it?",
+          "answer": "Splitting data into k folds, training on k-1 and validating on the remainder, rotating through all folds. It gives a more robust estimate of generalization than a single train/test split."
+        },
+        {
+          "number": 34,
+          "question": "What is data leakage and how do you prevent it?",
+          "answer": "When information from outside the training set (often from the future or the target) leaks into features, inflating performance. Prevent by strict train/test separation, careful feature engineering, and time-aware splits for time series."
+        },
+        {
+          "number": 35,
+          "question": "What is the difference between validation set and test set?",
+          "answer": "The validation set is used during development to tune hyperparameters and select models. The test set is held out entirely until the end, to estimate real-world generalization."
+        },
+        {
+          "number": 36,
+          "question": "How do you evaluate a regression model?",
+          "answer": "Common metrics: MAE (average absolute error), MSE/RMSE (penalizes large errors more), and R² (proportion of variance explained)."
+        }
+      ]
+    },
+    {
+      "name": "5. Deep Learning Fundamentals",
+      "items": [
+        {
+          "number": 37,
+          "question": "Explain backpropagation.",
+          "answer": "It computes gradients of the loss with respect to each weight by applying the chain rule backward through the network, enabling gradient-based weight updates."
+        },
+        {
+          "number": 38,
+          "question": "What is the vanishing gradient problem and how is it addressed?",
+          "answer": "Gradients shrink exponentially through many layers during backprop, stalling learning in early layers. Addressed with ReLU activations, residual connections, batch normalization, and careful initialization."
+        },
+        {
+          "number": 39,
+          "question": "What is the exploding gradient problem?",
+          "answer": "The opposite of vanishing — gradients grow uncontrollably, destabilizing training. Addressed with gradient clipping and careful initialization."
+        },
+        {
+          "number": 40,
+          "question": "Why use ReLU instead of sigmoid/tanh?",
+          "answer": "ReLU avoids saturating gradients for positive inputs, is computationally cheap, and empirically trains faster and deeper networks more reliably."
+        },
+        {
+          "number": 41,
+          "question": "What is batch normalization and why does it help?",
+          "answer": "It normalizes layer inputs across a mini-batch, stabilizing and speeding up training, and providing a mild regularization effect."
+        },
+        {
+          "number": 42,
+          "question": "What is dropout and how does it prevent overfitting?",
+          "answer": "Randomly zeroing a fraction of neurons during training forces the network to not rely on any single neuron, acting like an implicit ensemble."
+        },
+        {
+          "number": 43,
+          "question": "What's the difference between a CNN and a fully connected network for images?",
+          "answer": "CNNs use shared, local filters (convolutions) that exploit spatial structure and translation invariance, using far fewer parameters than a fully connected layer over raw pixels."
+        },
+        {
+          "number": 44,
+          "question": "Why are RNNs prone to vanishing gradients over long sequences?",
+          "answer": "Repeated multiplication of gradients through many time steps causes them to shrink (or explode) exponentially, making it hard to learn long-range dependencies."
+        },
+        {
+          "number": 45,
+          "question": "How do LSTMs address the vanishing gradient problem?",
+          "answer": "Gating mechanisms (forget, input, output gates) and a cell state that allows gradients to flow largely unchanged across time steps, preserving long-range signal."
+        },
+        {
+          "number": 46,
+          "question": "What is the difference between an epoch, a batch, and an iteration?",
+          "answer": "An epoch is one full pass over the training data. A batch is a subset of data processed together. An iteration is one weight update, corresponding to one batch."
+        }
+      ]
+    },
+    {
+      "name": "6. Optimization & Training",
+      "items": [
+        {
+          "number": 47,
+          "question": "How does Adam differ from plain SGD?",
+          "answer": "Adam maintains adaptive per-parameter learning rates using running estimates of the first and second moments of gradients, generally converging faster than plain SGD with less tuning."
+        },
+        {
+          "number": 48,
+          "question": "Why use learning rate schedules or warmup?",
+          "answer": "A learning rate that's too high early can destabilize training on randomly initialized weights; warmup gradually ramps it up, and decay schedules later help fine-grained convergence."
+        },
+        {
+          "number": 49,
+          "question": "What is weight decay and how does it differ from L2 regularization in Adam?",
+          "answer": "Weight decay directly shrinks weights each step. In naive Adam, L2 regularization interacts poorly with adaptive learning rates; AdamW decouples weight decay from the gradient update to fix this."
+        },
+        {
+          "number": 50,
+          "question": "What is gradient clipping and when is it used?",
+          "answer": "Capping the norm or value of gradients before the update step, commonly used in RNN/Transformer training to prevent exploding gradients."
+        },
+        {
+          "number": 51,
+          "question": "What's the difference between early stopping and regularization?",
+          "answer": "Early stopping halts training when validation performance stops improving, acting as an implicit regularizer by limiting how long the model can overfit; explicit regularization (L1/L2/dropout) constrains the model directly."
+        },
+        {
+          "number": 52,
+          "question": "Why do we shuffle training data each epoch?",
+          "answer": "To prevent the model from learning spurious patterns based on data order and to ensure each mini-batch is a representative, independent sample."
+        }
+      ]
+    },
+    {
+      "name": "7. NLP & LLMs",
+      "items": [
+        {
+          "number": 53,
+          "question": "What is tokenization and why do LLMs use subword tokenization?",
+          "answer": "Splitting text into units the model processes. Subword methods (BPE, WordPiece) balance vocabulary size and the ability to represent rare/unseen words by breaking them into common subunits."
+        },
+        {
+          "number": 54,
+          "question": "Explain the attention mechanism in one sentence.",
+          "answer": "It computes a weighted sum of value vectors, where weights come from the similarity (via dot product) between a query and each key, letting the model focus on relevant parts of the input."
+        },
+        {
+          "number": 55,
+          "question": "Why does the Transformer use multi-head attention instead of a single attention head?",
+          "answer": "Multiple heads let the model attend to different types of relationships (syntax, position, semantics) in parallel subspaces, which a single head can't capture as richly."
+        },
+        {
+          "number": 56,
+          "question": "What is positional encoding and why is it needed?",
+          "answer": "Since self-attention has no inherent notion of order, positional encodings inject sequence-position information into token embeddings."
+        },
+        {
+          "number": 57,
+          "question": "What's the difference between BERT and GPT architecturally?",
+          "answer": "BERT is an encoder-only, bidirectional model trained with masked language modeling — good for understanding tasks. GPT is a decoder-only, autoregressive model trained to predict the next token — good for generation."
+        },
+        {
+          "number": 58,
+          "question": "What is the difference between pretraining and fine-tuning?",
+          "answer": "Pretraining trains a model on a large, general corpus to learn broad language representations. Fine-tuning further trains that model on a smaller, task-specific dataset to specialize it."
+        },
+        {
+          "number": 59,
+          "question": "What is LoRA and why is it useful?",
+          "answer": "Low-Rank Adaptation freezes the original model weights and injects small trainable low-rank matrices, drastically reducing the number of trainable parameters needed to fine-tune large models."
+        },
+        {
+          "number": 60,
+          "question": "What is RLHF and why is it used for LLMs?",
+          "answer": "Reinforcement Learning from Human Feedback trains a reward model on human preference comparisons, then fine-tunes the LLM against that reward to better align outputs with human intent."
+        },
+        {
+          "number": 61,
+          "question": "What is the difference between RLHF and DPO?",
+          "answer": "RLHF trains a separate reward model and uses RL (e.g., PPO) to optimize against it. DPO (Direct Preference Optimization) skips the reward model and RL loop, directly optimizing the policy on preference pairs with a simpler loss."
+        },
+        {
+          "number": 62,
+          "question": "What is retrieval-augmented generation (RAG) and why use it?",
+          "answer": "It retrieves relevant external documents at inference time and feeds them into the model's context, grounding responses in up-to-date or domain-specific information without retraining the model."
+        },
+        {
+          "number": 63,
+          "question": "What causes hallucination in LLMs and how can it be mitigated?",
+          "answer": "Models generate fluent but factually incorrect text because they predict plausible tokens, not verified facts. Mitigations include RAG, fine-tuning on verified data, and prompting the model to cite sources or express uncertainty."
+        },
+        {
+          "number": 64,
+          "question": "What is KV caching and why does it matter for LLM inference speed?",
+          "answer": "It stores previously computed key/value tensors from attention so each new token generation step doesn't recompute attention over the entire prior sequence, greatly speeding up autoregressive decoding."
+        }
+      ]
+    },
+    {
+      "name": "8. Computer Vision",
+      "items": [
+        {
+          "number": 65,
+          "question": "What does a convolutional filter actually learn?",
+          "answer": "Early layers typically learn edges, colors, and textures; deeper layers combine these into increasingly abstract, task-relevant features (shapes, object parts)."
+        },
+        {
+          "number": 66,
+          "question": "What is the purpose of pooling layers in a CNN?",
+          "answer": "They downsample feature maps (e.g., max pooling), reducing spatial dimensions and computation while providing some translation invariance."
+        },
+        {
+          "number": 67,
+          "question": "What is transfer learning and why is it common in computer vision?",
+          "answer": "Reusing a model pretrained on a large dataset (e.g., ImageNet) as a starting point for a new, often smaller, task — since low-level visual features generalize well across tasks."
+        },
+        {
+          "number": 68,
+          "question": "What's the difference between object detection and image segmentation?",
+          "answer": "Detection localizes objects with bounding boxes and class labels. Segmentation assigns a class label to every pixel (semantic) or to every pixel of every distinct object instance (instance segmentation)."
+        },
+        {
+          "number": 69,
+          "question": "What is data augmentation and why is it used in vision tasks?",
+          "answer": "Applying random transformations (flips, crops, color jitter) to training images to artificially expand the dataset and improve generalization."
+        },
+        {
+          "number": 70,
+          "question": "How does a Vision Transformer (ViT) process an image differently than a CNN?",
+          "answer": "It splits the image into fixed-size patches, linearly embeds them as tokens, and processes them with standard self-attention, rather than using convolutional filters."
+        }
+      ]
+    },
+    {
+      "name": "9. Reinforcement Learning",
+      "items": [
+        {
+          "number": 71,
+          "question": "What are the core components of an RL problem?",
+          "answer": "Agent, environment, state, action, reward, and policy — the agent takes actions based on a policy to maximize cumulative reward from the environment."
+        },
+        {
+          "number": 72,
+          "question": "What is the exploration-exploitation tradeoff?",
+          "answer": "The agent must balance trying new actions to discover better strategies (exploration) against choosing the best-known action to maximize reward (exploitation)."
+        },
+        {
+          "number": 73,
+          "question": "What is the difference between value-based and policy-based RL methods?",
+          "answer": "Value-based methods (e.g., Q-learning, DQN) learn a value function and derive a policy from it. Policy-based methods (e.g., REINFORCE, PPO) directly parameterize and optimize the policy."
+        },
+        {
+          "number": 74,
+          "question": "What is the Bellman equation?",
+          "answer": "It expresses the value of a state as the immediate reward plus the discounted value of the next state, forming the recursive basis for most RL algorithms."
+        },
+        {
+          "number": 75,
+          "question": "What is the difference between on-policy and off-policy learning?",
+          "answer": "On-policy methods (e.g., PPO, SARSA) learn from data generated by the current policy. Off-policy methods (e.g., Q-learning, DQN) can learn from data generated by a different (or past) policy."
+        },
+        {
+          "number": 76,
+          "question": "Why is PPO popular for training LLMs with RLHF?",
+          "answer": "It constrains policy updates to stay close to the previous policy (via a clipped objective), giving stable training without the complexity of strict trust-region methods like TRPO."
+        }
+      ]
+    },
+    {
+      "name": "10. ML System Design & MLOps",
+      "items": [
+        {
+          "number": 77,
+          "question": "How would you design a recommendation system at scale?",
+          "answer": "Typically a two-stage system: fast candidate generation (e.g., collaborative filtering or embeddings + approximate nearest neighbor search) to narrow millions of items to hundreds, then a more expensive ranking model to order the final candidates."
+        },
+        {
+          "number": 78,
+          "question": "How do you detect and handle model drift in production?",
+          "answer": "Monitor input feature distributions and prediction/performance metrics over time against a baseline; trigger alerts or retraining pipelines when drift exceeds a threshold."
+        },
+        {
+          "number": 79,
+          "question": "What is a feature store and why is it useful?",
+          "answer": "A centralized system for storing, versioning, and serving features consistently between training and real-time inference, avoiding training/serving skew."
+        },
+        {
+          "number": 80,
+          "question": "How would you design an A/B test for a new ML model?",
+          "answer": "Randomly split traffic between the current (control) and new (treatment) model, define a clear success metric in advance, ensure sufficient sample size/duration for statistical power, and monitor for guardrail metric regressions."
+        },
+        {
+          "number": 81,
+          "question": "What's the difference between online and batch inference?",
+          "answer": "Online (real-time) inference serves predictions on demand with low latency requirements. Batch inference processes large volumes of data on a schedule, prioritizing throughput over latency."
+        },
+        {
+          "number": 82,
+          "question": "How do you version and reproduce ML experiments?",
+          "answer": "Version code (git), data (DVC or similar), and track hyperparameters/metrics/artifacts with an experiment tracker (MLflow, W&B) so any run can be reproduced."
+        },
+        {
+          "number": 83,
+          "question": "What is model quantization and why use it?",
+          "answer": "Reducing the numerical precision of model weights/activations (e.g., FP32 → INT8) to shrink model size and speed up inference, usually with a small accuracy tradeoff."
+        },
+        {
+          "number": 84,
+          "question": "What is model distillation?",
+          "answer": "Training a smaller \"student\" model to mimic a larger \"teacher\" model's outputs (often its soft probabilities), compressing knowledge into a cheaper model for deployment."
+        },
+        {
+          "number": 85,
+          "question": "How would you design a system to serve an LLM at low latency and high throughput?",
+          "answer": "Use an optimized inference server (e.g., vLLM) with continuous batching and KV caching, quantize the model where acceptable, and consider speculative decoding or smaller distilled models for latency-sensitive paths."
+        },
+        {
+          "number": 86,
+          "question": "How do you monitor a deployed ML model's health?",
+          "answer": "Track prediction distribution drift, input data quality, latency/throughput, and downstream business metrics — not just offline accuracy, which can't be measured live without labels."
+        }
+      ]
+    },
+    {
+      "name": "11. Coding, DSA & Practical",
+      "items": [
+        {
+          "number": 87,
+          "question": "Implement a function to compute the softmax of a vector, handling numerical stability.",
+          "answer": "Subtract the max value from all elements before exponentiating to prevent overflow, then normalize: `exp(x - max(x)) / sum(exp(x - max(x)))`."
+        },
+        {
+          "number": 88,
+          "question": "How would you implement K-nearest neighbors from scratch?",
+          "answer": "Compute the distance (e.g., Euclidean) from the query point to every training point, sort by distance, take the K closest, and return the majority class (or average, for regression)."
+        },
+        {
+          "number": 89,
+          "question": "Write pseudocode for mini-batch gradient descent.",
+          "answer": "Loop over epochs; within each epoch, shuffle data and loop over mini-batches; for each batch, compute the forward pass, loss, gradients via backprop, and update weights."
+        },
+        {
+          "number": 90,
+          "question": "How would you efficiently find duplicate rows in a very large dataset that doesn't fit in memory?",
+          "answer": "Process in chunks, hash each row (or a subset of key columns), and use an external sort or a disk-backed hash set to detect collisions across chunks."
+        },
+        {
+          "number": 91,
+          "question": "What data structure would you use for fast approximate nearest neighbor search over millions of embeddings?",
+          "answer": "An index like HNSW (hierarchical navigable small world graphs) or IVF (inverted file index with product quantization), as used in FAISS — exact search doesn't scale to that volume."
+        },
+        {
+          "number": 92,
+          "question": "How would you shuffle a large dataset that doesn't fit in memory?",
+          "answer": "Use reservoir sampling or shuffle in chunks with a buffer, or shuffle indices/pointers on disk and stream data in shuffled order rather than loading everything into memory at once."
+        },
+        {
+          "number": 93,
+          "question": "Write the formula for and explain cross-entropy loss.",
+          "answer": "`-Σ y_i log(ŷ_i)` — it penalizes confident wrong predictions heavily and rewards confident correct ones, making it well-suited to classification with probabilistic outputs."
+        },
+        {
+          "number": 94,
+          "question": "How would you implement early stopping in a training loop?",
+          "answer": "Track validation loss each epoch; if it hasn't improved for a set number of epochs (patience), stop training and restore the best-performing checkpoint."
+        }
+      ]
+    },
+    {
+      "name": "12. Behavioral & Take-Home",
+      "items": [
+        {
+          "number": 95,
+          "question": "Tell me about a time an ML model you built didn't perform as expected in production. What did you do?",
+          "answer": "Focus on the diagnostic process — checking for data drift, train/serve skew, or a broken assumption — and the concrete fix, not just the outcome."
+        },
+        {
+          "number": 96,
+          "question": "How do you decide when a model is \"good enough\" to ship?",
+          "answer": "Tie it to a business/product metric and a baseline (existing system or simple heuristic), not just offline accuracy — and factor in latency, cost, and failure mode severity."
+        },
+        {
+          "number": 97,
+          "question": "Describe a project where you had to balance model accuracy against interpretability or latency constraints.",
+          "answer": "Emphasize the tradeoff reasoning and stakeholder communication, not just the technical choice."
+        },
+        {
+          "number": 98,
+          "question": "How do you stay current with the fast pace of AI/ML research?",
+          "answer": "Mention concrete habits — following specific papers/newsletters, reproducing key results, or regularly rebuilding smaller versions of new techniques."
+        },
+        {
+          "number": 99,
+          "question": "How would you explain a complex model's prediction to a non-technical stakeholder?",
+          "answer": "Focus on translating feature importance or example-based reasoning (e.g., SHAP values, similar past cases) into plain business language, not the underlying math."
+        },
+        {
+          "number": 100,
+          "question": "Walk me through how you'd approach a take-home ML task with an ambiguous problem statement.",
+          "answer": "Emphasize clarifying the objective/metric upfront, doing quick exploratory data analysis before modeling, starting with a simple baseline, and documenting assumptions clearly in the writeup."
+        },
+        {
+          "number": 1,
+          "question": "Week 1:",
+          "answer": "§1–4 — fundamentals, stats, classic algorithms, and evaluation metrics (these underlie almost every other answer)"
+        },
+        {
+          "number": 2,
+          "question": "Week 2:",
+          "answer": "§5–6 — deep learning and optimization internals"
+        },
+        {
+          "number": 3,
+          "question": "Week 3:",
+          "answer": "§7–9 — pick the specialty most relevant to your target role (NLP/LLMs, CV, or RL) and go deep"
+        },
+        {
+          "number": 4,
+          "question": "Week 4:",
+          "answer": "§10–11 — system design and coding rounds, typically the highest-weighted rounds for ML engineering roles"
+        },
+        {
+          "number": 5,
+          "question": "Ongoing:",
+          "answer": "§12 — prepare 2–3 concrete personal examples for each behavioral question well before interviews, rather than improvising"
+        }
+      ]
+    }
+  ]
+};
